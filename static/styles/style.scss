@@ -142,14 +142,16 @@ nav[data-toggle="toc"] .nav .active .nav {
 a {
     color: $link-color;
 }
+
 a:hover {
     text-decoration: none;
     color: $dark-color;
     font-weight: bold;
 }
 
-.navbar a {
+.nav-link {
     color: $dark-color;
+    text-shadow: .2px .2px $dark-color;
 }
 
 

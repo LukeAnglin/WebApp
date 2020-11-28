@@ -141,6 +141,7 @@ a:hover {
   font-weight: bold;
 }
 
-.navbar a {
+.nav-link {
   color: #47404e;
+  text-shadow: 0.2px 0.2px #47404e;
 }
