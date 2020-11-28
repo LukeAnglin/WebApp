@@ -1,0 +1,13 @@
+{
+  "notebooks": {
+    "Saving and Evaluating Models.ipynb": {
+      "slug": "fc7560f2589f48fba19d695026557d71"
+    },
+    "Classification - Happiness Score.ipynb": {
+      "slug": "a85d64dd64974fde9a70c5d323aae986"
+    },
+    "Plotly.ipynb": {
+      "slug": "cc5868d48ff84d2ba8629c99a1707ffb"
+    }
+  }
+}
