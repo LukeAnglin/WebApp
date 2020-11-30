@@ -1,9 +1,25 @@
 {% extends "layout.html" %}
 
-<!-- Content for homepage -->
 
+<!-- Content for homepage -->
 {% block content %}
 
-{% include "home_content.html" %}
+<div class="Data Science">
+    <h1>Data Science</h1>
+    <p>Data science. Statistics. TensorFlow, Pandas, Sci-Kit Learn, and so much more! Check out the <a
+            href="{{ url_for('data_science')}}">data science</a> page for some
+        handy resources!</p>
+</div>
+
+<div class="Machine Learning">
+    <h1>Machine Learning Notebooks</h1>
+    <p>There are links in many of my data science notes to other notebooks. But, I also have this area which is purely
+        iPython Jupyter notebooks, containing various projects I've performed applying my knowledge. See <a href=""></a>
+    </p>
+</div>
+
+<div class="Python">
+    <h1>Python</h1>
+</div>
 
 {% endblock content %}

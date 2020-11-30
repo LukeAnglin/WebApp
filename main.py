@@ -6,9 +6,14 @@ from flask import send_from_directory
 import os
 import sys
 
+import categories as cat
+
+categories = cat.categories
+
+# Initialize Flask
 app = Flask(__name__)
 
-# Index.html Route
+# Index.html, homepage Route
 
 
 @app.route('/')
@@ -17,16 +22,39 @@ def home():
     return render_template('/home.html')
 
 
-@app.route('/Stat')
-def stat():
-    return render_template('/stat.html')
+# Data Science Route
+
+data_science_files = categories['Data Science']
+print(data_science_files)
+
+
+@app.route('/category_indices/data-science')
+def data_science():
+    return render_template('/category-indices/data-science.html', title='Data Science', description='Data science. Statistics.  TensorFlow, Pandas, Sci-Kit Learn, and so much more!  This page will house all of my personal notes.  Additionally, I will post some external resources which I have found helpful.', image_route='static/assets/media/stat-homepage-violin-plots.png', route='data_science')
+
+# Machine Learning Projects
+
+
+@app.route('/machine-learning')
+def machine_learning():
+    return render_template('/category-indices/machine-learning.html')
+
+# Python Route
+
+
+@app.route('/python')
+def python():
+    return render_template('/category-indices/python.html')
+
+# Linear Algebra Route
+
+
+# JS Route
 
 
 # Use export FLASK_APP=main
 # Then, export FLASK_ENV=development
 # Then, flask run
-if __name__ == '__main__':
-    app.run(debug=True)
 
 # Loop through categorie and display in navbar.
 # for category in

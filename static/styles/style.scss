@@ -7,6 +7,14 @@ $link-hover: rgb(24%, 39.8%, 49.1%);
 body {
     padding: 7vh;
 }
+div.col-3.toc {
+    padding-top: 4vh;
+    font-size: 2rem; 
+}
+
+div.col-9.content {
+    padding-top: 1vh;
+}
 
 ol.toc-list {
     font-size: x-small;
@@ -152,6 +160,11 @@ a:hover {
 .nav-link {
     color: $dark-color;
     text-shadow: .2px .2px $dark-color;
+}
+
+li.toc-list-item{
+    font-size: 1rem;
+    padding-top: .4rem;
 }
 
 
