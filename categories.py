@@ -1,4 +1,5 @@
 import os.path
+import pprint as pp
 import sys
 
 # The purpose of this file is to add the relevant categories and create a dictionary full of the category mapping to the relevant files.
@@ -6,7 +7,7 @@ import sys
 # Edit the following lines, 8-13, in order to update some of the features.
 
 # Remove certain folders that I don't want
-names_to_remove = ['MLProjects']
+names_to_remove = ['MLProjects', '.ipynb_checkpoints']
 
 # Change the names_to_change and new_name arrays to update
 names_to_change = ['JS']
@@ -26,7 +27,10 @@ categories_dir = 'categories'
 # Initialize an empty dictionary to store categories mapping to files
 category_dict = {}
 
+
 def create_categories():
+    """Fills the 'category_dict' dictionary with categories mapping to filepaths. 
+    """
     for category in categories:
         category_dir = os.path.join(categories_dir, category)
         category_contents = os.listdir(category_dir)
@@ -52,30 +56,38 @@ def create_categories():
     return category_dict
 
 
-def modify_categories(categories):
+def modify_categories(category_dict):
+    """Applies multiple modification functions to the overarching categories (ex. Statistics or Data Science, not the filepaths) 
+
+    Args:
+        category_dict (dict): A dictionary of categories mapping to filenames  
+
+    Returns:
+        dict: The dictionary after applying the modification functions. 
+    """
+    # Create a copy of the dictionary
+    categories = category_dict.copy()
+
     # Replace dashes keys with spaces
-    for category in categories:
+    for category in category_dict.keys():
         new_cat_name = category.replace('-', ' ')
-        category_dict[new_cat_name] = category_dict.pop(category)
+        categories[new_cat_name] = categories.pop(category)
 
     # Replace names with ones better suited for headings
     for old_name, new_name in zip(names_to_change, new_names):
-        category_dict[new_name] = category_dict.pop(old_name)
+        categories[new_name] = categories.pop(old_name)
 
     # Remove names that I don't want
     for name in names_to_remove:
-        del category_dict[name]
-    
-    return category_dict
+        del categories[name]
 
+    return categories
 
 # Create the categories
 create_categories()
 
-# Set categories to the list of keys
-categories = list(category_dict.keys())
-
 # Pass categories to modify_categories to be fixed
-categories = modify_categories(categories)
+categories = modify_categories(category_dict)
 
-
+# Pretty print the category dictionary for debugging purposes
+pp.pprint(categories)

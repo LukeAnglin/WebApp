@@ -1,3 +1,7 @@
+---
+author: Luke
+title: Bayesian Statistics
+---
 The relevant notebook can be found [here](../../MLProjects/Notes/Bayesian/Chapter1_Introduction/Ch1_Introduction_PyMC3.ipynb)
 
 A wonderful [Kaggle notebook](https://www.kaggle.com/mrisdal/the-philosophy-of-bayesian-inference) summarizes it nicely. 
@@ -10,7 +14,7 @@ $$P(A|X) = \frac{P(X|A)\times P(A)}{P(X)}$$
 
 Posterior probabilities lead us to update our theory.  
 
-![BayesianPosterior](/assets/BayesianPosterior.png)
+![BayesianPosterior](assets/BayesianPosterior.png)
 
 The <span class="keyword1">wider</span> the curve, the greater the <span class="keyword1">uncertainty</span>. 
 

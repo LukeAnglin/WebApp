@@ -3,6 +3,115 @@
 The `help(function)` returns a function's docstring.  
 
 The `dir(module)` gives a list of the functions and variables in a module. 
+
+# Debugging 
+
+## pprint 
+
+The `pprint` module has helpful data structure printing functions.  
+
+```python
+import pprint as pp 
+
+pp.pprint(my_dictionary)
+```
+
+# Testing 
+
+## unittest 
+
+Steps: 
+1. `import unittest`
+2. Create a class called `Test<myTest>` that is descriptively describing what you are testing. 
+3. Have it inherit from the `TestCase` class 
+4. Create test methods, making sure to add `self` as the first argument. 
+5. `self.<some-assertion>`
+6. End with: 
+```python 
+if __name__ == 'main':
+    unittest.main()
+```
+
+Example from the [unittest docs](https://docs.python.org/3/library/unittest.html#basic-example)
+
+```python 
+import unittest
+
+class TestStringMethods(unittest.TestCase):
+
+    def test_upper(self):
+        self.assertEqual('foo'.upper(), 'FOO')
+
+    def test_isupper(self):
+        self.assertTrue('FOO'.isupper())
+        self.assertFalse('Foo'.isupper())
+
+    def test_split(self):
+        s = 'hello world'
+        self.assertEqual(s.split(), ['hello', 'world'])
+        # check that s.split fails when the separator is not a string
+        with self.assertRaises(TypeError):
+            s.split(2)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+## doctest 
+
+
+Super cool if you're building something where you really want to make some clear examples.  Parses docstring for example code resembling an iPython session and conducts the tests. Best shown by example from [the docs](https://docs.python.org/3/library/doctest.html)
+
+```python
+def factorial(n):
+    """Return the factorial of n, an exact integer >= 0.
+
+    >>> [factorial(n) for n in range(6)]
+    [1, 1, 2, 6, 24, 120]
+    >>> factorial(30)
+    265252859812191058636308480000000
+    >>> factorial(-1)
+    Traceback (most recent call last):
+        ...
+    ValueError: n must be >= 0
+
+    Factorials of floats are OK, but the float must be an exact integer:
+    >>> factorial(30.1)
+    Traceback (most recent call last):
+        ...
+    ValueError: n must be exact integer
+    >>> factorial(30.0)
+    265252859812191058636308480000000
+
+    It must also not be ridiculously large:
+    >>> factorial(1e100)
+    Traceback (most recent call last):
+        ...
+    OverflowError: n too large
+    """
+
+    import math
+    if not n >= 0:
+        raise ValueError("n must be >= 0")
+    if math.floor(n) != n:
+        raise ValueError("n must be exact integer")
+    if n+1 == n:  # catch a value like 1e300
+        raise OverflowError("n too large")
+    result = 1
+    factor = 2
+    while factor <= n:
+        result *= factor
+        factor += 1
+    return result
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+```
+
+## pytest 
+
 # Strings
 
 ## f-Strings 
@@ -487,7 +596,9 @@ On the other
 
 ## kwargs 
 
-Often, you want to use the `.items()` function on the `kwargs` in order to iterate through it like a `dict`
+Often, you want to use the `.items()` function on the `kwargs` in order to iterate through it like a `dict`. 
+
+What is stored in `**kwargs` is a dictionary mapping keys to values.  
 
 ```python 
 def upper(**kwargs): 
@@ -499,6 +610,265 @@ upper(name = 'Luke')
 >> Output: name: Luke
 ```
 
+## ** and * 
+
+Commonly, you see this sort of notation for `*args` and `**kwargs` in a function, like this: 
+
+```python 
+# Positional args, *args and/or default args, *kwargs
+def f(a, b, *c, d=5, **e)
+```
+
+But, you can also use them for unpacking tuples to be **used as arguments**.  
+
+```python 
+def f(a,b):
+    print(a+b)
+args = [(1,2), (3,4), (5,6), (7,8), (9,10)]
+i = eval(input('Enter a number from 0 to 4:'))
+
+f(*args[i])
+```
+
+```python 
+Enter a number from 0 to 4: 
+3
+
+>> Output: 15
+```
+
+
 ## Ordering
 
-`*args` before `**kwargs`.  Simple as that. 
+`*args` before `**kwargs`.  Simple as that.
+
+## Variable retention
+
+You can give a function sort of static attributes.  
+
+```python 
+def add_members():
+    add_members.members += 1
+    print(add_members.members)
+# Initialize that var 
+add_members.members = 0
+
+add_members()
+add_members()
+
+>> Output: 1
+           2
+```
+
+# Itertools and collections
+
+Note that many of the features of these return `iterator` objects rather than lists.  Permutations are one example that we'll see right here. 
+
+## Permutations
+
+One cool thing is rather than just passing a list to permutations and getting the rearrangements, you can pass an int as an optional second argument and get all of the permutations of that subset.  
+
+Make sure to convert with `list`, because an `iterator` is returned. 
+
+```python 
+from itertools import permutations
+
+# No second argument
+list(permutations([1,2,3]))
+
+>> Output:  
+[(1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1)]
+
+# With second integer arg 
+list(permutations([1,2,3], 2))
+
+>> Output: 
+[(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)]
+
+```
+
+## Combinations
+
+Same syntax for combinations where you **can't repeat**.  If you want to repeat, just change it to `combinations_with_replacement()`
+
+## Cartesian Product 
+
+Wonderfully simple.  Just use `product()`
+
+```python
+from itertools import product 
+[''.join(seq) for seq in product('abc', '123')]
+
+>> Output: 
+['a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3']
+```
+
+# Sorting
+
+There are two big functions in this category.  `sort()` and `sorted()`
+
+## sort()
+
+`sort()` takes three optional `kwargs`.  
+
+```python
+L.sort(cmp = None, key = None, reverse = False)
+```
+
+Realistically, only `key` matters.  It allows you to sort by applying some function.  For example, you could pass `len` (**no parentheses**), the function object, to that parameter and it would sort by the length of the values in the list.  
+
+```python 
+L = ['hello', 'supercalifragilisticexpialadocious']
+L.sort(key = len, reverse = True)
+
+>> Output: 
+['supercalifragilisticexpialadocious', 'hello']
+```
+
+Note that the `Iterable` is sorted *in place* 
+
+## sorted()
+
+`sorted()` is similar, but you pass an `Iterable` as the first argument, and the `Iterable` is not sorted in place. 
+
+## Groupby 
+
+Useful for seeing how many of similar things occur in an `Iterable`.  Generates a `groupby` `iterator` object, so you must convert with a `list()`. 
+
+Generally, you want to `sort()` the collection first.  Let's see why.  
+
+Here's a **non-sorted** example. 
+
+```python 
+L = [0, 0, 1, 1, 1, 0, 0, 4, 4, 4]
+for key, group in groupby(L): 
+    print(key, ':', list(group))
+
+>> Output: 
+0 : [0, 0]
+1 : [1, 1, 1]
+0 : [0, 0]
+4 : [4, 4, 4]
+```
+
+As we can see, the zeroes get repeated.  
+
+If we sort, though . . . 
+
+```python 
+L.sort()
+for key, group in groupby(L): 
+    print(key, ':', list(group))
+
+>> Output: 
+0 : [0, 0, 0, 0]
+1 : [1, 1, 1]
+4 : [4, 4, 4]
+```
+
+Generally, you'd probably take the `len()` of those lists and see how many unique values there are.  
+
+### Optional key param
+
+Additionally, you can specify a `key` parameter to tell groupby how to map the dict more effectively.  This is best explained by a visual.  
+
+```python 
+L = ['this','is','a','test','of','groupby']
+L.sort(key =len) 
+for key, group in groupby(L, len):
+    print(key,':',list(group))
+
+>> Output: 
+1 : ['a']
+2 : ['is', 'of']
+4 : ['this', 'test']
+7 : ['groupby']
+```
+
+## Chain 
+
+This one is **extremely useful**.  If you have a list of lists, or an `Iterable` of other `Iterables`, which is very common, you can flatten it.  
+
+Note that the inner parts of the `Iterable` should be of the same dimension $n$ and you often will need to unpack the `Iterable` by calling something like `*tuple(<Iterable>)`
+
+```python 
+import itertools
+L = [[1], [2], [1, 2, 3]]
+all_nums = list(itertools.chain(*tuple(L)))
+print(all_nums)
+
+>> Output: 
+[1, 2, 1, 2, 3]
+```
+
+## Counter 
+
+The `Counter` class has useful methods for, well, *counting*.  Revolutionary, right? 
+
+```python 
+import re 
+from collections import Counter 
+names = ('LukeLukeLuke')
+repetitions = re.findall('Luke', names)
+my_counter = Counter(repetitions)
+list(zip(my_counter.keys(), my_counter.values()))
+
+>> Output: 
+[('Luke', 3)]
+```
+
+As you can see, it returns a `dict`.  A couple other cool things about `Counter` include: 
+
+* `most_common(*index/slice)` 
+    * Tip:  Use negative slicing to get least common elements
+* You can do math on `Counter` objects
+
+# Generators 
+
+Any function containing the keyword `yield` is a generator. These functions don't lose their variables when iterating, and are generally **recursive** functions. 
+
+Generators are often <span class="keyword1">more efficient</span> than regular `Iterables` because they do **not store all values in memory**.  
+
+This comes with one drawback though.  You can only iterate over a generator *once*, because they generate values *on the fly*. 
+
+```python 
+generator = (x*x for x in range(3)) 
+for value in generator:
+    print(value)
+
+>> Output: 
+0
+1
+4
+```
+
+## yield 
+
+Similar to return, but for creating generators from functions.  
+
+```python 
+def createGenerator():
+       mylist = range(3)
+       for i in mylist:
+       yield i*i
+
+mygenerator = createGenerator()
+print(mygenerator) # generators are objects
+
+>> Output: <generator object createGenerator at 0xb8324c38>
+
+for i in mygenerator:
+    print(i)
+
+>> Output: 
+0
+1
+4
+```
+
+This section and the above section on generators as a whole was inspired by this [Stack Overflow post](https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do)
+
+
+
+
+

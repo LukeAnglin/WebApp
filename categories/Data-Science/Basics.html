@@ -1,213 +1,172 @@
-<!doctype html>
-<html lang="en">
+{% extends 'layout.html' %}
+{% block content %}
 
-<head>
-    <title>Practical Stat</title>
+<div>
 
+    <h1 id="Basics">Basics</h1>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Indices -->
+    <div>
+        <h2 id="indices">Indices</h2>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
-    <!-- Tocbot -->
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
-
-    <!-- Personal CSS -->
-    <link type="text/css" rel="stylesheet" href="../../../styles/style.css">
-
-    <!-- Prism -->
-    <link rel="stylesheet" href="../../../styles/prism.css">
-
-</head>
-
-<body data-spy="scroll" data-target="#toc">
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Row to hold everything -->
+        Indices <b>summarize and rank</b> observations.
+        <!-- Index Pictures -->
         <div class="row">
-            <!-- TOC Nav Sidebar Sticky -->
-            <div class="col-3">
-                <nav id="toc" data-toggle="toc" class="sticky-top toc"></nav>
+
+            <div class="col-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Comparison_of_three_stock_indices_after_1975.svg/1200px-Comparison_of_three_stock_indices_after_1975.svg.png"
+                        alt="">
+                </a>
             </div>
-            <!-- Content -->
-            <div class="col-9 content">
+            <div class="col-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive"
+                        src="https://www.motherjones.com/wp-content/uploads/2019/03/blog_inflation_january_20191.gif"
+                        alt="">
+                </a>
+            </div>
+        </div>
+    </div>
 
+    <div>
+        <!-- Hypotheses -->
+        <h2 id="hypotheses">Hypotheses</h2>
 
-                <div>
+        <!-- Hypothesis Table -->
+        <table id="hypothesis-table" class="table">
+            <thead>
+                <tr>
+                    <th>Hypothesis</th>
+                    <th>Meaning</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">Null</td>
+                    <td>What we want to disprove</td>
+                    <td>The world is flat</td>
+                </tr>
+                <tr>
+                    <td scope="row">Alternative</td>
+                    <td>Our explanation for the phenomenon</td>
+                    <td>The world is spherical</td>
+                </tr>
+            </tbody>
+        </table>
 
-                    <h1 id="Basics">Basics</h1>
+        <!-- P Vals -->
+        <h3 id="p-values">P-Values</h3>
+        <blockquote>The p-value is the probability of the <b>observed outcome plus all “more extreme”
+                outcomes</b> (in
+            this case: 19 heads + 1 tail and 20 heads + 0 tail), represented by the shaded “tail area"<a
+                href="https://s4be.cochrane.org/blog/2016/03/21/p-value-in-plain-english-2/#:~:text=In%20academic%20literature%2C%20the%20p,the%20null%20hypothesis%20were%20true.">
+                $^1$</a>
+        </blockquote>
+        <img class="img-responsive" src="https://www.simplypsychology.org/p-value.png" alt="Source: Simply Psychology">
+    </div>
 
-                    <!-- Indices -->
-                    <div>
-                        <h2 id="indices">Indices</h2>
+    <div>
+        <h2 id="variability">Variability</h2>
+        <!-- Ways to measure -->
+        <h3 class="Measurements">Measurements</h3>
 
-                        Indices <b>summarize and rank</b> observations.
-                        <!-- Index Pictures -->
-                        <div class="row">
+        ul>li
+        <!-- Standard Error vs Deviation -->
+        <h3 id="SE Vs. SD">SE vs SD</h2>
 
-                            <div class="col-6 thumb">
-                                <a class="thumbnail" href="#">
-                                    <img class="img-responsive"
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Comparison_of_three_stock_indices_after_1975.svg/1200px-Comparison_of_three_stock_indices_after_1975.svg.png"
-                                        alt="">
-                                </a>
-                            </div>
-                            <div class="col-6 thumb">
-                                <a class="thumbnail" href="#">
-                                    <img class="img-responsive"
-                                        src="https://www.motherjones.com/wp-content/uploads/2019/03/blog_inflation_january_20191.gif"
-                                        alt="">
-                                </a>
-                            </div>
+            The standard deviation of the
+            <i>sample means</i> is the standard error.
+
+            <img class="img-responsive"
+                src="https://www.wallstreetmojo.com/wp-content/uploads/2019/12/Standard-Error.jpg"
+                alt="Standard Error Image from the WallStreetMojo">
+
+            <blockquote>
+                In general, <span class="text-primary">standard error</span> is only used for <span
+                    class="text-primary">confidence intervals</span>, and <span class="text-secondary">standard
+                    deviation</span> is used for <span class="text-secondary">everything else. </span>
+            </blockquote>
+    </div>
+    <div>
+        <h2 id="Measures of Location">Measures of Location</h2>
+
+        <div id="weighted-mean">
+            <h3>Weighted Means</h3>
+            <div class="bs-example" data-example-id="simple-panel">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">Sensor Data</h5>
+                    </div>
+                    <div class="panel-body">You have a sensor giving bad data 2% of the time. It's off a
+                        bit when it does, but nothing ridiculous. How can you prevent this from
+                        completely ruining your mean? Use a <b>weighted mean</b> </div>
+
+                    <!-- Weighted mean images -->
+
+                    <div class="row">
+
+                        <div class="col-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive"
+                                    src="https://www.mathsisfun.com/data/images/weighted-average-seesaw.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive"
+                                    src="https://www.wikihow.com/images/thumb/5/56/Calculate-Weighted-Average-Step-3-Version-7.jpg/v4-460px-Calculate-Weighted-Average-Step-3-Version-7.jpg"
+                                    alt="">
+                            </a>
                         </div>
                     </div>
 
-                    <div>
-                        <!-- Hypotheses -->
-                        <h2 id="hypotheses">Hypotheses</h2>
+                </div>
+            </div>
+        </div>
 
-                        <!-- Hypothesis Table -->
-                        <table id="hypothesis-table" class="table">
-                            <thead>
-                                <tr>
-                                    <th>Hypothesis</th>
-                                    <th>Meaning</th>
-                                    <th>Example</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td scope="row">Null</td>
-                                    <td>What we want to disprove</td>
-                                    <td>The world is flat</td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">Alternative</td>
-                                    <td>Our explanation for the phenomenon</td>
-                                    <td>The world is spherical</td>
-                                </tr>
-                            </tbody>
-                        </table>
+        <div id="trimmed-mean">
+            <h3>Trimmed Mean</h3>
 
-                        <!-- P Vals -->
-                        <h3 id="p-values">P-Values</h3>
-                        <blockquote>The p-value is the probability of the <b>observed outcome plus all “more extreme”
-                                outcomes</b> (in
-                            this case: 19 heads + 1 tail and 20 heads + 0 tail), represented by the shaded “tail area"<a
-                                href="https://s4be.cochrane.org/blog/2016/03/21/p-value-in-plain-english-2/#:~:text=In%20academic%20literature%2C%20the%20p,the%20null%20hypothesis%20were%20true.">
-                                $^1$</a>
-                        </blockquote>
-                        <img class="img-responsive" src="https://www.simplypsychology.org/p-value.png"
-                            alt="Source: Simply Psychology">
+            <!-- Trimmed mean image -->
+            <img src="https://images.slideplayer.com/27/9207184/slides/slide_6.jpg" alt="">
+
+            <!-- Trimmed mean use case -->
+            <div class="bs-example" data-example-id="simple-panel">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">Inflation Rates</h5>
                     </div>
-
-                    <div>
-                        <h2 id="variability">Variability</h2>
-                        <!-- Ways to measure -->
-                        <h3 class="Measurements">Measurements</h3>
-
-                        ul>li
-                        <!-- Standard Error vs Deviation -->
-                        <h3 id="SE Vs. SD">SE vs SD</h2>
-
-                        The standard deviation of the
-                        <i>sample means</i> is the standard error.
-
-                        <img class="img-responsive"
-                            src="https://www.wallstreetmojo.com/wp-content/uploads/2019/12/Standard-Error.jpg"
-                            alt="Standard Error Image from the WallStreetMojo">
-
-                        <blockquote>
-                            In general, <span class="text-primary">standard error</span> is only used for <span
-                                class="text-primary">confidence intervals</span>, and <span
-                                class="text-secondary">standard deviation</span> is used for <span
-                                class="text-secondary">everything else. </span>
-                        </blockquote>
+                    <div class="panel-body">The Great Depression and wars cause inflation rates to
+                        skyrocket. For reasons like this, inflation rates, and many other economic
+                        measurements, use <b>trimmed means</b>
                     </div>
-                    <div>
-                        <h2 id="Measures of Location">Measures of Location</h2>
+                </div>
+            </div>
+        </div>
 
-                        <div id="weighted-mean">
-                            <h3>Weighted Means</h3>
-                            <div class="bs-example" data-example-id="simple-panel">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title">Sensor Data</h5>
-                                    </div>
-                                    <div class="panel-body">You have a sensor giving bad data 2% of the time. It's off a
-                                        bit when it does, but nothing ridiculous. How can you prevent this from
-                                        completely ruining your mean? Use a <b>weighted mean</b> </div>
+        <!-- Sensitivity -->
+        <div id="sensitivity">
+            <h2 id="sensitivty">Sensitivity</h2>
+            <span class="keyword1">Variance and standard deviation</span> are the most <b>common</b>
+            measures of variability, but they are <b>sensitive to outliers</b>
 
-                                    <!-- Weighted mean images -->
+            <!-- R Example -->
 
-                                    <div class="row">
-
-                                        <div class="col-6 thumb">
-                                            <a class="thumbnail" href="#">
-                                                <img class="img-responsive"
-                                                    src="https://www.mathsisfun.com/data/images/weighted-average-seesaw.svg"
-                                                    alt="">
-                                            </a>
-                                        </div>
-                                        <div class="col-6 thumb">
-                                            <a class="thumbnail" href="#">
-                                                <img class="img-responsive"
-                                                    src="https://www.wikihow.com/images/thumb/5/56/Calculate-Weighted-Average-Step-3-Version-7.jpg/v4-460px-Calculate-Weighted-Average-Step-3-Version-7.jpg"
-                                                    alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="trimmed-mean">
-                            <h3>Trimmed Mean</h3>
-
-                            <!-- Trimmed mean image -->
-                            <img src="https://images.slideplayer.com/27/9207184/slides/slide_6.jpg" alt="">
-
-                            <!-- Trimmed mean use case -->
-                            <div class="bs-example" data-example-id="simple-panel">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title">Inflation Rates</h5>
-                                    </div>
-                                    <div class="panel-body">The Great Depression and wars cause inflation rates to
-                                        skyrocket. For reasons like this, inflation rates, and many other economic
-                                        measurements, use <b>trimmed means</b>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Sensitivity -->
-                        <div id="sensitivity">
-                            <h2 id="sensitivty">Sensitivity</h2>
-                            <span class="keyword1">Variance and standard deviation</span> are the most <b>common</b>
-                            measures of variability, but they are <b>sensitive to outliers</b>
-
-                            <!-- R Example -->
-
-                            <div class="bs-example" data-example-id="simple-panel">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title">Outlier Problems in R</h5>
-                                    </div>
-                                    <div class="panel-body">
-                                        <pre><code class="language-r">
+            <div class="bs-example" data-example-id="simple-panel">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">Outlier Problems in R</h5>
+                    </div>
+                    <div class="panel-body">
+                        <pre><code class="language-r">
 sd(data[["population"]])
 iqr(data[["population"]])
-                                            
+                            
 # May have <b>drastically</b> different outputs.  A better choice might be:
-                                            
+                            
 mad(data[["population"]]) 
 
 # Or perhaps
@@ -217,83 +176,24 @@ quantile(state[["Murder.Rate"]],p=c(.05,.25,.5,.75,.95))
 </pre></code>
 
 
-                                    </div>
-                                    <h3 id="Robust-Measurements">Robust Measurements</h3>
-                                    <ul>
-                                        <li>Median</li>
-                                        <li>Median Absolute Difference</li>
-                                        <li>Robust ANOVA</li>
-                                        <li>Robust Regression</li>
-                                        <li>Percentiles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <div>
-
-
-
-
-                    </div>
+                    <h3 id="Robust-Measurements">Robust Measurements</h3>
+                    <ul>
+                        <li>Median</li>
+                        <li>Median Absolute Difference</li>
+                        <li>Robust ANOVA</li>
+                        <li>Robust Regression</li>
+                        <li>Percentiles</li>
+                    </ul>
                 </div>
             </div>
-
-            <!-- Ending Scripts -->
-
-            <footer>
-                <!-- Prism.js -->
-
-                <script src="../../../styles/prism.js"></script>
+        </div>
+    </div>
+    <div>
 
 
-                <!-- tocbot -->
-
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
-
-                <script>tocbot.init({
-                        // Where to render the table of contents.
-                        tocSelector: '.toc',
-                        // Where to grab the headings to build the table of contents.
-                        contentSelector: '.content',
-                        // Which headings to grab inside of the contentSelector element.
-                        headingSelector: 'h1, h2, h3',
-                        // For headings inside relative or absolute positioned containers within content.
-                        hasInnerContainers: true,
-
-                        base: (window.location.pathname + window.location.search)
-
-                    });</script>
 
 
-                <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-
-                <!-- MathJax -->
-
-                <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, "HTML-CSS": { availableFonts: ["TeX"] } });
-         </script>
-
-                <script type="text/javascript" async
-                    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-                    </script>
-
-
-                <!-- Optional JavaScript -->
-                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                    crossorigin="anonymous">
-                    </script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                    crossorigin="anonymous">
-                    </script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                    crossorigin="anonymous">
-                    </script>
-            </footer>
-</body>
-
-</html>
+    </div>
+</div>
+{% endblock content %}
