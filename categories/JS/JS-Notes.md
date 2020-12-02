@@ -1,3 +1,11 @@
+---
+title: JavaScript Intro 
+author: Luke Anglin
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png
+description: Introduction to Javascript.  Some knowledge is needed in order to write this Flask application better!
+topics: Testing, RegEx, syntax, and other things that I think I'd forget otherwise!
+---
+
 # Testing
 
 ## Kinds of Tests

@@ -5,8 +5,6 @@ import os
 import categories as cat
 from frontmatter.default_handlers import YAMLHandler, TOMLHandler
 
-pp.pprint(cat.category_dict)
-
 # Create a new dictionary mapping filepaths to meta data from parsed markdown.
 note_metadata = {}
 
@@ -36,7 +34,6 @@ def generate_note_dict(category_dict: dict) -> dict:
     """
     # Store values of the dict in a list
     notes = list(category_dict.values())
-    print(notes)
     # Flatten list
     notes = list(chain(*tuple(notes)))
     
@@ -53,7 +50,18 @@ def generate_note_dict(category_dict: dict) -> dict:
         # Fetch yaml data, and append the meta dictionary to the notes_meta dictionary
         notes_meta[note] = fetch_note_meta(note)
 
+        # Remove '.md' ext
+        noteNewName = os.path.splitext(note)[0]
+
+        # Add '.html' ext back
+        noteNewName = noteNewName + '.html'
+
+        # Change key-name
+        notes_meta[noteNewName] = notes_meta.pop(note)
+
     # Return the dictionary of dictionaries
     return notes_meta
 
+
+        
 

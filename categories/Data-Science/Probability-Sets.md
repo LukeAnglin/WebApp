@@ -1,3 +1,11 @@
+---
+title: Sets
+author: Luke Anglin
+image: https://media.nagwa.com/723124583276/en/thumbnail_l.jpeg
+description: A look at set theory; at least, that which I deem relevant to probability and statistics. 
+topics: sample space, set operations, set laws, indicators, symbols
+---
+
 # Sets
 
 **Meaning**: No duplicates. 

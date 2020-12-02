@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>python-tips</title>
+      <title>Python Tips</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -391,98 +391,23 @@ pre[data-line] .line-highlight[data-end]:after {
 .markdown-preview.markdown-preview .navbar a {
   color: #47404e;
 }
+.markdown-preview.markdown-preview body > div.mume.markdown-preview {
+  padding: 3vw;
+}
 
       </style>
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">    <link type="text/css" rel="stylesheet" href="../../../styles/style.css">    <div class="container">              <div class="row">                        <div class="col-3">                <nav id="toc" data-toggle="toc" class="sticky-top toc"></nav>            </div>                 <div class="col-9 content">
-<div class="navbar"></div>
-<h1 class="mume-header" id="helpdocs">Help/Docs</h1>
+      
 
-<p>The <code>help(function)</code> returns a function&apos;s docstring.</p>
-<p>The <code>dir(module)</code> gives a list of the functions and variables in a module.</p>
-<h1 class="mume-header" id="strings">Strings</h1>
 
-<h2 class="mume-header" id="f-strings">f-Strings</h2>
 
-<p><a href="https://realpython.com/python-f-strings/">f-Strings</a> have a whole host of uses.  A couple common ones are inline bracket notation with evaluated expressions, and also aligning printed content.</p>
-<h2 class="mume-header" id="in">In</h2>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">    <link type="text/css" rel="stylesheet" href="../../static/assets/styles/style.css">    <div class="container">              <div class="row">                        <div class="col-3">                <nav id="toc" data-toggle="toc" class="sticky-top toc"></nav>            </div>                 <div class="col-9 content">
 
-<p>The <code>in</code> operator can be used to see if a character, or sequence of characters, exists in a string.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">if</span> <span class="token string">&apos;.html&apos;</span> <span class="token keyword">not</span> <span class="token keyword">in</span> string 
-    <span class="token keyword">continue</span>
-</pre><h2 class="mume-header" id="split-and-partition">Split and partition</h2>
+<div class="navbar"></div><div class="note-content">
 
-<p>Essentially the same.  Note that <code>partition()</code> requires a delimiter while <code>split()</code> does not, and <code>partition()</code> returns the delimiter in the output.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">name <span class="token operator">=</span> <span class="token string">&apos;Luke Anglin&apos;</span> 
-split_name <span class="token operator">=</span> name<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&apos; &apos;</span><span class="token punctuation">)</span>
-partitioned_name <span class="token operator">=</span> name<span class="token punctuation">.</span>partition<span class="token punctuation">(</span><span class="token string">&apos; &apos;</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;With split: </span><span class="token interpolation"><span class="token punctuation">{</span>split_name<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;With partition: </span><span class="token interpolation"><span class="token punctuation">{</span>partitioned_name<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
-
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> 
-<span class="token operator">&gt;&gt;</span> With split<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;Luke&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Anglin&apos;</span><span class="token punctuation">]</span>
-<span class="token operator">&gt;&gt;</span> With partition<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token string">&apos;Luke&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos; &apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Anglin&apos;</span><span class="token punctuation">)</span>
-</pre><h2 class="mume-header" id="slicing">Slicing</h2>
-
-<h3 class="mume-header" id="iteration-by-a-c">Iteration by a <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span></h3>
-
-<p>One can iterate by a certain amount.  Say we want to iterate every two letters.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">hello <span class="token operator">=</span> <span class="token string">&apos;hello&apos;</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>hello<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token builtin">len</span><span class="token punctuation">(</span>hello<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> el
-</pre><h3 class="mume-header" id="char-change">Char Change</h3>
-
-<p>Strings are immutable.  Slicing allows us to change a single character.</p>
-<p>The syntax takes the first slice up to the index we want to change.  Then, concatenate the new char, and add the remaining characters.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">name <span class="token operator">=</span> <span class="token string">&apos;Lake&apos;</span>
-name_fixed <span class="token operator">=</span> name<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">&apos;u&apos;</span> <span class="token operator">+</span> name<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>name_fixed<span class="token punctuation">)</span>
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> Luke
-</pre><h1 class="mume-header" id="lists">Lists</h1>
-
-<h2 class="mume-header" id="copying">Copying</h2>
-
-<h3 class="mume-header" id="shallow">Shallow</h3>
-
-<p>A shallow copy is what is generally used.  It copies the references of all sublists.  This is similar to the <code>copy()</code> method for other objects.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">new_list <span class="token operator">=</span> list_1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
-</pre><h3 class="mume-header" id="deep">Deep</h3>
-
-<p><code>deepcopy()</code> is used when lists are multi-dimensional.  Values are copied, not references.</p>
-<h2 class="mume-header" id="random">Random</h2>
-
-<p><img src="../../static/assets/media/Lists-Random.png" alt></p>
-<h1 class="mume-header" id="tuples">Tuples</h1>
-
-<p>Immutable lists.  When is this useful?  Consider a dictionary.  Tuples might be used as the keys.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">grades <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token string">&apos;Luke&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;five&apos;</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token number">95</span><span class="token punctuation">,</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token punctuation">}</span>
-</pre><h1 class="mume-header" id="sets">Sets</h1>
-
-<p>Enclosed in curly braces.  Convert lists to sets with the <code>set</code> function.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">my_set <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span>
-a_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
-
-my_same_set <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span>a_list<span class="token punctuation">)</span>
-
-</pre><p>Note that converting a <span class="keyword1">list to a set</span> will <span class="keyword1">remove all repeats</span></p>
-<h2 class="mume-header" id="operations">Operations</h2>
-
-<p><img src="../../assets/SetOps.png" alt="SetOps"></p>
-<h1 class="mume-header" id="enumerate-and-zip">Enumerate and Zip</h1>
-
-<p><code>enumerate</code> takes some list and returns each value with an indices, in pairs.  <code>zip</code> is essentially the opposite.</p>
-<p>Note that <strong>neither produce lists</strong> with tuples.  In order to get a list, you have to use the <code>list</code> function.</p>
-<p>One use of <code>zip</code> is to create dictionaries from two lists.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;Luke&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Casey&apos;</span><span class="token punctuation">]</span>
-grades <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">95</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">]</span>
-gradebook <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span>names<span class="token punctuation">,</span> grades<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>gradebook<span class="token punctuation">)</span>
-
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">&apos;Luke&apos;</span><span class="token punctuation">:</span> <span class="token number">95</span><span class="token punctuation">,</span> <span class="token string">&apos;Casey&apos;</span><span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">}</span>
-</pre><h1 class="mume-header" id="clean-code">Clean Code</h1>
+<h1 class="mume-header" id="clean-code">Clean Code</h1>
 
 <h2 class="mume-header" id="assertions-to-cover-your-ass">Assertions to cover your Ass</h2>
 
@@ -503,293 +428,82 @@ gradebook <span class="token operator">=</span> <span class="token builtin">dict
 <li><strong>Not</strong> an exception handling mechanism</li>
 <li>Meant to handle <em>impossible</em> conditions.</li>
 </ul>
-<h1 class="mume-header" id="os">OS</h1>
+<h3 class="mume-header" id="security">Security</h3>
 
-<h2 class="mume-header" id="split">Split</h2>
+<p>The first caveat to assertions is security.  The <code>-o</code> or <code>-OO</code> flag being passed to the command line will <strong>disable assertions</strong>.  So, if you&apos;re using them for validation schemes . . . good luck.</p>
+<p>As a general rule, your code should <em>work just fine</em> if we <em>remove all assertions</em>.</p>
+<p>Here&apos;s what you <span class="text-danger">shouldn&apos;t EVER do</span></p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">withdraw</span><span class="token punctuation">(</span>amount<span class="token punctuation">,</span> balance<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># If this get&apos;s disabled, we have problems.  </span>
+    <span class="token keyword">assert</span> amount <span class="token operator">&lt;</span> balance
+    balance <span class="token operator">-</span> amount 
+    <span class="token keyword">return</span> <span class="token boolean">True</span> 
+</pre><h3 class="mume-header" id="raise">raise</h3>
 
-<p>To retrieve a tuple of the directory and filename, use <code>split()</code></p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> os
+<p>What&apos;s the solution to that caveat?  <code>raise</code> your own exception!</p>
+<p>Have the custom Exception inherit from exception, and use <code>super().__init__</code>, passing in any necessary parameters.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">ScrewYouException</span><span class="token punctuation">(</span>Exception<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">&quot;&quot;&quot;
+Exception raised by losers who disable my assertion flag 
+&quot;&quot;&quot;</span>
 
-filepath <span class="token operator">=</span> <span class="token string">&apos;C:/users/lib/run.exe&apos;</span>
-os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>split<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span>
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token string">&apos;C:/users/lib&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;run.exe&apos;</span><span class="token punctuation">)</span>
-</pre><h2 class="mume-header" id="basename-and-dirname">Basename and Dirname</h2>
+<span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> message <span class="token operator">=</span> <span class="token string">&quot;Re-enable my assertion flag.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    self<span class="token punctuation">.</span>message <span class="token operator">=</span> message 
+    <span class="token builtin">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+</pre><pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">withdraw</span><span class="token punctuation">(</span>amount<span class="token punctuation">,</span> balance<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># If this get&apos;s disabled, we have problems.  </span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>amount <span class="token operator">&lt;</span> balance<span class="token punctuation">)</span>
+        <span class="token keyword">raise</span> ScrewYouException
+    <span class="token keyword">return</span> <span class="token boolean">True</span> 
+</pre><h3 class="mume-header" id="lying-assertions">Lying Assertions</h3>
 
-<p>Retrieves <em>just</em> the file name (the first index of the <code>split</code> function).</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> os
-
-filepath <span class="token operator">=</span> <span class="token string">&apos;C:/users/lib/run.exe&apos;</span>
-os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>basename<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span>
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> run<span class="token punctuation">.</span>exe
-</pre><p>In contrast, <code>dirname</code> returns just the directory (the zero index of the <code>split</code> function)</p>
-<h2 class="mume-header" id="walk">Walk</h2>
-
-<p><code>walk</code> is recursive.  It returns a tuple of the <code>(path, subdirectories, files)</code> and takes a filepath parameter.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">for</span> path<span class="token punctuation">,</span> dirs<span class="token punctuation">,</span> files <span class="token keyword">in</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span><span class="token string">&apos;MLProjects&apos;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment"># Do things</span>
-</pre><h2 class="mume-header" id="running">Running</h2>
-
-<p>The <code>.system</code> function is used to run a program.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> os 
-
-<span class="token comment"># Change directory to where the .exe is located </span>
-os<span class="token punctuation">.</span>chdir<span class="token punctuation">(</span><span class="token string">&apos;usr/evilpath&apos;</span><span class="token punctuation">)</span>
-
-<span class="token comment"># Run it </span>
-os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">&apos;evil.exe&apos;</span><span class="token punctuation">)</span>
-</pre><h2 class="mume-header" id="quitting">Quitting</h2>
-
-<p>Maybe I screwed up my recursive fibonnacci sequence.  To quit it, I have to import <code>sys</code> and use the <code>.exit()</code> function.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> sys 
-fibonnaci<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token comment"># uh oh, infinite recursion happening, what do I do?</span>
-
-sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</pre><h2 class="mume-header" id="file-extraction">File Extraction</h2>
-
-<p>One example is the <code>zipfile</code> module and it&apos;s <code>extractall</code> method.  Probably best that you use some other <a href="http://piorkowski.ca/rev/2016/01/python-zipfile-and-tarfile/">resources</a> on this, as it can get complicated.</p>
-<h1 class="mume-header" id="regex">RegEx</h1>
-
-<p>You know RegEx.  But do you know Python RegEx?  Here&apos;s an intro.</p>
-<p>Use the letter <code>r</code> to prefix the string like you do <code>f</code> for format strings</p>
-<p>I have it bookmarked, but here&apos;s my favorite <a href="https://regexr.com/">RegEx tester</a></p>
-<p>To transition it to Python more seamlessly, <a href="https://regex101.com/quiz">this site</a> has a dedicated Python section of RegEx.</p>
-<h2 class="mume-header" id="sub">Sub</h2>
-
-<p>Use the <code>sub(pattern, replacement, string)</code> function to replace strings based on regex patterns.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> re
-re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">r&apos;uke&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;ame&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Luke&apos;</span><span class="token punctuation">)</span>
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token string">&apos;Lame&apos;</span>
-</pre><h2 class="mume-header" id="cheatsheet">Cheatsheet</h2>
-
-<p>No reason to go through RegEx again.  Here&apos;s a <a href="https://www.debuggex.com/cheatsheet/regex/python">cheatsheet</a> for Python-flavored RegEx, but it seems like it&apos;s the same as what I&apos;ve already learned.</p>
-<p>Additionally, here&apos;s a handy chart.</p>
-<p><img src="../../static/assets/media/Python-RegEx.png" alt="RegEx Chart"></p>
-<p><img src="../../static/assets/media/Python-RegEx-2.png" alt="RegEx Example Chart"></p>
-<h2 class="mume-header" id="groups">Groups</h2>
-
-<p>The normal grouping with parentheses from regular RegEx applies, but Python allows us some other cool features.</p>
-<p>I&apos;m stealing the example from the book on this one, credit to Dan Bader.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">modify</span><span class="token punctuation">(</span>match<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    letter <span class="token operator">=</span> match<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> letter<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span>
-re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">r&apos;([A-Z])[a-z]&apos;</span><span class="token punctuation">,</span> modify<span class="token punctuation">,</span><span class="token string">&apos;PEACH Apple ApriCot&apos;</span><span class="token punctuation">)</span>
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token string">&apos;PEACH apple apricot&apos;</span>
-</pre><h2 class="mume-header" id="other-functions">Other Functions</h2>
-
+<p>Tuple truthfulness with non-empty values leads this assertion to never fail!</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token operator">==</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">&apos;This fails, right?&apos;</span><span class="token punctuation">)</span>
+</pre><p>Countermeasures</p>
 <ul>
-<li><code>findall</code> - return all matches</li>
-<li><code>split</code> - analagous to string splitting</li>
-<li><code>search</code> - returns a <code>Match</code> object if the match is found in the string
-<ul>
-<li>To use the groups:</li>
+<li>Smoke tests - make sure the assertions <em>can</em> fail</li>
+<li>Code linters</li>
 </ul>
-<pre data-role="codeBlock" data-info="python" class="language-python">match <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">r&apos;([ABC])(\d)&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;= A3+B2+C8&apos;</span><span class="token punctuation">)</span>
-match<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
-match<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token string">&apos;A3&apos;</span>
-           <span class="token string">&apos;A&apos;</span>
-</pre></li>
-</ul>
-<h2 class="mume-header" id="finditer">finditer</h2>
+<h2 class="mume-header" id="multi-line-iterables">Multi-Line Iterables</h2>
 
-<p>Gives us a list to loop through our matches.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">for</span> s <span class="token keyword">in</span> re<span class="token punctuation">.</span>finditer<span class="token punctuation">(</span><span class="token string">r&apos;([AB])(\d)&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;A3+B4&apos;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<p>Because of Git&apos;s syntax highlighting, rather than typing:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">amounts <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+</pre><p>Type</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">amounts <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token number">3</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+</pre><p>Oh, and did you see that extra comma?  Yeah.  Makes it easier to add/remove items later.</p>
+<h2 class="mume-header" id="context-managers">Context Managers</h2>
 
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> A 
-           B
-</pre><h2 class="mume-header" id="compile">compile</h2>
+<p>The <code>with</code> statement is a perfect example.  To make a statement compatabile with the easily readabl <code>with</code> syntax, just use an <code>__enter__(self)</code> and <code>__exit__(self)</code> in the class definition.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Indenter</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>level <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">def</span> <span class="token function">__enter__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>level <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> self
+    <span class="token keyword">def</span> <span class="token function">__exit__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> exc_type<span class="token punctuation">,</span> exc_val<span class="token punctuation">,</span> exc_tb<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>level <span class="token operator">-=</span> <span class="token number">1</span>
+    <span class="token keyword">def</span> <span class="token function">print</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos; &apos;</span> <span class="token operator">*</span> self<span class="token punctuation">.</span>level <span class="token operator">+</span> text<span class="token punctuation">)</span>
+</pre><p>If you really want to level up your game, look into the <a href="https://docs.python.org/3/library/contextlib.html"><code>contextlib</code> module</a></p>
+<h1 class="mume-header" id="generators">Generators</h1>
 
-<p>An efficiency function when reusing the same pattern often, which is a common case.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">pattern <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r&apos;[AB]\d&apos;</span><span class="token punctuation">)</span>
-pattern<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">&apos;*&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;A3+B4&apos;</span><span class="token punctuation">)</span>
+<p>Return <strong>lazy iterators</strong>, which are storage efficient <code>Iterables</code>.</p>
 
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token string">&apos;*+*&apos;</span>
-</pre><h1 class="mume-header" id="storageefficiency">Storage/Efficiency</h1>
 
-<h2 class="mume-header" id="sparse-matrices">Sparse Matrices</h2>
 
-<p>Use dictionaries to store non-zero locations.</p>
-<h2 class="mume-header" id="array">array</h2>
 
-<p>The <code>array</code> module of Python allows you to only store a certain datatype, making it more efficient.</p>
-<p>As we know, <code>numpy</code> and <code>scipy</code> have similar applications.</p>
-<h2 class="mume-header" id="numpy-vs-scipy">Numpy vs scipy</h2>
+</div>
 
-<p>Scipy is a numpy extension.  It is numpy and more; think of MATLAB housed in a Python module - that&apos;s Scipy.</p>
-<h1 class="mume-header" id="base-conversion">Base Conversion</h1>
-
-<p>Maybe it will come in handy.</p>
-<ul>
-<li><code>hex(int)</code></li>
-<li><code>oct(int)</code></li>
-<li><code>bin(int)</code></li>
-<li><code>int(any base)</code></li>
-</ul>
-<p>When using int:</p>
-<ul>
-<li>Hex values take the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi>x</mi></mrow><annotation encoding="application/x-tex">0x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord mathdefault">x</span></span></span></span> prefix</li>
-<li>Oct values take the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi>o</mi></mrow><annotation encoding="application/x-tex">0o</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord mathdefault">o</span></span></span></span> prefix</li>
-<li>Binary values take the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi>b</mi></mrow><annotation encoding="application/x-tex">0b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord mathdefault">b</span></span></span></span> prefix</li>
-</ul>
-<p>Or, even easier, specify the number and then the base number as the second arg.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token string">&apos;1011101101&apos;</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment"># Converts from binary</span>
-
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token number">749</span>
-</pre><h1 class="mume-header" id="ipython">iPython</h1>
-
-<h2 class="mume-header" id="_">_</h2>
-
-<p>The underscore holds <em>ans</em></p>
-<h2 class="mume-header" id="logs">Logs</h2>
-
-<p>In Python, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">ln</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">n</span></span></span></span> is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">log</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span>.  Strange, yes, but if you want to change this, just do <code>ln = log</code></p>
-<h2 class="mume-header" id="summations">Summations</h2>
-
-<p>Just some advanced syntax with the <code>sum</code> function.</p>
-<p>Say we want to sum <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>&#x2211;</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">&#x221E;</mi></msubsup><mfrac><mn>1</mn><mrow><msup><mi>n</mi><mn>2</mn></msup><mo>&#x2212;</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sum_{n=1}^{\infty} \frac{1}{n^2-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2484389999999999em;vertical-align:-0.403331em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">&#x2211;</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x221E;</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7463142857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mbin mtight">&#x2212;</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.403331em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">/</span><span class="token punctuation">(</span>n<span class="token operator">**</span><span class="token number">2</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token number">0.7489</span>
-</pre><p>And that&apos;s <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2248;</mo><mfrac><mn>3</mn><mn>4</mn></mfrac></mrow><annotation encoding="application/x-tex">\approx \frac{3}{4}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.48312em;vertical-align:0em;"></span><span class="mrel">&#x2248;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>.</p>
-<h1 class="mume-header" id="functions">Functions</h1>
-
-<h2 class="mume-header" id="first-class">First class</h2>
-
-<p>Functions can be assigned to variables, copied, used as args, etc.  We know this, but what are the implications?</p>
-<h3 class="mume-header" id="list-chaining">List Chaining</h3>
-
-<p>We can put functions in a list and iterate through the list on an argument, effectively applying multiple functions at a time.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span> 
-    <span class="token keyword">return</span> x<span class="token operator">+</span><span class="token number">2</span> 
-
-<span class="token keyword">def</span> <span class="token function">g</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span> 
-    <span class="token keyword">return</span> x<span class="token operator">+</span><span class="token number">3</span>
-
-function_chain <span class="token operator">=</span> <span class="token punctuation">[</span>f<span class="token punctuation">,</span> g<span class="token punctuation">]</span>
-x<span class="token operator">=</span><span class="token number">0</span>
-<span class="token keyword">for</span> function <span class="token keyword">in</span> function_chain<span class="token punctuation">:</span>
-    x <span class="token operator">=</span> function<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token number">5</span>
-</pre><h2 class="mume-header" id="lambda-functions">Lambda Functions</h2>
-
-<p>For the sake of completeness, I include these, but I find them less readable and generally just a way to show off.  You could generally just include another argument.  Sometimes they do come in handy though.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">myfunc</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  <span class="token keyword">return</span> <span class="token keyword">lambda</span> a <span class="token punctuation">:</span> a <span class="token operator">*</span> n
-
-mydoubler <span class="token operator">=</span> myfunc<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span>mydoubler<span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token number">22</span>
-</pre><p>Essentially, the purpose of lambda functions is to create a new function based on some input.</p>
-<h2 class="mume-header" id="list-comprehension">List Comprehension</h2>
-
-<p>A couple functions have been replaced by List Comprehension, but are still worth knowing</p>
-<h3 class="mume-header" id="map">map</h3>
-
-<p>Equivalent of Panda&apos;s <code>apply</code> function.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># With map </span>
-L <span class="token operator">=</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&apos;this&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;is&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;test&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token comment"># With List Comprehension </span>
-L <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">len</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span> <span class="token keyword">for</span> word <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">&apos;this&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;is&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;test&apos;</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-</pre><h3 class="mume-header" id="filter">filter</h3>
-
-<p>Returns the Iterable where the function evaluates to <code>True</code></p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># With filter </span>
-L <span class="token operator">=</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">filter</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token builtin">len</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&apos;this&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;is&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;test&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token comment"># With List Comprehension</span>
-L <span class="token operator">=</span> <span class="token punctuation">[</span>word <span class="token keyword">for</span> word <span class="token keyword">in</span><span class="token punctuation">[</span><span class="token string">&apos;this&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;is&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;test&apos;</span><span class="token punctuation">]</span><span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token number">2</span><span class="token punctuation">]</span>
-</pre><h2 class="mume-header" id="reduce">reduce</h2>
-
-<p>This one <strong>can&apos;t</strong> be easily replaced by List Comprehension (yet . . .)</p>
-<p>Applies a function cumulatively to an Iterable.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">factorial</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token builtin">reduce</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">,</span> y<span class="token punctuation">:</span> x<span class="token operator">*</span>y<span class="token punctuation">,</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</pre><p>Note that the final part of the Iterable is generally going to be <strong>one plus whatever is natural</strong>.</p>
-<h2 class="mume-header" id="operator-module">operator Module</h2>
-
-<p>Faster than regular anonymous/lambda functions.  Everything from addition to slicing.</p>
-<p>Rather than using</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">total <span class="token operator">=</span> <span class="token builtin">reduce</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">,</span> y<span class="token punctuation">:</span> x<span class="token operator">+</span>y<span class="token punctuation">,</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</pre><p>we can use</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">from</span> operator <span class="token keyword">import</span> add 
-total <span class="token operator">=</span> <span class="token builtin">reduce</span><span class="token punctuation">(</span>add<span class="token punctuation">,</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</pre><h2 class="mume-header" id="optional-args">Optional args</h2>
-
-<h3 class="mume-header" id="no-keywords">No keywords</h3>
-
-<p>Use an asterisk * to collect multiple non-keyword, optional arguments into a tuple.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token operator">*</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span> 
-    <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
-    <span class="token keyword">for</span> num <span class="token keyword">in</span> nums<span class="token punctuation">:</span> 
-        <span class="token builtin">sum</span><span class="token operator">+=</span>num 
-    <span class="token keyword">return</span> <span class="token builtin">sum</span> 
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> sep<span class="token operator">=</span><span class="token string">&apos;\n&apos;</span><span class="token punctuation">)</span>
-
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token number">7</span>
-           <span class="token number">20</span>
-</pre><p>On the other</p>
-<h2 class="mume-header" id="kwargs">kwargs</h2>
-
-<p>Often, you want to use the <code>.items()</code> function on the <code>kwargs</code> in order to iterate through it like a <code>dict</code>.</p>
-<p>What is stored in <code>**kwargs</code> is a dictionary mapping keys to values.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">upper</span><span class="token punctuation">(</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span> 
-    <span class="token keyword">for</span> keyword<span class="token punctuation">,</span> value <span class="token keyword">in</span> kwargs<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>keyword<span class="token punctuation">}</span></span><span class="token string">: </span><span class="token interpolation"><span class="token punctuation">{</span>value<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
-
-upper<span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">&apos;Luke&apos;</span><span class="token punctuation">)</span>
-
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> name<span class="token punctuation">:</span> Luke
-</pre><h2 class="mume-header" id="and">** and *</h2>
-
-<p>Commonly, you see this sort of notation for <code>*args</code> and <code>**kwargs</code> in a function, like this:</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># Positional args, *args and/or default args, *kwargs</span>
-<span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> <span class="token operator">*</span>c<span class="token punctuation">,</span> d<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token operator">**</span>e<span class="token punctuation">)</span>
-</pre><p>But, you can also use them for unpacking tuples to be <strong>used as arguments</strong>.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token punctuation">)</span>
-args <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-i <span class="token operator">=</span> <span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&apos;Enter a number from 0 to 4:&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-f<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-</pre><pre data-role="codeBlock" data-info="python" class="language-python">Enter a number <span class="token keyword">from</span> <span class="token number">0</span> to <span class="token number">4</span><span class="token punctuation">:</span> 
-<span class="token number">3</span>
-
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token number">15</span>
-</pre><h2 class="mume-header" id="ordering">Ordering</h2>
-
-<p><code>*args</code> before <code>**kwargs</code>.  Simple as that.</p>
-<h2 class="mume-header" id="variable-retention">Variable retention</h2>
-
-<p>You can give a function sort of static attributes.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">add_members</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    add_members<span class="token punctuation">.</span>members <span class="token operator">+=</span> <span class="token number">1</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>add_members<span class="token punctuation">.</span>members<span class="token punctuation">)</span>
-<span class="token comment"># Initialize that var </span>
-add_members<span class="token punctuation">.</span>members <span class="token operator">=</span> <span class="token number">0</span>
-
-add_members<span class="token punctuation">(</span><span class="token punctuation">)</span>
-add_members<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token number">1</span>
-           <span class="token number">2</span>
-</pre><h1 class="mume-header" id="itertools-and-collections">Itertools and collections</h1>
-
-<h2 class="mume-header" id="permutations-and-combinations">Permutations and Combinations</h2>
 
 </div>        </div>        <footer>                    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>            <script>tocbot.init({                                       tocSelector: '.toc',                                        contentSelector: '.content',                                        headingSelector: 'h1, h2, h3',                                       hasInnerContainers: true,                    base: (window.location.pathname + window.location.search)                });</script>            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">                </script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script><script>document.querySelector("body").setAttribute("data-spy", "scroll"); document.querySelector("body").setAttribute("data-target","#toc");</script>            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">                </script><script type="text/javascript" src="/scripts/main.js" < script>
-</script></footer></div>
       </div>
       
       
+    </body>
     
     
     
@@ -797,6 +511,5 @@ add_members<span class="token punctuation">(</span><span class="token punctuatio
     
     
     
-    
-  
-    </body></html>
+  </html>
+    </script></footer></div></div></body></html>

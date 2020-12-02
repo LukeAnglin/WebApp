@@ -1,6 +1,11 @@
 ---
-author: Luke
-title: Bayesian Statistics
+export_on_save: 
+    html: true
+title: The Bayesian Mindset
+author: Luke Anglin
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Comparison_of_three_stock_indices_after_1975.svg/1200px-Comparison_of_three_stock_indices_after_1975.svg.png
+description: Conditional probabilities lead us to update our theories and base all we do on probability and statistics.  
+topics: Probability distributions, PyMC3, TensorFlow, and other Pythonic ways of calculating Bayesian-related phenomena. 
 ---
 The relevant notebook can be found [here](../../MLProjects/Notes/Bayesian/Chapter1_Introduction/Ch1_Introduction_PyMC3.ipynb)
 

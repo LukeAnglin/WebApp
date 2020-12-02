@@ -1,4 +1,10 @@
-<!-- Markdown on EDA -->
+---
+title: Numerical vs. Categorical Data Processing and Visualization
+author: Luke Anglin
+image: https://miro.medium.com/max/421/1*PQ94BXT5tQbigm0UN4-WLg.png
+description:  This looks at visualizing and processing categorical and numerical data types.  
+topics: plotting numerical vs. categorical data, types of data
+---
 
 # Visualization
 

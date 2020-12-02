@@ -89,5 +89,3 @@ create_categories()
 # Pass categories to modify_categories to be fixed
 categories = modify_categories(category_dict)
 
-# Pretty print the category dictionary for debugging purposes
-pp.pprint(categories)

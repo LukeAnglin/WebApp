@@ -3,7 +3,7 @@
 {% block content %}
 <!-- Use the title we pass in main.py to each category route -->
 <!-- Use the super block to include this and more, or just override it. -->
-<div class="{{ title }}">
+<div class="{{ title }}-intro">
 
     <!-- Title of section (ex. Data Science) -->
 
@@ -12,7 +12,7 @@
     <!-- Responsive, representative image (ex. Linear Regression image) -->
 
     {% if image_route %}
-    <img src="{{ image_route }}" alt="{{ title }} image" class="img-responsive">
+    <img src="../{{ image_route }}" alt="{{ title }} image" class="img-responsive">
     {% else %}
     {% endif%}
 
@@ -20,7 +20,25 @@
     <p>{{ description }}</p><br>
 
     <!-- Notes/Links (ex, probability.html) -->
-    
-    
-{% endblock content %}
+    <h1 id=notes>Notes/Resources: </h1>
+</div>
+<div class="{{ title }}-notes">
+    <!-- Loop through category files and display a header linking to their page -->
+    {% for link in category_files %}
 
+    <h2 class="file-title"><a href="{{ url_for('note', note_title=note_dict[link].title, content = get_note_content(link)) }}"
+            class="file-link">{{ note_dict[link].title }}</a></h2>
+
+    <!-- Display a description of the file -->
+    <p class="file-description">{{ note_dict[link].description }}</p>
+
+    <!-- Display the topics covered -->
+    <p class="file-topics">Topics covered: {{ note_dict[link].topics }}</p>
+
+    <!-- Display an image -->
+    <img src="{{ note_dict[link].image }}" alt="">
+
+    {% endfor %}
+</div>
+
+{% endblock content %}

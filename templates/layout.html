@@ -26,6 +26,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
 
+
     <!-- Per Page styles -->
     {% block custom_styles %}
 
@@ -37,17 +38,20 @@
     <!-- Main Container -->
     <div class="container">
 
-        <!-- NavBar - edit in /navbar.html -->
-
+        <!-- Navbar -->
         {% include 'navbar.html' %}
+
+
 
         <!-- Row to hold everything -->
         <div class="row">
 
             <!-- TOC Nav Sidebar Sticky -->
+            <!-- NavBar - edit in /navbar.html -->
+            <div class="col-3">
+                <nav id="toc" data-toggle="toc" class="sticky-top toc">
 
-            <div class="col-3 toc">
-                <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+                </nav>
             </div>
 
 
@@ -65,7 +69,19 @@
     <footer>
         <!-- Prism.js -->
 
-        <script src="static/styles/prism.js"></script>
+        <script src="{{ url_for('static', filename='styles/prism.js') }}"></script>
+
+        <!-- AnchorJS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"
+            integrity="sha512-G2OGlm41XXw+fcgDcRPjVYEn7qCY6qiKWNqDGT37SnKh0qtRXTuKZ5/UQR0kDN0PZRNWcGExd3lAeqEH0I36bQ=="
+            crossorigin="anonymous"></script>
+        <script>
+            anchors.add('h1');
+            anchors.add('h2');
+            anchors.add('h3');
+            anchors.add('h4');
+        </script>
+
 
         <!-- tocbot -->
 
@@ -77,25 +93,23 @@
                 // Where to grab the headings to build the table of contents.
                 contentSelector: '.content',
                 // Which headings to grab inside of the contentSelector element.
-                headingSelector: 'h1, h2, h3',
+                headingSelector: 'h1, h2, h3, h4',
                 // For headings inside relative or absolute positioned containers within content.
                 hasInnerContainers: true,
 
-                base: 'Data-Science/Math/Stat/',
+                base: (window.location.pathname + window.location.search),
             });</script>
+
+        <!-- Jquery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
 
 
         <!-- MathJax -->
 
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-        <!-- Jquery -->
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
         <!-- Popper -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -104,6 +118,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
             </script>
+        <script>document.querySelector("body").setAttribute("data-spy", "scroll"); document.querySelector("body").setAttribute("data-target", "#toc");</script>
     </footer>
 </body>
 

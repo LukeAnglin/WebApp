@@ -1,3 +1,11 @@
+---
+title: Preprocessing Data 
+author: Luke Anglin 
+image: https://miro.medium.com/max/2144/1*yjgyRtY3sPpjpmp6t2U9Xg.png
+description: Preprocessing data for maximal efficiency, storage, speed, and F1 scores. 
+topics: standardization, feature adherence, sparse data, distributional mappings, categorical encoding, normalization, discretization
+---
+
 # Standardization  
 
 Estimators do not perform well when features are not close to normal distributions.  Considering the <span class="keyword1">Central Limit Theorem</span>, we want at least $n > 30$ samples.  

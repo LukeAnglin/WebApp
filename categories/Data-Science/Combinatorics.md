@@ -1,3 +1,11 @@
+---
+title: Combinatorics Introduction
+author: Luke Anglin
+image: https://www.birmingham.ac.uk/Images/Research-and-teaching/Engineering-and-Physical-Sciences/Mathematics/pictures/ham-900px300x300.png
+description: Some background knowledge on combinatorics; useful for statistics, probability, and data science in general. 
+topics: Binomials, Bernoulli's Theorem . . . 
+---
+
 # Binomials
 
 We have 

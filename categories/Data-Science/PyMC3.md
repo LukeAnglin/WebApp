@@ -1,3 +1,11 @@
+---
+title: PyMC3 
+author: Luke 
+image: https://i.stack.imgur.com/iG6NM.png
+description: Looking at this academically-focused, Bayesian-style Python data science library. 
+topics: PyMC3 usage, the with keyword and it's relevance to PyMC3, model state
+---
+
 # [PyMC3](https://docs.pymc.io/notebooks/getting_started.html)
 
 Here is a helpful notebook from a PyData talk from [Nicole Carlson.](../../MLProjects/Notes/Sci-Kit-Vs-PyMC3/Talk.ipynb)

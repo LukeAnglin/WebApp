@@ -1,21 +1,36 @@
 from flask import Flask, render_template
+import front_matter as fm
+import pprint as pp
+from get_note_content import get_note_content
 
-# Importing simply to remove the GET /favicon issue
+# Remove the GET /favicon issue
 from flask import send_from_directory
+
 
 import os
 import sys
 
 import categories as cat
 
-categories = cat.categories
+# Get the category files
+category_files = cat.categories
+
+# Drop MLProjects for now.
+if 'Machine Learning' in category_files.keys():
+    del category_files['Machine Learning']
+
+# Set the dictionary of note links mapping to metadata
+note_dict = fm.generate_note_dict(category_files)
 
 # Initialize Flask
 app = Flask(__name__)
 
+# Favicon 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
 # Index.html, homepage Route
-
-
 @app.route('/')
 @app.route('/home')
 def home():
@@ -24,13 +39,17 @@ def home():
 
 # Data Science Route
 
-data_science_files = categories['Data Science']
-print(data_science_files)
-
-
-@app.route('/category_indices/data-science')
+@app.route('/data-science')
 def data_science():
-    return render_template('/category-indices/data-science.html', title='Data Science', description='Data science. Statistics.  TensorFlow, Pandas, Sci-Kit Learn, and so much more!  This page will house all of my personal notes.  Additionally, I will post some external resources which I have found helpful.', image_route='static/assets/media/stat-homepage-violin-plots.png', route='data_science')
+    return render_template('/category-indices/data-science.html', title='Data Science', description='Data science. Statistics.  TensorFlow, Pandas, Sci-Kit Learn, and so much more!  This page will house all of my personal notes.  Additionally, I will post some external resources which I have found helpful.', image_route='static/assets/media/stat-homepage-violin-plots.png', get_note_content = get_note_content, category_files=category_files['Data Science'], note_dict=note_dict)
+
+
+# Data Science Notes Route
+@app.route('data-science/<note_title>/<content>', methods=['GET'])
+def note(note_title, content):   
+    return render_template('notes.html', note_title = note_title, content=content)
+
+
 
 # Machine Learning Projects
 
@@ -52,16 +71,11 @@ def python():
 # JS Route
 
 
-# Use export FLASK_APP=main
-# Then, export FLASK_ENV=development
-# Then, flask run
-
-# Loop through categorie and display in navbar.
-# for category in
+# export FLASK_APP=main FLASK_ENV=development
+# flask run
 
 # Remedy GET /favicon issue
 
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+if __name__ == '__main__':
+    app.run(port=5000)

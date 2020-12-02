@@ -1,3 +1,12 @@
+---
+title: Introduction to Probability
+author: Luke Anglin
+image: https://miro.medium.com/max/1000/1*7cFRn8jW4g_91YgDAbmxRQ.png
+description: Looking at some basic principles behind probability
+topics: relative frequency, mutual exclusion, counting, discretization, combinatorics review 
+---
+
+
 # Relative Frequency
 
 The relative frequency of an event, $A$, is given by $Q_{n}(A)$
