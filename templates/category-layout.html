@@ -25,8 +25,7 @@
 <div class="{{ title }}-notes">
     <!-- Loop through category files and display a header linking to their page -->
     {% for link in category_files %}
-
-    <h2 class="file-title"><a href="{{ url_for('note', note_title=note_dict[link].title, content = get_note_content(link)) }}"
+    <h2 class="file-title"><a href="{{ url_for('note', note_title=note_dict[link].title)}}"
             class="file-link">{{ note_dict[link].title }}</a></h2>
 
     <!-- Display a description of the file -->
@@ -40,5 +39,4 @@
 
     {% endfor %}
 </div>
-
 {% endblock content %}

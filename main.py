@@ -43,11 +43,16 @@ def home():
 def data_science():
     return render_template('/category-indices/data-science.html', title='Data Science', description='Data science. Statistics.  TensorFlow, Pandas, Sci-Kit Learn, and so much more!  This page will house all of my personal notes.  Additionally, I will post some external resources which I have found helpful.', image_route='static/assets/media/stat-homepage-violin-plots.png', get_note_content = get_note_content, category_files=category_files['Data Science'], note_dict=note_dict)
 
+data_sci_title_dict = {}
+for file in category_files['Data Science']: 
+    title = note_dict[file]['title']
+    content = get_note_content(file)
+    data_sci_title_dict[title] = content
 
 # Data Science Notes Route
-@app.route('data-science/<note_title>/<content>', methods=['GET'])
-def note(note_title, content):   
-    return render_template('notes.html', note_title = note_title, content=content)
+@app.route('/data-science-notes/<note_title>')
+def note(note_title):   
+    return render_template('notes.html', note_title = note_title, title_content_dict=data_sci_title_dict)
 
 
 
