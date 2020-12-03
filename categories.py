@@ -1,19 +1,28 @@
 import os.path
 import pprint as pp
 import sys
+import requests
+from bs4 import BeautifulSoup
+import frontmatter
+import pprint as pp
+from itertools import chain
+import os
+import categories as cat
+from frontmatter.default_handlers import YAMLHandler, TOMLHandler
 
 # The purpose of this file is to add the relevant categories and create a dictionary full of the category mapping to the relevant files.
 
 # Edit the following lines, 8-13, in order to update some of the features.
 
 # Remove certain folders that I don't want
-names_to_remove = ['MLProjects', '.ipynb_checkpoints']
+names_to_remove = ['Machine Learning', '.ipynb_checkpoints']
 
 # Change the names_to_change and new_name arrays to update
 names_to_change = ['JS']
 new_names = ['JavaScript']
 
-# CODE FOR THIS
+# Create a new dictionary mapping filepaths to meta data from parsed markdown.
+note_metadata = {}
 
 # Categories are in the 'categories' folder in the root directory of the project
 categories = os.listdir('categories')
@@ -32,6 +41,8 @@ def create_categories():
     """Fills the 'category_dict' dictionary with categories mapping to filepaths. 
     """
     for category in categories:
+        if category == 'MLProjects':
+            continue
         category_dir = os.path.join(categories_dir, category)
         category_contents = os.listdir(category_dir)
         # Initialize empty list to store categories mapping to lists of html files (which are dicts)
@@ -79,13 +90,110 @@ def modify_categories(category_dict):
 
     # Remove names that I don't want
     for name in names_to_remove:
-        del categories[name]
+        if name in categories:
+            del categories[name]
 
     return categories
+
+
+def get_note_content(html_file):
+    """Get's the content of a note
+
+    Args:
+        html_file (str): The file (meaning the relative file path) to be parsed.  Should be of .html extension 
+    """
+    try:
+        html_content = open(html_file, 'r')
+        soup = BeautifulSoup(html_content, 'html.parser')
+        return soup.find("div", {"class": "note-content"})
+    except FileExistsError:
+        return f"Failed to find file {html_file}"
+
+
+def fetch_note_meta(filepath: str) -> dict:
+    """Takes a filepath and returns a dictionary mapping the filepath to the metadata from a .md file.  Looks for the frontmatter in the .md file.  
+
+    Args:
+        filepath (str): The path of the file being parsed
+
+    Returns:
+        dict: A dictionary mapping the filepath to the metadata from a .md
+    """
+    with open(filepath) as file:
+        note = frontmatter.load(file)
+    return dict(note)
+
+
+def generate_note_dict(category_dict: dict) -> dict:
+    """Generates a dictionary of dictionaries mapping notes filepaths to their respective metadata
+
+    Args:
+        category (dict): A dictionary of the categories and their files/notes
+
+    Returns:
+        dict: A list of filepaths corresponding to the notes mapping to metadata 
+    """
+    # Store values of the dict in a list
+    notes = list(category_dict.values())
+    # Flatten list
+    notes = list(chain(*tuple(notes)))
+
+    # Initialize empty list to hold dictionaries
+    notes_meta = {}
+    # Iterate through flattened list of notes.  Create a list of dictionaries mapping note
+    for note in notes:
+        # Remove the file extension
+        note = os.path.splitext(note)[0]
+
+        # Add '.md' extension
+        note = note + '.md'
+
+        # Fetch yaml data, and append the meta dictionary to the notes_meta dictionary
+        notes_meta[note] = fetch_note_meta(note)
+
+        # Remove '.md' ext
+        noteNewName = os.path.splitext(note)[0]
+
+        # Add '.html' ext back
+        noteNewName = noteNewName + '.html'
+
+        # Change key-name
+        notes_meta[noteNewName] = notes_meta.pop(note)
+
+    # Return the dictionary of dictionaries
+    return notes_meta
+
 
 # Create the categories
 create_categories()
 
-# Pass categories to modify_categories to be fixed
+# Categories stores a category ('Data Science') mapping to available files ('Sets.html')
 categories = modify_categories(category_dict)
+
+# Generates a note dictionary ('Sets.html') mapping filepaths to metadata  {title: 'Sets'}
+note_dict = generate_note_dict(categories)
+
+# Generates a dictionary of titles ('Sets') mapping to body content (long string of div.note-content)
+
+
+def generate_title_dict(categories):
+    """Generates a dictionary of dictionaries, mapping categories ('Data Science') to titles ('Sets') to content ('div.note-content')
+
+    Args:
+        categories (dict): The categories
+    """
+    category_title_dict = {}
+    for category_name in categories:
+        title_dict = {}
+        for file in categories[category_name]:
+            try:
+                title = note_dict[file]['title']
+                content = get_note_content(file)
+                title_dict[title] = content
+            except KeyError:
+                print(f"Failed to access title attribute of file {file}. Have you included this in the front-matter?")
+        category_title_dict[category_name] = title_dict
+    return category_title_dict
+
+title_dict = generate_title_dict(categories)
 

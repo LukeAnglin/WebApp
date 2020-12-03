@@ -1,3 +1,15 @@
+---
+export_on_save:
+    html: true
+title: Classifation
+author: Luke Anglin
+image: https://www.gstatic.com/education/formulas/images_long_sheet/en/bayes__theorem.svg
+description: Looking at different classifation algorithms, and the theorems and math behind them
+topics: Bayes Theorem, SGD, iterative and other approaches to learning
+sources: https://towardsdatascience.com/probability-learning-ii-how-bayes-theorem-is-applied-in-machine-learning-bd747a960962
+publish: 
+---
+
 # Classification
 
 I think all of this can be better understood by **doing**.  See the relevant notebooks below. 
@@ -16,4 +28,9 @@ These notebooks cover:
     * One vs. One (OVO)
 * Muti-label Classification
     * K-Nearest Neighbors
+
+
+
+
+
 

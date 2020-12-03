@@ -489,6 +489,177 @@ Exception raised by losers who disable my assertion flag
     <span class="token keyword">def</span> <span class="token function">print</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> text<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos; &apos;</span> <span class="token operator">*</span> self<span class="token punctuation">.</span>level <span class="token operator">+</span> text<span class="token punctuation">)</span>
 </pre><p>If you really want to level up your game, look into the <a href="https://docs.python.org/3/library/contextlib.html"><code>contextlib</code> module</a></p>
+<h2 class="mume-header" id="underscores">Underscores</h2>
+
+<table>
+<thead>
+<tr>
+<th>Variety</th>
+<th>Meaning</th>
+<th>Convention?</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single Leading (<code>_Luke</code>)</td>
+<td>Mind your own business, I&apos;m private.</td>
+<td>True</td>
+<td>Bans usage only on wildcart imports, which <strong>shouldn&apos;t be used anyways</strong></td>
+</tr>
+<tr>
+<td>Single Trailing (<code>class_</code>)</td>
+<td>I&apos;m escaping a keyword</td>
+<td>True</td>
+<td>Used when you have a keyword that you want to use a variable name for</td>
+</tr>
+<tr>
+<td>Single Leading dunder (<code>__Luke</code>)</td>
+<td>I can&apos;t be overridden</td>
+<td>False</td>
+<td>A class where you want the method or attribute to not be changed in subclasses</td>
+</tr>
+<tr>
+<td>Double Dunder (<code>__Luke__</code>)</td>
+<td>I&apos;m magic.  Avoid naming your own variables/methods with a double dunder.  That&apos;s Python&apos;s job</td>
+<td>True</td>
+<td>Use magics <strong>provided by Python</strong>, don&apos;t make your own double dunders.</td>
+</tr>
+<tr>
+<td>Lonely (<code>for _ in range(10)</code>)</td>
+<td>I&apos;m useless in scripts, not so much in iPython shells.</td>
+<td>True</td>
+<td>When you&apos;re looping.  Use like <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>ans</mtext></mrow><annotation encoding="application/x-tex">\text{ans}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord text"><span class="mord">ans</span></span></span></span></span> in iPython shells</td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="format-strings">Format Strings</h2>
+
+<p>The <code>f&quot;{my_string}&quot;</code> format string can also do the <code>.format()</code> notation with <strong>colon hashtag</strong> syntax:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">errno <span class="token operator">=</span> <span class="token number">50159747054</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;See the </span><span class="token interpolation"><span class="token punctuation">{</span>errno<span class="token punctuation">:</span><span class="token format-spec">#x</span><span class="token punctuation">}</span></span><span class="token string"> error on aisle 5&quot;</span></span><span class="token punctuation">)</span>
+
+<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> 
+See the <span class="token number">0xbadc0ffee</span> error on aisle <span class="token number">5</span>
+</pre><h2 class="mume-header" id="template-strings">Template Strings</h2>
+
+<p>These are used for security purposes.  Let&apos;s see why.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">secret_key <span class="token operator">=</span> <span class="token string">&apos;password&apos;</span>
+<span class="token keyword">class</span> <span class="token class-name">Error</span><span class="token punctuation">:</span> 
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span> 
+err <span class="token operator">=</span> Error<span class="token punctuation">(</span><span class="token punctuation">)</span>
+user_input <span class="token operator">=</span> <span class="token string">&apos;{error.__init__.__globals__[secret_key]}&apos;</span>
+user_input<span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>error<span class="token operator">=</span>err<span class="token punctuation">)</span>
+
+<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> 
+password 
+
+user_input <span class="token operator">=</span> <span class="token string">&apos;${error.__init__.__globals__[secret_key]}&apos;</span>
+Template<span class="token punctuation">(</span>user_input<span class="token punctuation">)</span><span class="token punctuation">.</span>substitute<span class="token punctuation">(</span>error<span class="token operator">=</span>err<span class="token punctuation">)</span>
+
+<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> 
+Error
+</pre><h2 class="mume-header" id="format-string-summary">Format String Summary</h2>
+
+<p><img src="https://files.realpython.com/media/python-string-formatting-flowchart.4ecf0148fd87.png" alt="Format String Summary"></p>
+<h1 class="mume-header" id="function-frenzy">Function Frenzy</h1>
+
+<h2 class="mume-header" id="objects-functions">Objects &lt;-&gt; Functions</h2>
+
+<p>We all know by now functions are first class objects.  But, what about the reverse?</p>
+<p>The <code>__call__</code> dunder in python allows us some object -&gt; function directionality.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Adder</span><span class="token punctuation">:</span> 
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>n <span class="token operator">=</span> n 
+    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>n <span class="token operator">+</span> x
+
+plus_8 <span class="token operator">=</span> Adder<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>
+plus_8<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token number">10</span>
+</pre><h2 class="mume-header" id="lambdas">Lambdas</h2>
+
+<p>When should we <em>use</em> lambda expressions?  They can be somewhat less readable at times.</p>
+<h3 class="mume-header" id="sorting">Sorting</h3>
+
+<p>When we are sorting by a different key, commonly with tuples, lambda functions come in handy.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">tuples <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&apos;d&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">&apos;b&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">&apos;a&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">&apos;c&apos;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token builtin">sorted</span><span class="token punctuation">(</span>tuples<span class="token punctuation">,</span> key<span class="token operator">=</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> 
+<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">&apos;a&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">&apos;b&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">&apos;c&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&apos;d&apos;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+</pre><p>Sorting is <strong>just about the only time</strong> lambda expressions should be used (in my incredibly humble and unbiased opinion).</p>
+<h1 class="mume-header" id="decorators">Decorators</h1>
+
+<p>First, let&apos;s look at what a decorator <em>really is</em></p>
+<p>Here&apos;s a wrapper function.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">decorator</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> func 
+
+<span class="token keyword">def</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">&apos;Hello&apos;</span>
+
+hello <span class="token operator">=</span> decorator<span class="token punctuation">(</span>hello<span class="token punctuation">)</span>
+hello<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> <span class="token string">&apos;Hello&apos;</span>
+</pre><p>And, the <em>exact same thing</em> with a decorator.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token decorator annotation punctuation">@decorator</span> 
+<span class="token keyword">def</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    <span class="token keyword">return</span> <span class="token string">&apos;Hello&apos;</span>
+
+hello<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</pre><h2 class="mume-header" id="wrappers">Wrappers</h2>
+
+<p>Generally, you want to actually modify the function, unlike the example above.  Let&apos;s try writing a function the just changes whatever the return value is to &quot;Yoda loves Python&quot;.</p>
+<p>Oh, and make sure the arguments of the decorated function and the wrapper function match.  If you don&apos;t care about arguments, use <code>*args</code> and <code>**kwargs</code> accordingly.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># Wrappers/Decorators</span>
+<span class="token keyword">def</span> <span class="token function">yoda</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;Yoda loves Python&quot;</span>
+    <span class="token keyword">return</span> wrapper 
+
+@yoda
+<span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> x<span class="token operator">+</span>y 
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>add<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> 
+Yoda loves Python
+</pre><h2 class="mume-header" id="multi-decoration">Multi-Decoration</h2>
+
+<p>You aren&apos;t limited to <em>one</em> decorator.  Go crazy.</p>
+<p>Keep in mind that decorators <strong>wrap</strong> like it sounds.  Here&apos;s Dan&apos;s example:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token decorator annotation punctuation">@strong</span>
+<span class="token decorator annotation punctuation">@emphasis</span> 
+<span class="token keyword">def</span> <span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">&apos;Hello!&apos;</span>
+
+<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> 
+<span class="token operator">&lt;</span>strong<span class="token operator">&gt;</span><span class="token operator">&lt;</span>em<span class="token operator">&gt;</span>Hello!<span class="token operator">&lt;</span><span class="token operator">/</span>em<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>strong<span class="token operator">&gt;</span>
+</pre><h2 class="mume-header" id="uses">Uses</h2>
+
+<ul>
+<li>Logging</li>
+<li>Access control and Auth Ops</li>
+<li>Timing and Instrumentation</li>
+<li>Rate-limiting</li>
+<li>Caching</li>
+</ul>
+<h2 class="mume-header" id="metadata">Metadata</h2>
+
+<p>One severely unfortunate aspect of decorators is that they destroy metadata, like docstrings.  To fix this, I recommend <em>always</em> using the <code>@functools.wraps(func)</code> decorator before defining the wrapper.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">decorator</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    @functools<span class="token punctuation">.</span>wrap<span class="token punctuation">(</span>func<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> something 
+    <span class="token keyword">return</span> wrapper
+</pre><p>If you do that, your docstring will be preserved in <code>__doc__</code>, like it should!</p>
+<h1 class="mume-header" id="args-and-kwargs">*args and **kwargs</h1>
+
 <h1 class="mume-header" id="generators">Generators</h1>
 
 <p>Return <strong>lazy iterators</strong>, which are storage efficient <code>Iterables</code>.</p>

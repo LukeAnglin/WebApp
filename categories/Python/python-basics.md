@@ -1,6 +1,12 @@
 ---
 export_on_save:
-    html: true 
+    html: true
+title: Python's Forgotten Beauties
+author: Luke Anglin 
+image: https://data-flair.training/blogs/wp-content/uploads/sites/2/2018/03/Python-itertools-01-1-1-1200x720.jpg
+description: Here lies some of hidden gems of the Python, as well as some things I (and others) tend to forget.  
+topics: Itertools, debugging, pprint, testing, functions for each datatype, file extraction, os module, and so, much, MORE!
+sources: Python Basics, A Practical Introduction to Python 3
 ---
 
 # Help/Docs 

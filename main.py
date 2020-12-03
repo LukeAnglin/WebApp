@@ -1,7 +1,8 @@
 from flask import Flask, render_template
-import front_matter as fm
+from categories import generate_note_dict
 import pprint as pp
-from get_note_content import get_note_content
+from categories import get_note_content
+from categories import title_dict
 
 # Remove the GET /favicon issue
 from flask import send_from_directory
@@ -15,22 +16,22 @@ import categories as cat
 # Get the category files
 category_files = cat.categories
 
-# Drop MLProjects for now.
-if 'Machine Learning' in category_files.keys():
-    del category_files['Machine Learning']
-
 # Set the dictionary of note links mapping to metadata
-note_dict = fm.generate_note_dict(category_files)
+note_dict = cat.note_dict
 
 # Initialize Flask
 app = Flask(__name__)
 
-# Favicon 
+# Favicon
+
+
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 # Index.html, homepage Route
+
+
 @app.route('/')
 @app.route('/home')
 def home():
@@ -41,31 +42,23 @@ def home():
 
 @app.route('/data-science')
 def data_science():
-    return render_template('/category-indices/data-science.html', title='Data Science', description='Data science. Statistics.  TensorFlow, Pandas, Sci-Kit Learn, and so much more!  This page will house all of my personal notes.  Additionally, I will post some external resources which I have found helpful.', image_route='static/assets/media/stat-homepage-violin-plots.png', get_note_content = get_note_content, category_files=category_files['Data Science'], note_dict=note_dict)
+    return render_template('/category-indices/data-science.html', title='Data Science', description='Data science. Statistics.  TensorFlow, Pandas, Sci-Kit Learn, and so much more!  This page will house all of my personal notes.  Additionally, I will post some external resources which I have found helpful.', image_route='static/assets/media/stat-homepage-violin-plots.png', get_note_content=get_note_content, category_files=category_files['Data Science'], note_dict=note_dict)
 
-data_sci_title_dict = {}
-for file in category_files['Data Science']: 
-    title = note_dict[file]['title']
-    content = get_note_content(file)
-    data_sci_title_dict[title] = content
+
+data_sci_title_dict = title_dict['Data Science']
 
 # Data Science Notes Route
 @app.route('/data-science-notes/<note_title>')
-def note(note_title):   
-    return render_template('notes.html', note_title = note_title, title_content_dict=data_sci_title_dict)
-
+def note(note_title):
+    return render_template('notes.html', note_title=note_title, title_dict=data_sci_title_dict)
 
 
 # Machine Learning Projects
-
-
 @app.route('/machine-learning')
 def machine_learning():
     return render_template('/category-indices/machine-learning.html')
 
 # Python Route
-
-
 @app.route('/python')
 def python():
     return render_template('/category-indices/python.html')

@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>R-notes</title>
+      <title>R for Stat</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -257,53 +257,156 @@ pre[data-line] .line-highlight[data-end]:after {
 /* Please visit the URL below for more information: */
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 .markdown-preview.markdown-preview {
-  padding: 3vw;
+  /* PICK ONE */
+  /* don't expand nested items, which pushes down the rest of the page when navigating */
+  /* Effect 3: bottom line slides/fades in */
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/opensans/v18/mem6YaGs126MiZpBA-UFUK0Zdcg.ttf) format('truetype');
 }
 .markdown-preview.markdown-preview body {
+  padding: 7vh;
+}
+.markdown-preview.markdown-preview ol.toc-list {
+  font-size: x-small;
+}
+.markdown-preview.markdown-preview #toc a {
+  color: #47404e;
+}
+.markdown-preview.markdown-preview h1,
+.markdown-preview.markdown-preview h2,
+.markdown-preview.markdown-preview h3 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.markdown-preview.markdown-preview blockquote {
+  margin: 50px auto;
+  font-style: italic;
+  color: #555555;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid #47404e;
+  line-height: 1.6;
   position: relative;
+  background: #ededed;
+}
+.markdown-preview.markdown-preview blockquote::before {
+  font-family: Arial;
+  content: "\201C";
+  color: #47404e;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+.markdown-preview.markdown-preview blockquote::after {
+  content: "";
+}
+.markdown-preview.markdown-preview .bs-example {
+  position: relative;
+  padding: 45px 15px 15px;
+  margin: 0 -15px 15px;
+  border-color: #e5e5e5 #eee #eee;
+  border-style: solid;
+  border-width: 1px 0;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+.markdown-preview.markdown-preview .bs-example:after {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #959595;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  content: "Example";
+}
+.markdown-preview.markdown-preview .panel-heading {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.42857143;
+  box-sizing: border-box;
+  height: 3vh;
+  padding-bottom: 5vw;
+  border-bottom: 0.2vh solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+.markdown-preview.markdown-preview .panel-body {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.42857143;
+  color: #333;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.markdown-preview.markdown-preview div.panel-heading > h5 {
+  padding-left: 1vw;
+  padding-top: 1vh;
+  font-size: 1.5rem;
+}
+.markdown-preview.markdown-preview img {
+  width: 100%;
+  height: auto;
+}
+.markdown-preview.markdown-preview .img-row img {
+  height: 30vh;
+}
+.markdown-preview.markdown-preview a.is-active-link::before {
+  background-color: #47404e;
+}
+.markdown-preview.markdown-preview nav[data-toggle="toc"] {
+  top: 42px;
+}
+.markdown-preview.markdown-preview nav[data-toggle="toc"] .nav .active .nav {
+  display: none;
+}
+.markdown-preview.markdown-preview .keyword1 {
+  color: #c25c5c;
+  font-weight: bold;
+}
+.markdown-preview.markdown-preview .keyword2 {
+  color: #2e7caa;
+  font-weight: bold;
+}
+.markdown-preview.markdown-preview .keyword3 {
+  color: #709925;
+  font-weight: bold;
+}
+.markdown-preview.markdown-preview a {
+  color: #b17f7f;
+}
+.markdown-preview.markdown-preview a:hover {
+  text-decoration: none;
+  color: #47404e;
+  font-weight: bold;
+}
+.markdown-preview.markdown-preview .navbar a {
+  color: #47404e;
+}
+.markdown-preview.markdown-preview body > div.mume.markdown-preview {
+  padding: 3vw;
 }
 
       </style>
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> <div class="container-fluid"> <div class="row"> <div class="col-sm-3 sidebar"> <div class="tocNav"></div></div><div class="col-sm-9-content"><!-- </div></div></div>-->
-<ul>
-<li><a href="#r">R</a>
-<ul>
-<li><a href="#rstudio">RStudio</a>
-<ul>
-<li><a href="#keybinds">Keybinds</a></li>
-</ul>
-</li>
-<li><a href="#packages">Packages</a>
-<ul>
-<li><a href="#getting-packages">Getting Packages</a>
-<ul>
-<li><a href="#sources">Sources</a></li>
-<li><a href="#common">Common</a></li>
-</ul>
-</li>
-<li><a href="#clearing-packages">Clearing Packages</a></li>
-<li><a href="#visualization">Visualization</a>
-<ul>
-<li><a href="#basic-syntax">Basic syntax</a></li>
-<li><a href="#specific-charts">Specific Charts</a>
-<ul>
-<li><a href="#bar-plots">Bar Plots</a></li>
-<li><a href="#histograms">Histograms</a></li>
-</ul>
-</li>
-<li><a href="#plotting-functions">Plotting Functions</a></li>
-<li><a href="#additional-parameters">Additional Parameters</a></li>
-</ul>
-</li>
-<li><a href="#helpdocs">Help/Docs</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+      
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">    <link type="text/css" rel="stylesheet" href="../../static/assets/styles/style.css">    <div class="container">              <div class="row">                        <div class="col-3">                <nav id="toc" data-toggle="toc" class="sticky-top toc"></nav>            </div>                 <div class="col-9 content">
+
+<div class="navbar"></div><div class="note-content">
+
 <h1 class="mume-header" id="r">R</h1>
 
 <h2 class="mume-header" id="rstudio">RStudio</h2>
@@ -414,11 +517,18 @@ ylab <span class="token operator">=</span> <span class="token string">&quot;Peta
 
 <pre data-role="codeBlock" data-info="r" class="language-r"><span class="token comment"># Use question mark plus command to get help</span>
 ?plot
-</pre><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script> <script>tocbot.init({tocSelector: ".tocNav", contentSelector: ".markdown-preview.markdown-preview", hasInnerContainers: true, orderedList: false});</script>
-</div></div></div>
+</pre>
+
+
+
+</div>
+
+
+</div>        </div>        <footer>                    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>            <script>tocbot.init({                                       tocSelector: '.toc',                                        contentSelector: '.content',                                        headingSelector: 'h1, h2, h3',                                       hasInnerContainers: true,                    base: (window.location.pathname + window.location.search)                });</script>            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">                </script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script><script>document.querySelector("body").setAttribute("data-spy", "scroll"); document.querySelector("body").setAttribute("data-target","#toc");</script>            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">                </script><script type="text/javascript" src="/scripts/main.js" < script>
       </div>
       
       
+    </body>
     
     
     
@@ -426,6 +536,5 @@ ylab <span class="token operator">=</span> <span class="token string">&quot;Peta
     
     
     
-    
-  
-    </body></html>
+  </html>
+    </script></footer></div></div></body></html>

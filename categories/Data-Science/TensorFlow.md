@@ -8,3 +8,5 @@ topics: TensorFlow usage and implications
 
 # Sequential 
 
+
+

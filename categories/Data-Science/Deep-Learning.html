@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Choosing-Models</title>
+      <title>Deep Learning</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -391,70 +391,198 @@ pre[data-line] .line-highlight[data-end]:after {
 .markdown-preview.markdown-preview .navbar a {
   color: #47404e;
 }
+.markdown-preview.markdown-preview body > div.mume.markdown-preview {
+  padding: 3vw;
+}
 
       </style>
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">    <link type="text/css" rel="stylesheet" href="../../../styles/style.css">    <div class="container">              <div class="row">                        <div class="col-3">                <nav id="toc" data-toggle="toc" class="sticky-top toc"></nav>            </div>                 <div class="col-9 content">
-<div class="navbar"></div>
-<h1 class="mume-header" id="linear">Linear</h1>
+      
 
-<h2 class="mume-header" id="linear-regression">Linear Regression</h2>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">    <link type="text/css" rel="stylesheet" href="../../static/assets/styles/style.css">    <div class="container">              <div class="row">                        <div class="col-3">                <nav id="toc" data-toggle="toc" class="sticky-top toc"></nav>            </div>                 <div class="col-9 content">
+
+<div class="navbar"></div><div class="note-content">
+
+<h1 class="mume-header" id="ai-vs-ml-vs-dl">AI vs. ML vs. DL</h1>
+
+<p><img src="https://www.kdnuggets.com/wp-content/uploads/ai-machine-learning-deep-learning-1.jpg" alt="AI vs ML vs DL"></p>
+<dl>
+    <dt>AI</dt>
+    <dd>Classical Programming - The human inputs code which let&apos;s computers do tasks for us</dd>
+    <dt>Machine Learning</dt>
+    <dd>Humans clean up some data, feed it to the model, and the model creates it&apos;s own rules.  Trained, not explicitly programmed.</dd>
+    <dt>Deep Learning</dt>
+    <dd></dd>
+</dl>
+<h2 class="mume-header" id="ml-requirements">ML Requirements</h2>
 
 <ul>
-<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> complexity</li>
-<li>Least Squares</li>
-<li><strong>Overfitting</strong> problems</li>
+<li>Inputs - sound files</li>
+<li>Labels - transcripts</li>
+<li>Scoring metrics - used to adjust the model as it learns</li>
 </ul>
-<h2 class="mume-header" id="sgd">SGD</h2>
+<h2 class="mume-header" id="deep-learning">Deep Learning</h2>
 
-<p>Stochastic Gradient Descent iteratively minimizes the error by taking small steps.</p>
-<h2 class="mume-header" id="ridge-lasso-elastic-net">Ridge, Lasso, Elastic-Net</h2>
+<p>Here, we define <em>our own representations</em> of data in multiple layers.  Layers are assigned weights, which are constantly optimized based on the <strong>loss function</strong></p>
+<p><img src="../../static/assets/media/Deep-Learning-Diagram.png" alt="Deep-Learning-Diagram"></p>
+<h2 class="mume-header" id="ml-or-dl">ML or DL?</h2>
 
-<p>These regressions minimize the overfitting problems of least squares.  They are <strong>regularizing</strong> estimators.</p>
-<p>When should I use each?</p>
-<table>
-<thead>
-<tr>
-<th>Estimator</th>
-<th>Many Variables</th>
-<th>Most Variables Useful</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Ridge</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Lasso</td>
-<td>Yes</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Elastic-Net</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
-<h2 class="mume-header" id="keep-in-mind">Keep in mind</h2>
+<p>Don&apos;t start using deep learning for every problem.  That&apos;s using a jackhammer to floss rabbit teeth.</p>
+<p>For complex problems, here are the advantage of DL:</p>
+<ul>
+<li>Removes feature engineering</li>
+<li><strong>Adjusts everything</strong> at once rather than one weak model at a time, as high-performing ML algorithms like XGBoost do.</li>
+</ul>
+<h2 class="mume-header" id="practical-mldl">Practical ML/DL</h2>
+
+<p>Learn XGBoost and Keras.  Watch the Kaggle competitions to stay up-to-date.  Win.</p>
+<h1 class="mume-header" id="keras-neural-network">Keras Neural Network</h1>
+
+<p>What steps should we take to build a neural network with Keras?</p>
+<h2 class="mume-header" id="split">Split</h2>
+
+<p>First, we have to decide our data into features and labels.  A dimension check never hurts anyone, using the <code>.shape</code> attribute.</p>
+<p>Don&apos;t forget to use a <code>reshape(-1, 1)</code> to get the proper <strong>column vector</strong> for the labels.  For example, if we have a table of 4 features and 10 samples (10, 4), then the shape of our labels should be (10, 1).</p>
+<h2 class="mume-header" id="sculpt">Sculpt</h2>
+
+<p>This step involves:</p>
+<ul>
+<li>Instantiate the model - for example, run <code>models.Sequential()</code>, and put that in a <code>network</code> variable.</li>
+<li>Add layers with <code>.add(layers)</code></li>
+</ul>
+<h2 class="mume-header" id="compile">Compile</h2>
+
+<p>To make our network ready for training, we need three things:</p>
+<ul>
+<li>Loss function</li>
+<li>Optimizer</li>
+<li>Scoring metrics</li>
+</ul>
+<p>Pass these to <code>network.compile()</code> as <code>**kwargs</code>, and we&apos;re on our way!</p>
+<h2 class="mume-header" id="preprocess">Preprocess</h2>
+
+<h3 class="mume-header" id="reshaping">Reshaping</h3>
+
+<p>The training images from the MNIST dataset are of shape (60000, 28, 28).  How do we make this <em>usable</em> for Keras?</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">train_images <span class="token operator">=</span> train_imags<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">60000</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token operator">*</span><span class="token number">28</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><p>With multi-dimensional shapes, the <code>reshape</code> must have the same <strong>product</strong> as the original shape.</p>
+<h3 class="mume-header" id="datatype-check">DataType Check</h3>
+
+<p>Just like with machine learning, we need <em>numbers</em>.  A quick <code>.astype(&apos;float32&apos;)</code> can do wonders.</p>
+<h3 class="mume-header" id="standardization">Standardization</h3>
+
+<p>If our interval is [0, 255], we just divide the data by 255 so it&apos;s in the range [0, 1].</p>
+<p>If necessary, you can always use Sci-Kit&apos;s toolbox.</p>
+<h3 class="mume-header" id="categorical-types">Categorical Types</h3>
+
+<p>Keras makes this easier for us than other libraries.  Rather than one hot encoding, just use the <code>to_categorical(data)</code> function from the <code>keras.utils</code> module.</p>
+<h2 class="mume-header" id="train">Train!</h2>
+
+<p>Use the <code>.fit(training_data, training_labels)</code> function on the network, and be exposed to the wonders of Deep Learning!</p>
+<h1 class="mume-header" id="tensor-manipulation">Tensor Manipulation</h1>
+
+<p>Ahh, tensors, arrays of matrices (or tensors . . .).  How do we work with them?</p>
+<h2 class="mume-header" id="slicing">Slicing</h2>
+
+<p>Slicing tensors is just like slicing numpy matrices.  You can even use shorthand.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># This </span>
+train_images<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">:</span><span class="token number">100</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Is equivalent to this </span>
+train_images<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">:</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span>
+</pre><h2 class="mume-header" id="batches">Batches</h2>
+
+<p>We know the samples axis and axis = 0 are equivalent.  But, with neural networks, we&apos;re constantly subdividing data into simpler parts.</p>
+<p>In batches, axis 0 is the <strong>batch axis</strong>.</p>
+<h2 class="mume-header" id="common-dimensions">Common dimensions</h2>
 
 <ul>
-<li>Data should <strong>not be noisy</strong></li>
-<li>Many variables generally hurts linear regressions
+<li>2D - Vectors
 <ul>
-<li>Removing collinearity is beneficial with many variables.  This may involve calculating <em>pairwise</em> correlations</li>
+<li>Tables - Bank represents everyone as a name, income, and zip code.  If we have 100,000 people, our shape would be (100000, 3)</li>
+</ul>
+</li>
+<li>3D - Timeseries or Sequences
+<ul>
+<li>Stock data has samples, features, and time attributes</li>
+</ul>
+</li>
+<li>4D - Image Data
+<ul>
+<li>Samples, height, width, color-depth</li>
+</ul>
+</li>
+<li>5D - Video
+<ul>
+<li>Image data with the extra frames dimension</li>
 </ul>
 </li>
 </ul>
+<h2 class="mume-header" id="operations">Operations</h2>
+
+<h3 class="mume-header" id="elementwise">Elementwise</h3>
+
+<p>Let&apos;s look at the sculpting process to understand elementwise operations.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">,</span> activation <span class="token operator">=</span> <span class="token string">&apos;relu&apos;</span><span class="token punctuation">)</span>
+</pre><p>Here, 512 represents the <em>neuron units</em> in our network.  <code>activation</code> is the function which takes an input 2D tensor and outputs another 2D tensor.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">output <span class="token operator">=</span> relu<span class="token punctuation">(</span>dot<span class="token punctuation">(</span>W<span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">)</span> <span class="token operator">+</span> b<span class="token punctuation">)</span>
+</pre><p>There are a few things going on here.</p>
+<ul>
+<li><code>dot</code> - dot product</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span></span></span></span> - a slope like parameter for our tensor</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> - An intercept</li>
+</ul>
+<h3 class="mume-header" id="broadcasting">Broadcasting</h3>
+
+<p>Here&apos;s a <a href="https://deeplizard.com/learn/video/6_33ulFDuCg">helpful video</a>, and my summary.</p>
+<p>First, we ask:  Are the dimensions compatabile?</p>
+<p>Conditions:</p>
+<ul>
+<li>Dimensions are equal - (1, 3) and (1, 3)</li>
+<li>One of the dimensions is 1 - (1, 5, 3) and (5, 5, 3)</li>
+</ul>
+<p>The <strong>resultant shape</strong> of a broadcasting operation takes the <em>maximum</em> of the compared dimensions.</p>
+<p>Consider (1, 3) and (3, 1).  The resultant shape would be (3, 3)</p>
+<h4 class="mume-header" id="mental-model">Mental Model</h4>
+
+<p>The easiest way to picture broadcasting ops is imagining the smaller rank tensor being <em>copied out</em>.  Then, the operation is performed.</p>
+<h3 class="mume-header" id="dot-product">Dot Product</h3>
+
+<p>The <code>dot</code> operation differs from <code>*</code>.</p>
+<p><img src="https://www.mathsisfun.com/algebra/images/matrix-multiply-a.svg" alt="Dot Product"></p>
+<p>My steps:</p>
+<ul>
+<li>Transpose the first matrix</li>
+<li>Multiply column by column</li>
+<li>Add up that sum</li>
+</ul>
+<p>That&apos;s worded a bit different than other explanations, but I like the transposition idea.</p>
+<p>Here&apos;s a <a href="https://www.mathsisfun.com/algebra/matrix-multiplying.html">simple explanation</a>.  If you think about matrix multiplication (the dot product) in terms of economics, costs and demand, it&apos;s facile to grasp the logic.</p>
+<h4 class="mume-header" id="requirements">Requirements</h4>
+
+<p>Columns of the first matrix must equal the rows of th second.</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>x</mi></msub><mo>=</mo><msub><mi>r</mi><mi>y</mi></msub></mrow><annotation encoding="application/x-tex">c_x = r_y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>The final output is flipped, so to speak.  The matrix will have the same amount of rows as the first matrix, and the same amount of columns as the second</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>&#x2217;</mo><mi>y</mi><mo>=</mo><mtext>A&#xA0;matrix&#xA0;of&#xA0;dimensions&#xA0;</mtext><msub><mi>r</mi><mi>x</mi></msub><mtext>and&#xA0;</mtext><msub><mi>c</mi><mi>y</mi></msub></mrow><annotation encoding="application/x-tex">x * y = \text{A matrix of dimensions }r_x \text{and }c_y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2217;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord text"><span class="mord">A&#xA0;matrix&#xA0;of&#xA0;dimensions&#xA0;</span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord text"><span class="mord">and&#xA0;</span></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p><img src="../../static/assets/media/DotMap.png" alt="Dot Product Requirements Mapping Image"></p>
+<h1 class="mume-header" id="gradient-optimization">Gradient Optimization</h1>
+
+
+
+
+
+</div>
+
+
 </div>        </div>        <footer>                    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>            <script>tocbot.init({                                       tocSelector: '.toc',                                        contentSelector: '.content',                                        headingSelector: 'h1, h2, h3',                                       hasInnerContainers: true,                    base: (window.location.pathname + window.location.search)                });</script>            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">                </script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script><script>document.querySelector("body").setAttribute("data-spy", "scroll"); document.querySelector("body").setAttribute("data-target","#toc");</script>            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">                </script><script type="text/javascript" src="/scripts/main.js" < script>
-</script></footer></div>
       </div>
       
       
+    </body>
     
     
     
@@ -462,6 +590,5 @@ pre[data-line] .line-highlight[data-end]:after {
     
     
     
-    
-  
-    </body></html>
+  </html>
+    </script></footer></div></div></body></html>

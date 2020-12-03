@@ -1,4 +1,12 @@
-[TOC]
+---
+export_on_save:
+    html: true
+title: R for Stat
+author: Luke Anglin
+image: https://miro.medium.com/max/2404/1*WSZpEbx1J71GL7KZ4BOONQ.jpeg
+description: R is a phenomenal, simply-syntaxed language for Statistics.  Similar to MATLAB in some respects, it may be the best choice for certain projects.  Note, however, that Python scripts may be better as things scale.
+topics: R syntax, RStudio, Visualization in R, and statistical programming
+---
 
 # R
 
