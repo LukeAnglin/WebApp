@@ -714,6 +714,37 @@ I&apos;m a Golden Retriever
 <li><code>__repr__</code> is for the developers - convey some information!</li>
 <li>If nothing else, use <code>__repr__</code>, as <code>str()</code> conversions where <code>__str__</code> would be use will default to it.</li>
 </ul>
+<h2 class="mume-header" id="custom-exceptions">Custom Exceptions</h2>
+
+<p>Custom exceptions take the form of newly created classes, generally inheriting from an overarching exception.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">AuthenticationError</span><span class="token punctuation">(</span>ValueError<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ShortPasswordError</span><span class="token punctuation">(</span>AuthenticationError<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span> 
+
+<span class="token keyword">def</span> <span class="token function">createPassword</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">:</span> 
+        <span class="token keyword">raise</span> ShortPasswordError<span class="token punctuation">(</span>password<span class="token punctuation">)</span>
+
+password <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;Enter a password: &quot;</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">try</span><span class="token punctuation">:</span> 
+    createPassword<span class="token punctuation">(</span>password<span class="token punctuation">)</span>
+<span class="token keyword">except</span> AuthenticationError <span class="token keyword">as</span> e<span class="token punctuation">:</span> 
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;Looks like there&apos;s an error with your password. Does </span><span class="token interpolation"><span class="token punctuation">{</span>e<span class="token conversion-option punctuation">!r</span><span class="token punctuation">}</span></span><span class="token string"> ring any bells?&quot;</span></span><span class="token punctuation">)</span>
+
+<span class="token operator">&gt;&gt;</span> Input<span class="token punctuation">:</span> Luke
+
+<span class="token operator">&gt;&gt;</span> Output<span class="token punctuation">:</span> 
+Looks like there&apos;s an error <span class="token keyword">with</span> your password<span class="token punctuation">.</span>  Does ShortPasswordError<span class="token punctuation">:</span> Luke ring <span class="token builtin">any</span> bells?
+</pre><p>Here, <code>AuthenticationError</code> is our <strong>base</strong> exception class.  Always a good idea to have one of these for each module or package for public releases, as it allows for easier <code>try</code> blocks.</p>
+<p>Also remember:</p>
+<ul>
+<li>Use <code>__repr__</code> to format the error string</li>
+<li>Use the <code>!r</code> conversion flag in f-strings</li>
+</ul>
 <h1 class="mume-header" id="generators">Generators</h1>
 
 <p>Return <strong>lazy iterators</strong>, which are storage efficient <code>Iterables</code>.</p>

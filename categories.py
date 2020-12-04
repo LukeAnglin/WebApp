@@ -28,7 +28,7 @@ note_metadata = {}
 categories = os.listdir('categories')
 
 # Remove .DS_Store
-categories = categories[1:]
+categories.remove('.DS_Store')
 
 # Set the initial categories directory
 categories_dir = 'categories'
@@ -63,7 +63,7 @@ def create_categories():
         if note.endswith('.ipynb') or note.endswith('.html'):
             ml_notes.append(os.path.join(
                 categories_dir, 'MLProjects', 'Notes', note))
-    category_dict['Machine and Deep Learning'] = ml_notes
+    category_dict['Notebook Reference'] = ml_notes
     return category_dict
 
 

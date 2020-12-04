@@ -639,6 +639,26 @@ model<span class="token punctuation">.</span>add<span class="token punctuation">
 <li>MSE - regression</li>
 <li>Connectionist temporal classifcation (CTC) - sequence learning problems</li>
 </ul>
+<h2 class="mume-header" id="optimizers">Optimizers</h2>
+
+<p>First, we need to understand the <a href="https://towardsdatascience.com/the-vanishing-exploding-gradient-problem-in-deep-neural-networks-191358470c11">exploding/vanishing problem</a> in deep learning.</p>
+<h3 class="mume-header" id="explodingvanishing">Exploding/Vanishing</h3>
+
+<p>Detect an explosion problem if you see these signs:</p>
+<ul>
+<li>Immensely large changes in loss on each step</li>
+<li>The model&apos;s loss will be NaN during training</li>
+<li>Weights grow exponentially, trending towards <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">&#x221E;</mi></mrow><annotation encoding="application/x-tex">\infin</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord">&#x221E;</span></span></span></span> and becoming NaN</li>
+</ul>
+<p>In contrast, vanishing might cause:</p>
+<ul>
+<li>Immensely small changes in loss on each step</li>
+<li>Weights close to the output layer will change more than those close to the input layer</li>
+<li>Models shrink exponentially, trending towards 0</li>
+</ul>
+<h3 class="mume-header" id="rmsprop">rmsprop</h3>
+
+<p>This is a very common optimizer that balances exploding and vanishing</p>
 <h2 class="mume-header" id="hidden-units">Hidden Units</h2>
 
 <p>Hidden units are the dimensions of the projections the layers map the input data onto.  Think of each hidden unit as more freedom you&apos;re giving the model.</p>
@@ -657,6 +677,12 @@ model<span class="token punctuation">.</span>add<span class="token punctuation">
 <h2 class="mume-header" id="sigmoid">sigmoid</h2>
 
 <p>This allows us to use probability distributions by squashing are values down into the interval [0, 1].</p>
+<h1 class="mume-header" id="notebooks">Notebooks</h1>
+
+<ol>
+<li><a href="http://localhost:8888/notebooks/categories/MLProjects/Notes/Keras-IMDB.ipynb">First neural network with Keras</a></li>
+<li></li>
+</ol>
 
 
 

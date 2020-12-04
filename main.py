@@ -44,9 +44,9 @@ def home():
     # note_dict - Also necessary, simply pass in note_dict = note_dict 
 
 data_sci_route_params = {
-    'title': 'Data Science',
+    'title': 'Data Science Foundations',
 
-    'description': 'Data science. Statistics.  TensorFlow, Pandas, Sci-Kit Learn, and so much more!  This page will house all of my personal notes.  Additionally, I will post some external resources which I have found helpful.',
+    'description': 'Data science. Python, Pandas, Sci-Kit Learn, and so much more!  This page will house all of my personal notes.  Also note that this will contain resources mostly in the Machine Learning subset of data science, whereas Deep Learning will have a unique category. Additionally, I will post some external resources which I have found helpful.',
 
     'image_route': 'static/assets/media/stat-homepage-violin-plots.png',
 
@@ -80,16 +80,16 @@ data_sci_notes_params = {
 
 # Then, unpack that dictionary in the render-template. Additionally, place the **kwarg note_title=note_title before the dictionary unpacking step.  
 
-@app.route('/data-science-notes/<note_title>')
-def note(note_title):
+@app.route('/notes/<note_title>')
+def data_sci_note(note_title):
     return render_template('notes.html', note_title=note_title,**data_sci_notes_params)
 
 
 # Machine learning **kwargs dictionary initialization for category homepage 
 
-machine_learning_route_params = {
+notebook_reference_route_params = {
 
-    'title': 'Machine and Deep Learning',
+    'title': 'Notebook Reference',
 
     'description': 'The majority of content here will consist of Jupyter Notebooks.  These are best for note-taking and presentation.  Note that Python scripts are preferable in some cases, but for the sake of readability and experimentation, I choose Jupyter Notebooks for this.  I also have .py scripts in my GitHub repository for different modules and packages I have created myself.',
 
@@ -97,15 +97,15 @@ machine_learning_route_params = {
 
     'get_note_content': get_note_content, 
 
-    'category_files': category_files['Machine and Deep Learning'], 
+    'category_files': category_files['Notebook Reference'], 
 
     'note_dict': note_dict,
 }
 
 # Machine Learning Projects
-@app.route('/machine-learning')
-def machine_learning():
-    return render_template('/category-indices/machine-learning.html', **machine_learning_route_params)
+@app.route('/notebook_reference')
+def notebook_reference():
+    return render_template('/notebook-reference.html', **notebook_reference_route_params)
 
 # Python Route
 

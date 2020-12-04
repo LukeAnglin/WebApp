@@ -1,6 +1,7 @@
-{% extends 'layout.html' %}
+{% extends 'category-layout.html' %}
 
 {% block content %}
+
 <!-- Use the title we pass in main.py to each category route -->
 <!-- Use the super block to include this and more, or just override it. -->
 <div class="{{ title }}-intro">
@@ -18,24 +19,19 @@
 
     <!-- Description of section -->
     <p>{{ description }}</p><br>
-
-    <!-- Notes/Links (ex, probability.html) -->
-    <h1 id=notes>Notes/Resources: </h1>
 </div>
-<div class="{{ title }}-notes">
+
+<div class="{{ title }}-projects">
     <!-- Loop through category files and display a header linking to their page -->
     {% for link in category_files %}
     <!-- Only display published files or ones without the attribute by default (auto-publish) -->
     {% if 'publish' in note_dict.keys() or note_dict[link].publish == True %}
 
-    <!-- If it's a data sci note, display that url -->
-    {% if title == 'Data Science Foundations' %}
-
-    <h2 class="file-title"><a href="{{ url_for('data_sci_note', note_title=note_dict[link].title)}}"
+    <!-- Check if link is in file meta -->
+    {% if note_dict.link %}
+    <h2 class="file-title"><a href="{{ note_dict.link }}"
             class="file-link">{{ note_dict[link].title }}</a></h2>
-
     {% endif %}
-
     <!-- Display a description of the file -->
     <p class="file-description">{{ note_dict[link].description }}</p>
 

@@ -298,6 +298,27 @@ Choosing a loss function is generally not *too* difficult.  Here are some common
 * Connectionist temporal classifcation (CTC) - sequence learning problems 
 
 
+## Optimizers 
+
+First, we need to understand the [exploding/vanishing problem](https://towardsdatascience.com/the-vanishing-exploding-gradient-problem-in-deep-neural-networks-191358470c11) in deep learning. 
+
+### Exploding/Vanishing
+
+Detect an explosion problem if you see these signs: 
+
+* Immensely large changes in loss on each step
+* The model's loss will be NaN during training 
+* Weights grow exponentially, trending towards $\infin$ and becoming NaN
+
+In contrast, vanishing might cause: 
+
+* Immensely small changes in loss on each step
+* Weights close to the output layer will change more than those close to the input layer 
+* Models shrink exponentially, trending towards 0
+
+### rmsprop
+
+This is a very common optimizer that balances exploding and vanishing 
 
 
 
@@ -325,6 +346,12 @@ $W$'s shape is therefore `(input_dimensions, hidden_units)`
 ## sigmoid 
 
 This allows us to use probability distributions by squashing are values down into the interval [0, 1].
+
+# Notebooks 
+
+1. [First neural network with Keras](http://localhost:8888/notebooks/categories/MLProjects/Notes/Keras-IMDB.ipynb)
+2. 
+
 
 
 

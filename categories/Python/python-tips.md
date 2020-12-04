@@ -7,6 +7,7 @@ image: https://files.realpython.com/media/Real-Python-Tips-and-Tricks_Watermarke
 description: Notes from RealPython's "Python Tricks" book.  Lots of time-savers here! 
 topics: Clean code, 
 sources: Python Tricks, by Dan Bader
+publish: True
 ---
 
 
@@ -378,7 +379,41 @@ Takeaways:
 * `__repr__` is for the developers - convey some information!
 * If nothing else, use `__repr__`, as `str()` conversions where `__str__` would be use will default to it. 
 
+## Custom Exceptions 
 
+Custom exceptions take the form of newly created classes, generally inheriting from an overarching exception.  
+
+```python 
+class AuthenticationError(ValueError):
+    pass
+
+class ShortPasswordError(AuthenticationError):
+    pass 
+
+def createPassword(password):
+    if len(password) < 10: 
+        raise ShortPasswordError(password)
+
+password = input("Enter a password: ")
+
+
+try: 
+    createPassword(password)
+except AuthenticationError as e: 
+    print(f"Looks like there's an error with your password. Does {e!r} ring any bells?")
+
+>> Input: Luke
+
+>> Output: 
+Looks like there's an error with your password.  Does ShortPasswordError: Luke ring any bells?
+```
+
+Here, `AuthenticationError` is our **base** exception class.  Always a good idea to have one of these for each module or package for public releases, as it allows for easier `try` blocks. 
+
+Also remember: 
+
+* Use `__repr__` to format the error string 
+* Use the `!r` conversion flag in f-strings 
 
 # Generators 
 
