@@ -15,7 +15,7 @@ from frontmatter.default_handlers import YAMLHandler, TOMLHandler
 # Edit the following lines, 8-13, in order to update some of the features.
 
 # Remove certain folders that I don't want
-names_to_remove = ['Machine Learning', '.ipynb_checkpoints']
+names_to_remove = ['.ipynb_checkpoints']
 
 # Change the names_to_change and new_name arrays to update
 names_to_change = ['JS']
@@ -63,7 +63,7 @@ def create_categories():
         if note.endswith('.ipynb') or note.endswith('.html'):
             ml_notes.append(os.path.join(
                 categories_dir, 'MLProjects', 'Notes', note))
-    category_dict['Machine Learning'] = ml_notes
+    category_dict['Machine and Deep Learning'] = ml_notes
     return category_dict
 
 
@@ -119,9 +119,12 @@ def fetch_note_meta(filepath: str) -> dict:
     Returns:
         dict: A dictionary mapping the filepath to the metadata from a .md
     """
-    with open(filepath) as file:
-        note = frontmatter.load(file)
-    return dict(note)
+    if os.path.isfile(filepath):
+        with open(filepath) as file:
+            note = frontmatter.load(file)
+        return dict(note)
+    else:
+        return {'publish': False}
 
 
 def generate_note_dict(category_dict: dict) -> dict:
@@ -142,23 +145,46 @@ def generate_note_dict(category_dict: dict) -> dict:
     notes_meta = {}
     # Iterate through flattened list of notes.  Create a list of dictionaries mapping note
     for note in notes:
+        original_html = False
+        original_ipynb = False
+        if note.endswith('.html'):
+            original_html = True
+        if note.endswith('.ipynb'):
+            original_ipynb = True
         # Remove the file extension
         note = os.path.splitext(note)[0]
 
         # Add '.md' extension
         note = note + '.md'
 
-        # Fetch yaml data, and append the meta dictionary to the notes_meta dictionary
-        notes_meta[note] = fetch_note_meta(note)
+        # Only do the following IFF the file exists!
+        try:
 
-        # Remove '.md' ext
-        noteNewName = os.path.splitext(note)[0]
+            # Fetch yaml data, and append the meta dictionary to the notes_meta dictionary
+            notes_meta[note] = fetch_note_meta(note)
 
-        # Add '.html' ext back
-        noteNewName = noteNewName + '.html'
+            if original_html:
+                # Remove '.md' ext
+                noteNewName = os.path.splitext(note)[0]
 
-        # Change key-name
-        notes_meta[noteNewName] = notes_meta.pop(note)
+                # Add '.html' ext back
+                noteNewName = noteNewName + '.html'
+
+                # Change key-name
+                notes_meta[noteNewName] = notes_meta.pop(note)
+
+            if original_ipynb:
+                # Remove '.md' ext
+                noteNewName = os.path.splitext(note)[0]
+
+                # Add '.ipynb' ext back
+                noteNewName = noteNewName + '.ipynb'
+
+                # Change key-name
+                notes_meta[noteNewName] = notes_meta.pop(note)
+        # Do nothing if the .md file doesn't exist which stores metadata
+        except FileNotFoundError:
+            pass
 
     # Return the dictionary of dictionaries
     return notes_meta
@@ -191,9 +217,10 @@ def generate_title_dict(categories):
                 content = get_note_content(file)
                 title_dict[title] = content
             except KeyError:
-                print(f"Failed to access title attribute of file {file}. Have you included this in the front-matter?")
+                print(
+                    f"Failed to access title attribute of file {file}. Have you included this in the front-matter?")
         category_title_dict[category_name] = title_dict
     return category_title_dict
 
-title_dict = generate_title_dict(categories)
 
+title_dict = generate_title_dict(categories)

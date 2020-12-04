@@ -310,6 +310,74 @@ If you do that, your docstring will be preserved in `__doc__`, like it should!
 
 # *args and **kwargs 
 
+Note that the asterisk and double asterisk are *just naming conventions*.  We could just as easily define a function like so: 
+
+```python 
+def f(*arguments, **keyword_arguments):
+    print("Stick to the naming convention though.")
+```
+
+Just remember: 
+
+* `*args` collects *positional arguments* as a *tuple* 
+* `**kwargs` collects *keyword arguments* as a *dictionary* 
+* All that matters is the `*` and the `**` 
+
+## Unpacking 
+
+We can use the `*` to unpack Iterables to be used as *positional* arguments. 
+
+```python 
+def f(a, b): 
+    return a + b 
+
+seq = (3, 4)
+print(f(*seq))
+
+>> Output: 
+7
+```
+
+Similarly, we can unpack dictionaries to be used as *keyword* arguments. 
+
+# OOP 
+
+## is vs ==
+
+== checks for equality, `is` checks if the pointers are the same
+
+## __repr__ and __str__ 
+
+`__repr__` is the `toString()` of Python in iPython sessions, whereas `__str__` is for `print()` statements and string conversion.
+
+```python 
+class Dog: 
+    def __init__(self, breed):
+        self.breed = breed 
+    def __repr__(self):
+        return "I hate looking at memory locations"
+    def __str__(self):
+        return f"I'm a {self.breed}"
+
+dog = Dog("Golden Retriever")
+
+dog
+
+>> Output: 
+I hate looking at memory locations 
+
+print(dog)
+
+>> Output: 
+I'm a Golden Retriever
+```
+
+Takeaways: 
+
+* `__str__` is for the user - something anyone can read
+* `__repr__` is for the developers - convey some information!
+* If nothing else, use `__repr__`, as `str()` conversions where `__str__` would be use will default to it. 
+
 
 
 # Generators 

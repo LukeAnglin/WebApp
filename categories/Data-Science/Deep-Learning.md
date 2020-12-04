@@ -48,7 +48,7 @@ For complex problems, here are the advantage of DL:
 
 Learn XGBoost and Keras.  Watch the Kaggle competitions to stay up-to-date.  Win. 
 
-# Keras Neural Network
+# Neural Network Basics
 
 What steps should we take to build a neural network with Keras? 
 
@@ -157,8 +157,12 @@ output = relu(dot(W, input) + b)
 There are a few things going on here. 
 
 * `dot` - dot product 
-* $W$ - a slope like parameter for our tensor 
-* $b$ - An intercept 
+* $W$ - The kernel 
+* $b$ - The bias
+
+The kernel, $W$, and the bias, $b$, are known as the *weights*, or *trainable parameters* of the layer
+
+![The Loss Function](https://miro.medium.com/max/467/0*ObwPPSgUtgUqhJtY.png)
 
 ### Broadcasting 
 
@@ -208,6 +212,123 @@ $$ x * y = \text{A matrix of dimensions }r_x \text{and }c_y$$
 ![Dot Product Requirements Mapping Image](../../static/assets/media/DotMap.png)
 
 # Gradient Optimization 
+
+The key to minimizing the loss function is calculating it's gradient.  
+
+Here's a simple gradient.
+
+![Gradient](https://miro.medium.com/max/640/0*cky02gQU_1I8WdlX.png)
+
+
+Now, one with more features.
+
+![Advanced Gradient](https://miro.medium.com/max/631/0*7QToqMHqNhBpuF-U.png)
+
+Either way, we're interested in the *absolute minimum*, where the slope = 0. 
+
+## Batch SGD
+
+An *analytical* approach is equivalent to actually calculating the derivative of the function.  That's *possible*, but extremely taxing on the computer when the number of parameters, $N$, goes up. 
+
+Instead, we use **SGD** on each batch.  We iterativly tweak the parameters until we hit that sweet spot. 
+
+![Batch SGD](../../static/assets/media/SGD.png)
+
+### Momentum
+
+We have a local/global minimum issue with this approach.
+
+![Momentum Fixes This](../../static/assets/media/MomentumFixesThis.png)
+
+To remedy this, we calculate velocities at each step and use the slope, so it won't stop at each little bump. 
+
+# Neural Anatomy
+
+## Components 
+
+Let's dive deeper into the components of neural networks we've covered so far: 
+
+* Layers 
+* Input Data 
+* Loss Function 
+* Optimizer 
+
+![Components](../../static/assets/media/NNComp.png)
+
+Additionally, let's cover: 
+
+* Hidden units 
+
+## Layers 
+
+Layer types are defined by the shape of the tensors they can take: 
+
+* Dense - 2D Vectors 
+* Recurrent, `LSTM` - 3D 
+* 2D Convolution, `Conv2D` - 4D
+
+The input to one layer is the output of one before it.  This means you only have to specify the input shape of the **first layer**. 
+
+```python 
+from keras import models
+from keras import layers
+model = models.Sequential()
+model.add(layers.Dense(32, input_shape=(784,)))
+model.add(layers.Dense(32))
+```
+
+### Dense 
+
+Linear stacks of layers, the simplest setup we can create.  Luckily, it's also the *most common*.  The questions we must ask ourselves are as follows: 
+
+* How many layers? 
+* How many hidden units? 
+
+## Loss Function 
+
+Be *very specific* in how you define these.  I love the author's example here: 
+
+> Imagine a stupid, omnipotent AI trained via SGD, with this poorly chosen objective function: "maximize the average well-being of all living humans."  To make its job easier, this AI might choose to kill all humans except a few and focus on the well-being of the remaining ones. 
+
+Choosing a loss function is generally not *too* difficult.  Here are some common cases: 
+
+* Binary crossentropy - two-class classification 
+* Categorical crossentropy - multi-class classifation 
+* MSE - regression 
+* Connectionist temporal classifcation (CTC) - sequence learning problems 
+
+
+
+
+
+
+## Hidden Units 
+
+Hidden units are the dimensions of the projections the layers map the input data onto.  Think of each hidden unit as more freedom you're giving the model.  
+
+**More hidden units** means **more variance** - overfitting, and **less bias**.  You need to strike a nice balance here!
+
+Note that the hidden units represent the *columns of the weight matrix*, $W$
+
+$W$'s shape is therefore `(input_dimensions, hidden_units)`
+
+# Activations 
+
+![Activation Functions](https://qph.fs.quoracdn.net/main-qimg-07bc0ec05532caf5ebe8b4c82d0f5ca3)
+
+> Without an activation function like relu (also called a non-linearity), the Dense layer would consist of two linear operations—a dot product and an addition. So  the  layer  could  only  learn  linear  transformations  (affine  transformations)  of  the input data: the hypothesis space of the layer would be the set of all possible lineartransformations of the input data into a 16-dimensional space. Such a hypothesisspace is too restricted
+
+## relu 
+
+`relu` stands for Rectified Linear Unit, and it is a function meant to zero out negative values.  
+
+## sigmoid 
+
+This allows us to use probability distributions by squashing are values down into the interval [0, 1].
+
+
+
+
 
 
 
