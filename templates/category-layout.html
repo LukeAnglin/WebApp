@@ -25,18 +25,24 @@
 <div class="{{ title }}-notes">
     <!-- Loop through category files and display a header linking to their page -->
     {% for link in category_files %}
+    <!-- Only display published files or ones without the attribute by default (auto-publish) -->
+    {% if not note_dict[link].publish or note_dict[link].publish == True %}
     <h2 class="file-title"><a href="{{ url_for('note', note_title=note_dict[link].title)}}"
             class="file-link">{{ note_dict[link].title }}</a></h2>
 
     <!-- Display a description of the file -->
     <p class="file-description">{{ note_dict[link].description }}</p>
 
-    <!-- Display the topics covered -->
+    <!-- Display the topics covered if that attribute exists -->
+
+    {% if note_dict[link].topics %}
+
     <p class="file-topics">Topics covered: {{ note_dict[link].topics }}</p>
 
+    {% endif %}
     <!-- Display an image -->
     <img src="{{ note_dict[link].image }}" alt="">
-
+    {% endif %}
     {% endfor %}
 </div>
 {% endblock content %}

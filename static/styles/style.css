@@ -105,6 +105,7 @@ div.panel-heading > h5 {
 img {
   width: 100%;
   height: auto;
+  padding-bottom: 2rem;
 }
 
 .img-row img {

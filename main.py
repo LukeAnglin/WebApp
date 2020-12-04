@@ -93,7 +93,7 @@ machine_learning_route_params = {
 
     'description': 'The majority of content here will consist of Jupyter Notebooks.  These are best for note-taking and presentation.  Note that Python scripts are preferable in some cases, but for the sake of readability and experimentation, I choose Jupyter Notebooks for this.  I also have .py scripts in my GitHub repository for different modules and packages I have created myself.',
 
-    'image_route': 'https://tangocode.com/wp-content/uploads/2019/07/AI-Machine-Learning-and-Deep-Learning-1080x654.png?x35785',
+    'image_route': 'static/assets/media/ml-category-homepage.png',
 
     'get_note_content': get_note_content, 
 
