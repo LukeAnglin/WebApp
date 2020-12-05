@@ -14,7 +14,7 @@ publish: true
 
 The foundation behind model **learning**.  This is how we update our beliefs.  
 
-Consider a linear regression.  Rather than the slopes (the $\theta$s) being constant, we turn them into **distributions** 
+Consider a linear regression.  Rather than the slopes (the ) being constant, we turn them into **distributions** 
 
 ## Regressive 
 

@@ -6,5 +6,5 @@ description: This is an introduction to Keras and TensorFlow with a simple class
 topics: 
 sources: 
 publish: False
-link: https://hub.gke2.mybinder.org/user/lukeanglin-webapp-ng8dzfhb/notebooks/categories/MLProjects/Notes/Keras-and-TensorFlow.ipynb
+link: https://hub.gke2.mybinder.org/user/lukeanglin-webapp-lyovfh49/notebooks/categories/MLProjects/Notes/Keras-and-TensorFlow.ipynb
 ---

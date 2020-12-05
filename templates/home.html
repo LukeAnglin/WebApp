@@ -5,9 +5,9 @@
 {% block content %}
 
 <div class="Broad Data Science and ML">
-    <h1>Data Science and ML</h1>
-    <p>Data science. Machine Learning. TensorFlow, Pandas, Sci-Kit Learn, and so much more! Check out the <a
-            href="{{ url_for('data_science')}}">data science</a> page for some
+    <h1><a href="{{ url_for('data_science')}}">Data Science and Machine Learning</a></a></h1>
+    <p>Data science. Machine Learning. TensorFlow, Pandas, Sci-Kit Learn, and so much more! Check out the data science
+        page for some
         handy resources!</p>
     <div class="row">
 
@@ -26,14 +26,43 @@
 </div>
 
 <div class="Deep Learning">
-    <h1>Deep Learning</h1>
-    <img src="https://cdn.wccftech.com/wp-content/uploads/2020/06/Machine-learning.jpg" alt="Keras and Tensorflow machine learning">
-    <p>While the Data Science category above contains mostly broad-stroke data science procedure and Machine Learning content, this page contains information <i>specific</i> to Deep Learning.
+    <h1><a href="{{ url_for('deep_learning') }}">Deep Learning</a></h1>
+    <img src="https://cdn.wccftech.com/wp-content/uploads/2020/06/Machine-learning.jpg"
+        alt="Keras and Tensorflow machine learning">
+    <p>While the Data Science category above contains mostly broad-stroke data science procedure and Machine Learning
+        content, this page contains information <i>specific</i> to Deep
+        Learning.
     </p>
 </div>
 
 <div class="Python">
-    <h1>Python</h1>
+    <h1><a href="{{ url_for('python') }}">Python</a></h1>
+    <!-- Python Image row -->
+    <div class="row">
+
+        <div class="col-4 thumb">
+            <a class="thumbnail" href="#">
+                <img class="img-responsive"
+                    src="https://cdn.educba.com/academy/wp-content/uploads/2019/12/numpy-ndarray.png" alt="">
+            </a>
+        </div>
+        <div class="col-4 thumb">
+            <a class="thumbnail" href="#">
+                <img class="img-responsive"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/1200px-Pandas_logo.svg.png"
+                    alt="">
+            </a>
+        </div>
+        <div class="col-4 thumb">
+            <a class="thumbnail" href="#">
+                <img class="img-responsive"
+                    src="https://d33wubrfki0l68.cloudfront.net/da1e0318622d0d2134f72714d248a339780799af/1be46/blog/python-web-scraping-beautiful-soup/beautiful_soup.png"
+                    alt="">
+            </a>
+        </div>
+    </div>
+    <p>Python is readable and easy to use. Does that mean it can't be powerful? Of course not! Various tools for data
+        science, web scraping, and other disciplines run on it. </p>
 </div>
 
 {% endblock content %}

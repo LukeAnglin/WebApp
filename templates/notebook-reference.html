@@ -29,8 +29,7 @@
 
     <!-- Check if link is in file meta -->
     {% if note_dict[file].link %}
-    <h2 class="file-title"><a href="{{ note_dict[file].link }}"
-            class="file-link">{{ note_dict[file].title }}</a></h2>
+    <h2 class="file-title"><a href="{{ note_dict[file].link }}" class="file-link">{{ note_dict[file].title }}</a></h2>
     {% endif %}
     <!-- Display a description of the file -->
     <p class="file-description">{{ note_dict[file].description }}</p>
@@ -40,8 +39,19 @@
     {% if note_dict[file].topics %}
 
     <p class="file-topics"><b>Topics covered:</b> {{ note_dict[file].topics }}</p>
+
+    {% endif %}
+    <!-- Display sources if provided -->
+    {% if note_dict[file].sources %}
+
     <p class="file-sources">Sources: {{ note_dict[file].sources | safe }}</p>
 
+    {% endif %}
+
+    <!-- Display relevant links if provided -->
+    {% if note_dict[file].relevant %}
+    <p class="file-relevant">More extensive notes may be found <a href="{{ note_dict[file].relevant | safe }}">here</a>
+    </p>
     {% endif %}
     <!-- Display an image -->
     <img src="{{ note_dict[file].image }}" alt="">

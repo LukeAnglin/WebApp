@@ -16,7 +16,8 @@ For a multiclass problem, we want to use `softmax` activation, so it will output
 
 Multiclass demands the `categorical_crossentropy` loss function, which minimizes the distance between our prediction probability distribution and the true distribution. 
 
-# Advice 
+# Advice
 
 * Don't use too many layers, especially if they're small.  This leads to **information bottlenecks**. 
+* One way to remedy overfitting and improve model accuracy is playing with the number of layers and hidden units you are using
 
