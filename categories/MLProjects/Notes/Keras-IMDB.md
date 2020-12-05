@@ -6,4 +6,5 @@ description: Here, I follow along with Francois Chollet's 'Deep Learning with Py
 topics: Basic neural network architecture and some introductory material on loss functions, optimizers, activation functions and more. 
 sources: Francois Chollet's 'Deep Learning with Python'
 publish: True 
+link: https://nbviewer.jupyter.org/github/LukeAnglin/WebApp/blob/master/categories/MLProjects/Notes/Keras-and-TensorFlow.ipynb
 ---

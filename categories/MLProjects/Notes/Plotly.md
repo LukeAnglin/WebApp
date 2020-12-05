@@ -6,4 +6,5 @@ description: There's so much you can do with Plotly.  Interactive visualizations
 topics: Plotly 
 sources: https://plotly.com/python/
 publish: True
+link: https://nbviewer.jupyter.org/github/LukeAnglin/WebApp/blob/master/categories/MLProjects/Notes/Plotly.ipynb
 ---

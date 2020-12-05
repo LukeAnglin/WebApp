@@ -6,5 +6,5 @@ description: Here, I take notes on one of the greatest online linear algebra cou
 topics: Linear Algebra
 sources: 3Blue1Brown's incredible YouTube 'Essence of Linear Algebra' course
 publish: True
-link: http://localhost:8888/notebooks/categories/MLProjects/Notes/Essence-of-Linear-Algebra.ipynb
+link: https://nbviewer.jupyter.org/github/LukeAnglin/WebApp/blob/master/categories/MLProjects/Notes/Essence-of-Linear-Algebra.ipynb
 ---
