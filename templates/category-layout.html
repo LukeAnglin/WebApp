@@ -23,33 +23,34 @@
     <h1 id=notes>Notes/Resources: </h1>
 </div>
 <div class="{{ title }}-notes">
-    <!-- Loop through category files and display a header linking to their page -->
-    {% for link in category_files %}
+    <!-- Loop through category files and display a header fileing to their page -->
+    {% for file in category_files %}
+
     <!-- Only display published files or ones without the attribute by default (auto-publish) -->
-    {% if 'publish' in note_dict.keys() or note_dict[link].publish == True %}
+    {% if not 'publish' in note_dict[file].keys() or note_dict[file].publish == True %}
 
     <!-- If it's a data sci note, display that url and title.  Override this in the category-indices relevant html file.  See data-science.html for an example -->
     {% if title == 'Data Science Foundations' %}
 
-    <h2 class="file-title"><a href="{{ url_for('data_sci_note', note_title=note_dict[link].title)}}"
-            class="file-link">{{ note_dict[link].title }}</a></h2>
+    <h2 class="file-title"><a href="{{ url_for('data_sci_note', note_title=note_dict[file].title)}}"
+            class="file-file">{{ note_dict[file].title }}</a></h2>
 
     {% endif %}
 
     <!-- If it's a Python note, display that url -->
 
     <!-- Display a description of the file -->
-    <p class="file-description">{{ note_dict[link].description }}</p>
+    <p class="file-description">{{ note_dict[file].description }}</p>
 
     <!-- Display the topics covered if that attribute exists -->
 
-    {% if note_dict[link].topics %}
+    {% if note_dict[file].topics %}
 
-    <p class="file-topics">Topics covered: {{ note_dict[link].topics }}</p>
+    <p class="file-topics"><b>Topics covered:</b> {{ note_dict[file].topics }}</p>
 
     {% endif %}
     <!-- Display an image -->
-    <img src="{{ note_dict[link].image }}" alt="">
+    <img src="{{ note_dict[file].image }}" alt="">
     {% endif %}
     {% endfor %}
 </div>

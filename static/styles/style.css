@@ -3,6 +3,10 @@ body {
   padding: 7vh;
 }
 
+div.row.content {
+  padding-top: 2rem;
+}
+
 div.col-3.sidebar {
   padding-top: 4vh;
   font-size: 2rem;
@@ -12,9 +16,9 @@ div.col-9.content {
   padding-top: 1vh;
 }
 
-ol.toc-list {
+ol.toc-list:first-of-type {
+  padding-top: 2rem;
   font-size: x-small;
-  padding-top: 1.65rem;
   position: -webkit-sticky;
 }
 
