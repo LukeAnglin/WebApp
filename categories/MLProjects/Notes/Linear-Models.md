@@ -6,6 +6,6 @@ description: What are the different types of linear models?  What makes ridge be
 topics: Linear models, ridge regression, lasso regression, elastic-net regression, Statsmodels, r squared, coefficients, p-values, the bias-variance tradeoff, overfitting, and linear model visualization. 
 sources: 
 publish: True
-link: https://nbviewer.jupyter.org/github/LukeAnglin/WebApp/blob/master/categories/MLProjects/Notes/Linear-Models.ipynb
+link: https://hub.gke2.mybinder.org/user/lukeanglin-webapp-ng8dzfhb/notebooks/categories/MLProjects/Notes/Linear-Models.ipynb
 ---
 

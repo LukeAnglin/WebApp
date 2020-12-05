@@ -6,5 +6,5 @@ description: Here, we take a look at the powerful Deep Learning library, PyMC3. 
 topics: PyMC3, Bayesian modeling
 sources: <a href="https://docs.pymc.io/">PyMC3 Docs</a> and <a href="http://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/">Bayesian Methods for Hackers</a>
 publish: True
-link: https://nbviewer.jupyter.org/github/LukeAnglin/WebApp/blob/master/categories/MLProjects/Notes/PyMC-Intro.ipynb
+link: https://hub.gke2.mybinder.org/user/lukeanglin-webapp-ng8dzfhb/notebooks/categories/MLProjects/Notes/PyMC-Intro.ipynb
 ---

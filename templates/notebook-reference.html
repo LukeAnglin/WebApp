@@ -23,27 +23,28 @@
 
 <div class="{{ title }}-projects">
     <!-- Loop through category files and display a header linking to their page -->
-    {% for link in category_files %}
+    {% for file in category_files %}
     <!-- Only display published files or ones without the attribute by default (auto-publish) -->
-    {% if 'publish' in note_dict.keys() or note_dict[link].publish == True %}
+    {% if 'publish' in note_dict.keys() or note_dict[file].publish == True %}
 
     <!-- Check if link is in file meta -->
-    {% if note_dict.link %}
-    <h2 class="file-title"><a href="{{ note_dict.link }}"
-            class="file-link">{{ note_dict[link].title }}</a></h2>
+    {% if note_dict[file].link %}
+    <h2 class="file-title"><a href="{{ note_dict[file].link }}"
+            class="file-link">{{ note_dict[file].title }}</a></h2>
     {% endif %}
     <!-- Display a description of the file -->
-    <p class="file-description">{{ note_dict[link].description }}</p>
+    <p class="file-description">{{ note_dict[file].description }}</p>
 
     <!-- Display the topics covered if that attribute exists -->
 
-    {% if note_dict[link].topics %}
+    {% if note_dict[file].topics %}
 
-    <p class="file-topics">Topics covered: {{ note_dict[link].topics }}</p>
+    <p class="file-topics"><b>Topics covered:</b> {{ note_dict[file].topics }}</p>
+    <p class="file-sources">Sources: {{ note_dict[file].sources | safe }}</p>
 
     {% endif %}
     <!-- Display an image -->
-    <img src="{{ note_dict[link].image }}" alt="">
+    <img src="{{ note_dict[file].image }}" alt="">
     {% endif %}
     {% endfor %}
 </div>

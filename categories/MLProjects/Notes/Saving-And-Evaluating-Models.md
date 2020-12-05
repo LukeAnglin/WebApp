@@ -6,5 +6,5 @@ description: We have a model.  Now how do we use it later?  How do we evaluate i
 topics: Saving models with Joblib, evaluating with different scoring metrics like r squared, confusion matrices, and more.
 sources: 
 publish: True
-link: https://nbviewer.jupyter.org/github/LukeAnglin/WebApp/blob/master/categories/MLProjects/Notes/Saving-and-Evaluating-Models.ipynb
+link: https://hub.gke2.mybinder.org/user/lukeanglin-webapp-ng8dzfhb/notebooks/categories/MLProjects/Notes/Saving-and-Evaluating-Models.ipynb
 ---

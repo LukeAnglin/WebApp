@@ -6,5 +6,5 @@ description: A look at SVMs, grid searches, and pipelines.  The latter two are a
 topics: SVMs, grid search techniques, and pipelines.
 sources: 
 publish: True
-link: https://nbviewer.jupyter.org/github/LukeAnglin/WebApp/blob/master/categories/MLProjects/Notes/SVM-Grid-Search-Pipelines.ipynb
+link: https://hub.gke2.mybinder.org/user/lukeanglin-webapp-ng8dzfhb/notebooks/categories/MLProjects/Notes/SVM-Grid-Search-Pipelines.ipynb
 ---
