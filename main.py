@@ -60,10 +60,43 @@ data_sci_route_params = {
 
 # Then, to create the route, use render template, passing in the template file as a positional argument, and unpack the dictionary for the **kwargs to be used in rendering the page
 
+# NAMING CONVENTION - Lower case of the folder name in the categories directory
+# ALPHABETIZE!
+# EXAMPLE - 'Data-Science' folder should be '/data-science' route
+
 # Data Science Route
 @app.route('/data-science')
 def data_science():
     return render_template('/category-indices/data-science.html', **data_sci_route_params)
+
+
+deep_learning_route_params = {
+    'title': 'Deep Learning',
+
+    'description': 'Neural networks!  Keras and Tensorflow allow us to build incredible models, capable of more than we can imagine.  Let\'s learn how to use, visualize and evaluate this sector of data science!',
+
+    'image_route': 'static/assets/deep_homepage.jpg',
+
+    'get_note_content': get_note_content, 
+
+    'category_files': category_files['Deep Learning'], 
+
+    'note_dict': note_dict,
+
+}
+
+# Deep Learning Route
+@app.route('/deep-learning')
+def deep_learning():
+    return render_template('/category-indices/deep-learning.html')
+
+#@app.route('/js')
+
+#@app.route('/linear-algebra')
+
+#@app.route('/r')
+
+#@app.route('/stat-and-probability')
 
 
 # NOTES ROUTES

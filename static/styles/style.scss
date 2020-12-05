@@ -18,6 +18,7 @@ div.col-9.content {
 
 ol.toc-list {
     font-size: x-small;
+    padding-top: 1.65rem;
     position: -webkit-sticky;
 }
 
@@ -132,6 +133,7 @@ nav[data-toggle="toc"] {
 nav[data-toggle="toc"] .nav .active .nav {
     display: none;
 }
+
 
 .keyword1 {
     color: rgb(194, 92, 92);

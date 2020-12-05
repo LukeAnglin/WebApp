@@ -28,7 +28,7 @@
     <!-- Only display published files or ones without the attribute by default (auto-publish) -->
     {% if 'publish' in note_dict.keys() or note_dict[link].publish == True %}
 
-    <!-- If it's a data sci note, display that url -->
+    <!-- If it's a data sci note, display that url and title.  Override this in the category-indices relevant html file.  See data-science.html for an example -->
     {% if title == 'Data Science Foundations' %}
 
     <h2 class="file-title"><a href="{{ url_for('data_sci_note', note_title=note_dict[link].title)}}"
