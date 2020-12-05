@@ -7,6 +7,9 @@ $link-hover: rgb(24%, 39.8%, 49.1%);
 body {
     padding: 7vh;
 }
+nav#toc:first-child {
+    padding-top: 1.75rem;
+}
 div.row.content {
     padding-top: 2rem;
 }
@@ -19,8 +22,7 @@ div.col-9.content {
     padding-top: 1vh;
 }
 
-ol.toc-list:first-of-type {
-    padding-top: 2rem; 
+ol.toc-list {
     font-size: x-small;
     position: -webkit-sticky;
 }
