@@ -6,5 +6,5 @@ description: This is a classication and visualization project I did for fun.  I 
 topics: Plotly visualization, binary classification, and EDA
 sources: 
 publish: True 
-link: https://hub.gke2.mybinder.org/user/lukeanglin-webapp-lyovfh49/notebooks/categories/MLProjects/Notes/Happiness-Classification.ipynb
+link: https://nbviewer.jupyter.org/github/LukeAnglin/WebApp/blob/master/categories/MLProjects/Notes/Happiness-Classification.ipynb
 ---

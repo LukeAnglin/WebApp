@@ -7,5 +7,5 @@ topics: Multiclass classification, categorical crossentropy, and the plot-keras-
 sources: Francois Chollet's <i>Deep Learning with Python</i> book
 publish: True
 category:  Deep Learning 
-link: https://hub.gke2.mybinder.org/user/lukeanglin-webapp-lyovfh49/notebooks/categories/MLProjects/Notes/Keras-Reuters-Multiclass.ipynb
+link: https://nbviewer.jupyter.org/github/LukeAnglin/WebApp/blob/master/categories/MLProjects/Notes/Keras-Reuters-Multiclass.ipynb
 ---

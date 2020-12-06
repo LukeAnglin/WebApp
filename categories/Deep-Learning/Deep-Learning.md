@@ -347,6 +347,61 @@ $W$'s shape is therefore `(input_dimensions, hidden_units)`
 
 This allows us to use probability distributions by squashing are values down into the interval [0, 1].
 
+# Preprocessing
+
+## Missing Values
+
+Generally, you can just replace with zeroes. The neural network will learn zeroes are useless, so long as zeroes don't mean anything elsewhere 
+
+## Over/Underfitting Solutions 
+
+* Regularization - Occam's Razor
+* Get more training data 
+* Reduce network size 
+* Dropout
+
+## Regularization
+
+![Occam's Razor](https://automaticaddison.com/wp-content/uploads/2019/06/1.jpg)
+
+### Norms 
+
+If we call the penalty $\lambda$ and the weight coefficients $W_{i}$, then: 
+
+* L1 - $\lambda \propto \lvert (W_{i} \rvert$ 
+    * This is your *lasso* regression - use when you have some variables that might not be super useful. 
+* L2 - $\lambda \propto \sqrt{W_{i}}$
+    * Also called *weight decay*
+    * This is your *ridge* regression - use when you have mostly useful variables
+
+### Dropout
+
+During training, **dropout** is when we randomly zero some of our output hidden units.  
+
+![Dropout](https://miro.medium.com/max/513/1*dEi_IkVB7IpkzZ-6H0Vpsg.png)
+
+Generally, we do a `*= np.randint(0, high=2, size = layer_output.shape)` at training time, which drops 50% of our hidden units.  
+
+At testing time, we simply run a quick `layer_output *= 0.5`. 
+
+> I went to my bank.  The tellers keep moving around.  Why? It would be much harder to instantiate a coup.  Similarly, removing neurons is introducing noise:  it's much harder to create a conspiracy. 
+
+In this case, the *conspiracy* is overfitting, and dropout is our savior. 
+
+## Keras
+
+Keras makes it super simple for us.  Just create a `Dropout` layer rather than a `Dense` one.  
+
+```python 
+model.add(layers.Dropout(0.5))
+```
+
+
+# Terminology 
+
+* **Capacity** - the number of learnable parameters in a model. 
+    * Obviously, a greater capacity means greater tendency to overfit 
+
 # Notebooks 
 
 1. [First neural network with Keras](http://localhost:8888/notebooks/categories/MLProjects/Notes/Keras-IMDB.ipynb)

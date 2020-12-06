@@ -70,9 +70,23 @@ Transforming continuous data to discrete data is known as **discretization**.  T
 * Model Compatability
 * Smoothing (reducing noise)
 
-## Approaches
+# Vectorization 
 
-### Unsupervised
+This is essentially the same as **changing your datatypes**.  Give me tensors of floats, or give me death. 
 
-#### Equal Width
+# Missing Values
+
+## Neural Networks
+
+*Generally*, you can get away with changing NaN's to zeroes.  However, *if* the data has *meaningful* zeroes, DO NOT do this.  
+
+Why can we get away with zeroes?  Because the neural network will eventually say "zeroes mean nothing to me."  
+
+# Feature Engineering
+
+Hard code to make the model's life easier.  
+
+Consider an ML algorithm trying to tell time based on a clock.  If you hard code it to pass in the polar coordinates rather than the entire pixel grid, you've just saved a ton of computation and improved the accuracy massively.  
+
+
 

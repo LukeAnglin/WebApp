@@ -677,6 +677,72 @@ model<span class="token punctuation">.</span>add<span class="token punctuation">
 <h2 class="mume-header" id="sigmoid">sigmoid</h2>
 
 <p>This allows us to use probability distributions by squashing are values down into the interval [0, 1].</p>
+<h1 class="mume-header" id="preprocessing">Preprocessing</h1>
+
+<h2 class="mume-header" id="missing-values">Missing Values</h2>
+
+<p>Generally, you can just replace with zeroes. The neural network will learn zeroes are useless, so long as zeroes don&apos;t mean anything elsewhere</p>
+<h2 class="mume-header" id="overunderfitting-solutions">Over/Underfitting Solutions</h2>
+
+<ul>
+<li>Regularization - Occam&apos;s Razor</li>
+<li>Get more training data</li>
+<li>Reduce network size</li>
+<li>Dropout</li>
+</ul>
+<h2 class="mume-header" id="regularization">Regularization</h2>
+
+<p><img src="https://automaticaddison.com/wp-content/uploads/2019/06/1.jpg" alt="Occam&apos;s Razor"></p>
+<h3 class="mume-header" id="norms">Norms</h3>
+
+<p>If we call the penalty <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3BB;</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">&#x3BB;</span></span></span></span> and the weight coefficients <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">W_{i}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, then:</p>
+<ul>
+<li>L1 - <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3BB;</mi><mo>&#x221D;</mo><mo stretchy="false">&#x2223;</mo><mo stretchy="false">(</mo><msub><mi>W</mi><mi>i</mi></msub><mo stretchy="false">&#x2223;</mo></mrow><annotation encoding="application/x-tex">\lambda \propto \lvert (W_{i} \rvert</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">&#x3BB;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x221D;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">&#x2223;</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">&#x2223;</span></span></span></span>
+<ul>
+<li>This is your <em>lasso</em> regression - use when you have some variables that might not be super useful.</li>
+</ul>
+</li>
+<li>L2 - <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3BB;</mi><mo>&#x221D;</mo><msqrt><msub><mi>W</mi><mi>i</mi></msub></msqrt></mrow><annotation encoding="application/x-tex">\lambda \propto \sqrt{W_{i}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">&#x3BB;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x221D;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.18833500000000003em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.851665em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.811665em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.18833500000000003em;"><span></span></span></span></span></span></span></span></span>
+<ul>
+<li>Also called <em>weight decay</em></li>
+<li>This is your <em>ridge</em> regression - use when you have mostly useful variables</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="dropout">Dropout</h3>
+
+<p>During training, <strong>dropout</strong> is when we randomly zero some of our output hidden units.</p>
+<p><img src="https://miro.medium.com/max/513/1*dEi_IkVB7IpkzZ-6H0Vpsg.png" alt="Dropout"></p>
+<p>Generally, we do a <code>*= np.randint(0, high=2, size = layer_output.shape)</code> at training time, which drops 50% of our hidden units.</p>
+<p>At testing time, we simply run a quick <code>layer_output *= 0.5</code>.</p>
+<blockquote>
+<p>I went to my bank.  The tellers keep moving around.  Why? It would be much harder to instantiate a coup.  Similarly, removing neurons is introducing noise:  it&apos;s much harder to create a conspiracy.</p>
+</blockquote>
+<p>In this case, the <em>conspiracy</em> is overfitting, and dropout is our savior.</p>
+<h2 class="mume-header" id="keras">Keras</h2>
+
+<p>Keras makes it super simple for us.  Just create a <code>Dropout</code> layer rather than a <code>Dense</code> one.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>layers<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><h1 class="mume-header" id="terminology">Terminology</h1>
+
+<ul>
+<li><strong>Capacity</strong> - the number of learnable parameters in a model.
+<ul>
+<li>Obviously, a greater capacity means greater tendency to overfit</li>
+</ul>
+</li>
+</ul>
 <h1 class="mume-header" id="notebooks">Notebooks</h1>
 
 <ol>

@@ -6,6 +6,7 @@ description: Here, we work through the IMDB dataset, classifying reviews, by tra
 topics: Neural networks, activation functions, loss functions, basic deep learning
 sources: Deep Learning with Python by Francois Chollet 
 publish: True
+link: https://nbviewer.jupyter.org/github/LukeAnglin/WebApp/blob/master/categories/MLProjects/Notes/Keras-IMDB.ipynb
 ---
 
 The first project on our Deep Learning journey is evaluating the IMDB dataset.
