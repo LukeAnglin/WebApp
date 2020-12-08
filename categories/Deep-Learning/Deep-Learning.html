@@ -440,9 +440,12 @@ pre[data-line] .line-highlight[data-end]:after {
 <h2 class="mume-header" id="practical-mldl">Practical ML/DL</h2>
 
 <p>Learn XGBoost and Keras.  Watch the Kaggle competitions to stay up-to-date.  Win.</p>
-<h1 class="mume-header" id="neural-network-basics">Neural Network Basics</h1>
+<h1 class="mume-header" id="basics">Basics</h1>
 
 <p>What steps should we take to build a neural network with Keras?</p>
+<h2 class="mume-header" id="load-data">Load Data</h2>
+
+<p>It&apos;s best practice to create a <code>base_dir</code> and potentially training and testing directories, and use <code>os.path.join</code> to merge them.</p>
 <h2 class="mume-header" id="split">Split</h2>
 
 <p>First, we have to decide our data into features and labels.  A dimension check never hurts anyone, using the <code>.shape</code> attribute.</p>
@@ -483,6 +486,9 @@ pre[data-line] .line-highlight[data-end]:after {
 <h2 class="mume-header" id="train">Train!</h2>
 
 <p>Use the <code>.fit(training_data, training_labels)</code> function on the network, and be exposed to the wonders of Deep Learning!</p>
+<h2 class="mume-header" id="saving">Saving</h2>
+
+<p>Use <code>model.save(model)</code> to save your model in Keras.</p>
 <h1 class="mume-header" id="tensor-manipulation">Tensor Manipulation</h1>
 
 <p>Ahh, tensors, arrays of matrices (or tensors . . .).  How do we work with them?</p>
@@ -730,7 +736,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">&#
 <p>I went to my bank.  The tellers keep moving around.  Why? It would be much harder to instantiate a coup.  Similarly, removing neurons is introducing noise:  it&apos;s much harder to create a conspiracy.</p>
 </blockquote>
 <p>In this case, the <em>conspiracy</em> is overfitting, and dropout is our savior.</p>
-<h2 class="mume-header" id="keras">Keras</h2>
+<h3 class="mume-header" id="keras">Keras</h3>
 
 <p>Keras makes it super simple for us.  Just create a <code>Dropout</code> layer rather than a <code>Dense</code> one.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>layers<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>

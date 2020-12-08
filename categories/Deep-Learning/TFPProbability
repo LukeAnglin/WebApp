@@ -1,0 +1,9 @@
+---
+export_on_save:
+    html: true
+title: TensorFlow - Bayesian Modeling
+description: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjHqvqoFpU7dQ5I__DQMmpiW73Iv_U5sGZrQ&usqp=CAU
+topics: TensorFlow Probability, Bayesian Modeling 
+sources: <i>Bayesian Probabilistic Methods for Hackers Github</i> Repo
+publish: False
+---

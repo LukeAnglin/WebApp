@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Convolutional Neural Networks</title>
+      <title>TensorFlow - Bayesian Modeling</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -407,108 +407,12 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <div class="navbar"></div><div class="note-content">
 
-<h1 class="mume-header" id="cnn">CNN</h1>
+<h1 class="mume-header" id="modeling-parameters">Modeling Parameters</h1>
 
-<p><a href="https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53">CNN&apos;s</a> are stacks of <code>Conv2D</code> and <code>MaxPooling2D</code> layers.</p>
-<p><img src="https://cezannec.github.io/assets/cnn_intro/CNN_ex.png" alt="CNN"></p>
-<h2 class="mume-header" id="purpose">Purpose</h2>
-
-<p>The idea behind CNN&apos;s is that we <strong>extract the useful features</strong> from things like images.  Edges, perhaps.</p>
-<h2 class="mume-header" id="convolution">Convolution</h2>
-
-<p>While <code>Dense</code> layers learn <strong>global</strong> patterns, <code>Conv2D</code> layers learn <strong>local</strong> patterns.</p>
-<p>We had 28 x 28 pixel images in this exmample.  Convolutional operations broke this into 3 x 3 sections.</p>
-<h2 class="mume-header" id="properties">Properties</h2>
-
-<ul>
-<li><strong>Translation Invariance</strong> - A pattern learned in one window propagates to the others.  Consider I learned a pattern in the bottom left of an image - it would be usable in the upper right.</li>
-<li><strong>Hierarchial Learning</strong> - Consider an image of a dog.  It might break down it&apos;s nose, ears, and legs to make the whole dog easier to recognize.</li>
-<li><code>Conv2D</code> operate on <strong>3D tensors</strong>
-<ul>
-<li>The <code>2D</code> represents the <strong>two spatial axes</strong> they take - e.g. (height, width)</li>
-<li>The last axis is the <em>depth</em> axis.  In RGB, it would be three dimensional (for R, B or G)</li>
-<li>The final output&apos;s depth axis is no longer representing the same thing as the input.  It represents a <strong>filter</strong>, which may represent something, like the presence of a tail.
-<ul>
-<li>This is a <em>parameter of the layer</em>.  We could configure a length 32 output from an RGB image on the depth axis.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 class="mume-header" id="filters">Filters</h2>
-
-<p>The <span class="keyword1">filter, feature detector or kernel</span> is the iterative, moving piece over the feature map (our input image).</p>
-<p><img src="https://miro.medium.com/max/500/1*GcI7G-JLAQiEoCON7xFbhg.gif" alt></p>
-<p>It has the same depth as the input as well. If we have very high resolution images, we may increase the <strong>stride value</strong>, or the filter&apos;s movement on each iteration.</p>
-<h2 class="mume-header" id="paddingstrides">Padding/Strides</h2>
-
-<p>Modifying our strides and padding is crucial to adjusting on how our model either reduces or increases dimensionality.  See the animations on <a href="https://github.com/vdumoulin/conv_arithmetic">this GitHub repo.</a></p>
-<p>Padding also counteracts <strong>border effects</strong>.</p>
-<p>Here&apos;s a border effect.  It&apos;s what makes one output of a 28 x 28 x 1 turn into 26 x 26 x 1.</p>
-<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQR2FNdV5MbP6YRhpcd_p_yBUlEA-WAmQF3A&amp;usqp=CAU" alt="Border Effect"></p>
-<p>Types of <code>padding</code> in Keras:</p>
-<ul>
-<li><code>same</code> - pad in a way to have same as initial dimensions</li>
-<li><code>valid</code> - don&apos;t pad, reduce dimensions for me.</li>
-</ul>
-<h2 class="mume-header" id="pooling">Pooling</h2>
-
-<p>Dimensionality reduction of the convolved feature.  Two types:</p>
-<ul>
-<li><strong>Max</strong> - Greatest value in the matrix</li>
-<li>Average - Average of matrix</li>
-</ul>
-<p>We <em>almost always</em> use max, because it performs <strong>noise suppression</strong>.</p>
-<p><img src="https://miro.medium.com/max/396/1*uoWYsCV5vBU8SHFPAPao-w.gif" alt="Pooling"></p>
-<h3 class="mume-header" id="max-pooling">Max Pooling</h3>
-
-<p>Rather than using strides to reduce dimensionality, it&apos;s more common and effective to use max pooling.</p>
-<ul>
-<li>Usually done in 2 x 2 windows</li>
-<li></li>
-</ul>
-<h2 class="mume-header" id="parameters">Parameters</h2>
-
-<ul>
-<li><strong>Patch Size</strong> - Typically 3 x 3 or 5 x 5</li>
-<li><strong>Depth Output</strong></li>
-</ul>
-<h1 class="mume-header" id="architecture">Architecture</h1>
-
-<p>One feeds <code>Conv2D</code> layers into <code>MaxPooling2D</code> Layers.  Here&apos;s an example:</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">model <span class="token operator">=</span> models<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token punctuation">)</span>
-model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>layers<span class="token punctuation">.</span>Conv2D<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">&apos;relu&apos;</span><span class="token punctuation">,</span> input_shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">28</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>layers<span class="token punctuation">.</span>MaxPooling2D<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>layers<span class="token punctuation">.</span>Conv2D<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">&apos;relu&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>layers<span class="token punctuation">.</span>MaxPooling2D<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>layers<span class="token punctuation">.</span>Conv2D<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">&apos;relu&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</pre><h2 class="mume-header" id="final-flattening">Final Flattening</h2>
-
-<p>At the end of this <em>convoluted</em> (I had to take that opportunity) process, we connect it to a normal neural network.</p>
-<p><img src="https://miro.medium.com/max/700/1*kToStLowjokojIQ7pY2ynQ.jpeg" alt></p>
-<p>We want to connect the CNN to a stack of <code>Dense</code> layers.  This is where the <code>Flatten()</code> constructor of <code>layers</code> comes in.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>layers<span class="token punctuation">.</span>Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">&apos;relu&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">&apos;softmax&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</pre><p>Additionally, notice that last line.  <code>softmax</code> is for multi-class, and because we have multiple types of digits we&apos;re identifying here, we use that.</p>
-<h2 class="mume-header" id="data-size">Data Size</h2>
-
-<p>The size of a convnet network, like most networks, is proportional to the data size and problem complexity.</p>
-<p>Additionally, <strong>small datasets call for data augmentation</strong></p>
-<h3 class="mume-header" id="data-augmentation">Data Augmentation</h3>
-
-<p>Increase the amount of &apos;data&apos; you have by changing orientation or scale.  For instance, maybe change the orientation of one image of a dog 9 times, and turn that one image into ten.</p>
-<h1 class="mume-header" id="pretrained-models">Pretrained Models</h1>
-
-<p>In general, you want to just use the <em>convolutional base</em> of other models.  These are more generic, and thus more reusable.</p>
-<h1 class="mume-header" id="examples">Examples</h1>
-
-<ol>
-<li><a href="https://github.com/fchollet/deep-learning-with-python-notebooks/blob/master/5.1-introduction-to-convnets.ipynb">Intro</a></li>
-<li><a href="https://github.com/fchollet/deep-learning-with-python-notebooks/blob/master/5.2-using-convnets-with-small-datasets.ipynb">On a small dataset</a></li>
-<li><a href="https://github.com/fchollet/deep-learning-with-python-notebooks/blob/master/5.3-using-a-pretrained-convnet.ipynb">Pre-Trained Convnet</a></li>
-<li><a href="https://www.kaggle.com/kanncaa1/convolutional-neural-network-cnn-tutorial">Full Kaggle Tutorial</a></li>
-</ol>
+<p>We model our probability functions with the sigmoid function:</p>
+<p><img src="https://1.bp.blogspot.com/-OoeL75BC6Yw/Xd2mJh2E_oI/AAAAAAAABZ4/DEwyanoRDIUsGReTXmK9s7wj-piiEmnewCLcBGAsYHQ/s1600/probability.png" alt="Sigmoid"></p>
+<p>Each of which can be represented as Gaussian distributions:</p>
+<p><img src="https://3.bp.blogspot.com/-lPw9ryGy8Go/Xd2mrVJy5YI/AAAAAAAABaA/706ALq3yqzQ_Etgh5z5S3k57me1vxaUaQCLcBGAsYHQ/s1600/logfxns.png" alt="Alpha and Beta"></p>
 
 
 

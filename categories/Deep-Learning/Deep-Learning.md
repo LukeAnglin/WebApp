@@ -48,9 +48,13 @@ For complex problems, here are the advantage of DL:
 
 Learn XGBoost and Keras.  Watch the Kaggle competitions to stay up-to-date.  Win. 
 
-# Neural Network Basics
+# Basics
 
 What steps should we take to build a neural network with Keras? 
+
+## Load Data 
+
+It's best practice to create a `base_dir` and potentially training and testing directories, and use `os.path.join` to merge them.  
 
 ## Split
 
@@ -104,6 +108,10 @@ Keras makes this easier for us than other libraries.  Rather than one hot encodi
 ## Train! 
 
 Use the `.fit(training_data, training_labels)` function on the network, and be exposed to the wonders of Deep Learning! 
+
+## Saving
+
+Use `model.save(model)` to save your model in Keras. 
 
 # Tensor Manipulation 
 
@@ -388,7 +396,7 @@ At testing time, we simply run a quick `layer_output *= 0.5`.
 
 In this case, the *conspiracy* is overfitting, and dropout is our savior. 
 
-## Keras
+### Keras
 
 Keras makes it super simple for us.  Just create a `Dropout` layer rather than a `Dense` one.  
 
@@ -396,11 +404,44 @@ Keras makes it super simple for us.  Just create a `Dropout` layer rather than a
 model.add(layers.Dropout(0.5))
 ```
 
+# Fine Tuning 
+
+After we have trained the base of our network, we can fine tune it.  The steps are as follows: 
+
+1. Add your custom network on top of an already-trained base network
+2. Freeze the base network 
+3. Train the part you added 
+4. Unfreeze some layers in the base network 
+5. Jointly train both these layers and the part you added 
+
+## Black Box 
+
+Often, DL is considered a black box.  How can we visualize intermediate activations?  
+
+```python
+from keras import models 
+import matplotlib.pyplot as plt 
+# Grab the output attribute of each layer in your model 
+layer_outputs = [layer.output for layer in model.layers[:8]]
+
+# Construct an instance of a Model, and pass it as input the input attribute of your model 
+activation_model = models.Model(inputs = model.input, outputs = layer_outputs)
+
+# Predict on different layers 
+activations = activation_model.predict(img_tensor)
+
+# Check out different layers 
+first_layer_activation = activations[0]
+
+# Plot - this shows the 148 x 148 feature map on the FOURTH channel.  
+plt.matshow(first_layer_activation[0, :, :, 4], cmap = 'viridis')
+```
 
 # Terminology 
 
 * **Capacity** - the number of learnable parameters in a model. 
     * Obviously, a greater capacity means greater tendency to overfit 
+* **Freezing** - common with large datasets or pretrained model, freezing prevents sections of the network from being retrained.  
 
 # Notebooks 
 
