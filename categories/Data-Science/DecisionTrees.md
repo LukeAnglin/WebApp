@@ -9,4 +9,4 @@ sources: <i>Hands on Machine Learning with Sci-Kit Learn</i>
 publish: True
 ---
 
-The relevant notebook can be found [here]
+The relevant notebook can be found [here]()
