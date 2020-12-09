@@ -199,3 +199,21 @@ What are you good at?  Do that more!
 
 The author's example was "love of learning."  Not sure I can think of a better one for myself! 
 
+# Spreading Positivity 
+
+## Workplace 
+
+Spread positivity in the workplace, both for the ROI, and to make yourself and others feel joy. 
+
+> And the bosses who discourage positivity in their employees are at a double disadvantage, because these tend to be people who are most negative themselves. In short, sacrificing positivity in the name of time management and efficiency actually slows us down.
+> -- **Book** 
+
+Some proven examples: 
+
+* Google's scooters, ping-pong tables, and more 
+* Companies instituting gym memberships and health benefits 
+* Patagonia's *Let's go surfing* policy
+
+### Recognition 
+
+*The Order of the Elephant* - in this case, employees gave a stuffed elephant to others when they did something exemplary. 

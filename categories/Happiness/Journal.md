@@ -32,5 +32,9 @@ I learned today that talking to myself is helpful.  Use words like 'we' and posi
 
 Like fame, possessions and this Earth are fleeting.  Heaven is eternal.  Live that way. 
 
+# December 9, 2020
 
+## Anger 
+
+Today, I felt angry at my father.  I love him very much, but I was upset because he seems to never provide me with positive feedback.  
 

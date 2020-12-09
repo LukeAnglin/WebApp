@@ -15,6 +15,10 @@ When you see someone rewarded for doing wrong, do not envy them!
 > Fret not yourself because of evildoers; be not envious of wrongdoers! For they will soon fade like the grass and wither like the green herb. Trust in the LORD, and do good; dwell in the land and befriend faithfulness
 > -- **Psalm 37:1-3**
 
+## Case for Christ 
+
+
+
 
 # Influence 
 
