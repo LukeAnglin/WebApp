@@ -15,7 +15,7 @@ div.row.content {
 }
 div.col-3.sidebar {
     padding-top: 4vh;
-    font-size: 2rem; 
+    font-size: 2rem;
 }
 
 div.col-9.content {
@@ -139,7 +139,6 @@ nav[data-toggle="toc"] .nav .active .nav {
     display: none;
 }
 
-
 .keyword1 {
     color: rgb(194, 92, 92);
     font-weight: bold;
@@ -168,12 +167,12 @@ a:hover {
 
 .nav-link {
     color: $dark-color;
-    text-shadow: .2px .2px $dark-color;
+    text-shadow: 0.2px 0.2px $dark-color;
 }
 
-li.toc-list-item{
+li.toc-list-item {
     font-size: 1rem;
-    padding-top: .4rem;
+    padding-top: 0.4rem;
 }
 
 $color-code-background: #272822;
@@ -185,4 +184,20 @@ code {
     border-radius: 0.3em;
     padding: 4px 5px 6px;
     white-space: nowrap;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 1rem;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.img-responsive {
+    padding-bottom: 1rem;
 }

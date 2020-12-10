@@ -167,7 +167,7 @@ a:hover {
 
 li.toc-list-item {
   font-size: 1rem;
-  padding-top: .4rem;
+  padding-top: 0.4rem;
 }
 
 code {
@@ -176,4 +176,22 @@ code {
   border-radius: 0.3em;
   padding: 4px 5px 6px;
   white-space: nowrap;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 1rem;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.img-responsive {
+  padding-bottom: 1rem;
 }

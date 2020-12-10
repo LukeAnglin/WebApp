@@ -44,3 +44,22 @@ Always remember that, Luke, you're an idiot.  Don't let pride get you.
 
 > Carelessly discarding the second chance afforded me by the fates required such a potent mixture of arrogance and stupidity that it had to have been cultivated, because I’m fairly certain I wasn’t always such a complete asshole.
 
+# Business
+
+> The markets can remain irrational longer than you can remain solvent 
+> -- **Keynes**
+
+## Venture Capital
+
+Venture capital loses when it doesn't see the winners.
+
+> But failing to invest in a winner means that you forfeit all the asymmetric upside that comes along with that investment.
+> -- **Secrets of Sand Hill**  
+
+# Funny Moment
+
+[A-Train cancer moment](https://www.youtube.com/watch?v=l5czdDuQ5Kw)
+
+[Searching for missing teen, gossip](https://www.youtube.com/watch?v=XUT8ec24anM&feature=youtu.be)
+
+[Glice](https://www.youtube.com/watch?v=bAq1V6WAE8M&feature=youtu.be)

@@ -12,7 +12,8 @@
     <!-- Responsive, representative image (ex. Linear Regression image) -->
 
     {% if image_route %}
-    <img src="../{{ image_route }}" alt="{{ title }} image" class="img-responsive">
+    <img src="../{{ image_route }}" alt="{{ title }} image" class="img-responsive center"
+        style="max-height:30%; align: center;">
     {% else %}
     {% endif%}
 
@@ -40,7 +41,19 @@
     <!-- If it's a data sci note, display that url and title. -->
     {% if title == 'Deep Learning' %}
     <h2 class="file-title"><a href="{{ url_for('deep_learning_note', note_title=note_dict[file].title)}}"
-        class="file-file">{{ note_dict[file].title }}</a></h2>
+            class="file-file">{{ note_dict[file].title }}</a></h2>
+    {% endif %}
+
+    <!-- If python title -->
+    {% if title == 'Python' %}
+    <h2 class="file-title"><a href="{{ url_for('python_note', note_title=note_dict[file].title)}}"
+            class="file-file">{{ note_dict[file].title }}</a></h2>
+    {% endif %}
+
+    <!-- If stat title -->
+    {% if title == 'Statistics and Probability' %}
+    <h2 class="file-title"><a href="{{ url_for('stat_note', note_title=note_dict[file].title)}}"
+            class="file-file">{{ note_dict[file].title }}</a></h2>
     {% endif %}
 
     <!-- If it's a Python note, display that url -->
@@ -53,7 +66,7 @@
     {% if note_dict[file].topics %}
 
     <p class="file-topics"><b>Topics covered:</b> {{ note_dict[file].topics }}</p>
-    
+
     {% endif %}
 
 

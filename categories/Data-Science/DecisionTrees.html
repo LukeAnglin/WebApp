@@ -407,7 +407,77 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <div class="navbar"></div><div class="note-content">
 
-<p>The relevant notebook can be found [here]</p>
+<p>The relevant notebook can be found <a href="https://nbviewer.jupyter.org/github/LukeAnglin/WebApp/blob/master/categories/MLProjects/Notes/Decision-Trees.ipynb">here</a></p>
+<p>A helpful article from Towards Data Science can be found <a href="https://towardsdatascience.com/understanding-decision-tree-classification-with-scikit-learn-2ddf272731bd">here</a>.</p>
+<h1 class="mume-header" id="decision-trees">Decision Trees</h1>
+
+<p>We construct decision trees just like other classifiers in Sci-Kit.  Construct it, and fit it.  Predict when ready, and fine-tune.</p>
+<h2 class="mume-header" id="visualizing">Visualizing</h2>
+
+<p>Use <code>export_graphviz</code> and use dot conversion to get a nice png of what your AI is doing.</p>
+<h2 class="mume-header" id="tree-properties">Tree Properties</h2>
+
+<ul>
+<li>Extremely little data cleaning.</li>
+<li>Easy to understand</li>
+<li>Can predict <em>probabilities</em> (with <code>predict_proba</code>)</li>
+<li>Makes <strong>few assumptions</strong> about training data</li>
+</ul>
+<h2 class="mume-header" id="impurity">Impurity</h2>
+
+<p>The general measure of impurity is the <strong>gini impurity</strong>, which is a criterion to minimize the probability of misclassification.</p>
+<p>0 is pure-fect, 1 is impure.</p>
+<p><img src="https://miro.medium.com/max/500/1*sURE2Znb8ai1bzt9z7Kv5w.png" alt="Gini Impurity"></p>
+<h2 class="mume-header" id="node-properties">Node Properties</h2>
+
+<ul>
+<li><strong>samples</strong> - how many samples on the node</li>
+<li><strong>value</strong> - how many of each class on the node</li>
+<li><strong>gini</strong> - the node&apos;s impurity.</li>
+</ul>
+<p>All of these are mirrored in Sci-Kit with the appropriate code naming convention (i.e., samples is <code>samples</code>)</p>
+<h3 class="mume-header" id="root">Root</h3>
+
+<p>The <strong>root node</strong> should be the one with the <span class="keyword1">least impurity</span></p>
+<h2 class="mume-header" id="regularization">Regularization</h2>
+
+<p>There are a few hyperparameters we can use to regularize.  If we don&apos;t do this, decision trees will grow large enough to perfectly fit (i.e. an infinite overfit)</p>
+<p>The <strong>best parameter</strong> to lower to avoid overfitting is <code>max_depth</code>.</p>
+<ul>
+<li><code>min_samples_split</code> - The minimum number of samples a node must have for it to split.</li>
+<li><code>min_samples_leaf</code> - The minimum number of samples a leaf must have.</li>
+<li><code>min_weight_fraction_leaf</code> - <code>mean_samples_leaf</code> as a fraction.</li>
+<li><code>max_leaf_nodes</code> - The maximum number of leaf nodes.</li>
+<li><code>max_features</code> - The maximum number of features that are evaluated for any split.</li>
+</ul>
+<h2 class="mume-header" id="regression">Regression</h2>
+
+<p>Decision Trees can even be used for regression!  Simply use the <code>DecisionTreeRegressor</code> rather than the <code>DecisionTreeClassifier</code>.</p>
+<p>Note that this ends up predicting <strong>discrete</strong> values rather than continuous ones.  To clarify, here are some example predictions:</p>
+<p><img src="https://scikit-learn.org/stable/_images/sphx_glr_plot_tree_regression_001.png" alt="DTR"></p>
+<h2 class="mume-header" id="cart">CART</h2>
+
+<p>Decision Trees in Sci-Kit are constructed using the <strong>CART</strong> algorithm.  This seeks to minimize the impurity of both splits, and does so recursively.</p>
+<h2 class="mume-header" id="drawbacks">Drawbacks</h2>
+
+<ul>
+<li>Orthogonal decision boundaries makes them sensitive to training rotation
+<ul>
+<li>Use PCA to limit this effect</li>
+</ul>
+</li>
+<li>Sensitive to small changes in training data</li>
+</ul>
+<h2 class="mume-header" id="efficiency">Efficiency</h2>
+
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(log_2(m))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span>, so it&apos;s <strong>very fast</strong>.</p>
+<h2 class="mume-header" id="takeaways">Takeaways</h2>
+
+<ul>
+<li>Use <code>GridSearchCV</code> or <code>RandomSearchCV</code> to decide the <code>max_depth</code> and <code>max_leaf_nodes</code> in order to prevent overfitting</li>
+<li>Generally, hold off on Decision Tree Regression unless you&apos;re predicting <strong>discrete</strong> values</li>
+<li>A fantastic <strong>white box</strong> model choice for classification</li>
+</ul>
 
 
 

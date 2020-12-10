@@ -49,6 +49,7 @@ def home():
 
 # Route parameters to be unpacked in category homepages
 
+
 data_sci_route_params = {
     'title': 'Data Science Foundations',
 
@@ -78,6 +79,20 @@ deep_learning_route_params = {
 
 }
 
+python_route_params = {
+    'title': 'Python',
+
+    'description': 'Python is the basis for the majority of data science nowadays.  Having a strong understanding of the more advanced topics can propel one forward immensely.',
+
+    'image_route': 'static/assets/media/python-homepage.jpg',
+
+    'get_note_content': get_note_content,
+
+    'category_files': category_files['Python'],
+
+    'note_dict': note_dict,
+}
+
 notebook_reference_route_params = {
 
     'title': 'Notebook Reference',
@@ -89,6 +104,20 @@ notebook_reference_route_params = {
     'get_note_content': get_note_content,
 
     'category_files': category_files['Notebook Reference'],
+
+    'note_dict': note_dict,
+}
+
+stat_route_params = {
+    'title': 'Statistics and Probability',
+
+    'description': 'Statistics and Probability is fundamental for data science!  Let\'s learn about stochastic gradient descent, regression analysis, hypothesis testing, and more!',
+
+    'image_route': 'static/assets/media/stat-homepage.jpeg',
+
+    'get_note_content': get_note_content,
+
+    'category_files': category_files['Stat And Probability'],
 
     'note_dict': note_dict,
 }
@@ -108,6 +137,17 @@ deep_learning_notes_params = {
     'title_dict': deep_learning_title_dict,
 }
 
+python_title_dict = title_dict['Python']
+python_notes_params = {
+    'title_dict': python_title_dict,
+}
+
+stat_title_dict = title_dict['Stat And Probability']
+stat_notes_params = {
+    'title_dict': stat_title_dict,
+}
+
+
 # Then, unpack that dictionary in the render-template. Additionally, place the **kwarg note_title=note_title before the dictionary unpacking step.
 
 # Then, to create the route, use render template, passing in the template file as a positional argument, and unpack the dictionary for the **kwargs to be used in rendering the page
@@ -123,14 +163,24 @@ deep_learning_notes_params = {
 def data_science():
     return render_template('/category-indices/data-science.html', **data_sci_route_params)
 
+
 @app.route('/notebook-reference')
 def notebook_reference():
     return render_template('/notebook-reference.html', **notebook_reference_route_params)
+
 
 @app.route('/deep-learning')
 def deep_learning():
     return render_template('/category-indices/deep-learning.html', **deep_learning_route_params)
 
+
+@app.route('/python')
+def python():
+    return render_template('/category-indices/python.html', **python_route_params)
+
+@app.route('/stat')
+def stat():
+    return render_template('/category-indices/stat.html', **stat_route_params)
 # Deep Learning Notes
 
 # @app.route('/js')
@@ -149,28 +199,23 @@ def deep_learning():
 def data_sci_note(note_title):
     return render_template('notes.html', note_title=note_title, **data_sci_notes_params)
 
+
 @app.route('/deep-learning-notes/<note_title>')
 def deep_learning_note(note_title):
     return render_template('notes.html', note_title=note_title, **deep_learning_notes_params)
 
-# Python Route
 
+@app.route('/python-notes/<note_title>')
+def python_note(note_title):
+    return render_template('notes.html', note_title=note_title, **python_notes_params)
 
-@app.route('/python')
-def python():
-    return render_template('/category-indices/python.html')
-
-# Linear Algebra Route
-
-
-# JS Route
-
-
+@app.route('/stat-notes/<note_title>')
+def stat_note(note_title):
+    return render_template('notes.html', note_title=note_title, **stat_notes_params)
 # export FLASK_APP=main FLASK_ENV=development
 # flask run
 
 # Remedy GET /favicon issue
 
-
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=6000)
