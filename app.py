@@ -218,4 +218,4 @@ def stat_note(note_title):
 # Remedy GET /favicon issue
 
 if __name__ == '__main__':
-    app.run(port=6000)
+    app.run()
