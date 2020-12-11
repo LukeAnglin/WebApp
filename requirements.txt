@@ -175,8 +175,6 @@ multipledispatch==0.6.0
 multitasking==0.0.9
 navigator-updater==0.2.1
 nbclient @ file:///tmp/build/80754af9/nbclient_1601059699549/work
-# Editable install with no version control (nbconvert==6.0.7)
--e /Users/lukeanglin/opt/anaconda3/lib/python3.8/site-packages
 nbdime @ file:///home/conda/feedstock_root/build_artifacts/nbdime_1601645814261/work
 nbformat==5.0.7
 nest-asyncio @ file:///tmp/build/80754af9/nest-asyncio_1601499549014/work
