@@ -212,10 +212,7 @@ def python_note(note_title):
 @app.route('/stat-notes/<note_title>')
 def stat_note(note_title):
     return render_template('notes.html', note_title=note_title, **stat_notes_params)
-# export FLASK_APP=main FLASK_ENV=development
-# flask run
 
-# Remedy GET /favicon issue
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()
+
