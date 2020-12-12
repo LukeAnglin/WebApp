@@ -217,3 +217,22 @@ Some proven examples:
 ### Recognition 
 
 *The Order of the Elephant* - in this case, employees gave a stuffed elephant to others when they did something exemplary. 
+
+Don't forget about creative ways to do this, like the Danish elephant example. 
+
+If you ever are a **CEO**, make those employees happy, and find ways to recognize them! 
+
+# Fake til Make 
+
+We often show scowls without even realizing.  Make a concious effort to show your positivity with your facial expression and tone all the time.  You will be rewarded.
+
+## Losada's Ratio 
+
+2.9013.  For every 3 positive actions, you can mullify one negative one.  The more positives you do, the easier it is to get away with screwing up.  And we screw up.  A lot. 
+
+# Fulcrum and the Lever
+
+The sister of the author fell on all fours and broke her bones.  Yet, *the author told her she was a unicorn* and her pain dissipated.  What does this tell us? 
+
+
+

@@ -206,6 +206,55 @@ Additionally, <span class="keyword1">assess the likelihood</span> that the firm 
 # VC-LP Dynamic 
 
 * LPs are **blind pool** - they have *no say* in the investments of the VC 
-* LPs have limited liability
+* LPs have limited liability - it's the GPs who bare the risk 
 
+## LPA 
+
+The LPA is the Limited Partner Agreement, which lays out the rules of the road between the LP and GP. 
+
+### Management Fee 
+
+Usually $\approx$ 2% on the LP's committed capital.  Also note that when a GP closes with a fund, they don't collect up-front, which would *depress the rate of return*. 
+
+These may change based on the age of the fund - if they are investing later, the fee may be lower because the VC has less time to evaluate candidate companies.
+
+### Carried Interest 
+
+What the GP keeps of profits - say AirBNB sells for 60 million, and the VC purchased it for 10 million.  If carried interest is 20%, then the GP keeps $\frac{1}{5}$ of the profit (50 million) which is 10 million, and the rest goes to the VC, both the remaining 80% of the profit and the original investment.
+
+### Valuation Marks 
+
+Rather than being based solely on security value, like a hedge fund, this differs based on the fund. 
+
+#### Types 
+
+* Last round/waterfall - last round of financing determines valuation 
+* Comparable company analysis 
+* Option pricing - mathematical model 
+
+### Clawbacks 
+
+Profits are based on valuations of all companies.  So let's consider that 60 millon of actual cash again, and 80 million more of *hypothetical cash* based on valuations.  
+
+If they take profit based on that, and then the companies they valued fail to produce, they are subject to a **clawback**, where they're in debt to the LPs.  
+
+Generally, these are avoided in LPAs with special requirements that a GP can't take carry until they have returned the full quantity of the LP's commitment.
+
+### Recycling 
+
+Some portion of interim, hard profits for the VC are recycled into other businesses, and then the profit portion that goes to GPs and LPs are based on that. 
+
+### Hurdle Rate
+
+Some LPAs include the following provision because of the risk for the LP of investing in VCs vs. other asset classes: 
+
+> A hurdle rate says that unless the fund generates a return in excess of the hurdle rate (this is a negotiated number, but often around 8 percent), the GP is not entitled to take her carried interest on the profits. If the fund exceeds the hurdle rate, then the GP can start collecting her carried interest as if the hurdle rate didn’t exist. So, as long as you clear the bar, you are good; fall short and you get nothing.
+
+### Preferred Return 
+
+Less common, more severe than the hurdle rate is the preferred return: 
+
+> Unlike the “clear the bar and take the money” aspect of a hurdle rate, a preferred return doesn’t just fall away when you clear it. Rather, if the preferred return were 8 percent, the LPs would get 100 percent of the money back until the preferred return is met, and then the GP participates in any profits above the preferred return. In our ten-year, \$100 million fund, an 8 percent preferred return would amount to about \$216 million $[\$100\text{ million}/(1.08)10]$ at the end of ten years; thus, a $200 million total fund return would garner our GP a big fat zero in profits!
+
+Excerpt From: Scott Kupor. “Secrets of Sand Hill Road.” Apple Books. 
 
