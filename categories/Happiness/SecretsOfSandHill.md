@@ -254,7 +254,331 @@ Some LPAs include the following provision because of the risk for the LP of inve
 
 Less common, more severe than the hurdle rate is the preferred return: 
 
-> Unlike the “clear the bar and take the money” aspect of a hurdle rate, a preferred return doesn’t just fall away when you clear it. Rather, if the preferred return were 8 percent, the LPs would get 100 percent of the money back until the preferred return is met, and then the GP participates in any profits above the preferred return. In our ten-year, \$100 million fund, an 8 percent preferred return would amount to about \$216 million $[\$100\text{ million}/(1.08)10]$ at the end of ten years; thus, a $200 million total fund return would garner our GP a big fat zero in profits!
+> Unlike the “clear the bar and take the money” aspect of a hurdle rate, a preferred return doesn’t just fall away when you clear it. Rather, if the preferred return were 8 percent, the LPs would get 100 percent of the money back until the preferred return is met, and then the GP participates in any profits above the preferred return. In our ten-year, \$100 million fund, an 8 percent preferred return would amount to about \$216 million $\frac{\$100\text{ million}}{1.08\times10}$ at the end of ten years; thus, a $200 million total fund return would garner our GP a big fat zero in profits!
 
 Excerpt From: Scott Kupor. “Secrets of Sand Hill Road.” Apple Books. 
 
+# LPA 
+
+## Invest Domain 
+
+The LPA defines where and how the GP can invest.  
+
+Potential restrictions on:
+
+* Geographic location
+* Private vs. public 
+* Seed vs. early-stage 
+* The **type** of business - technology, construction, etc.
+
+As an entrepreneur, understand if you fit the domain requirements. 
+
+## GP Devotion 
+
+The GP can't play fantasty football all day - the LPA requires they are fully invested personally in the business. 
+
+A **key man**, which is one of said inadequate GPs, may be **suspended** for this behavior. 
+
+Additionally, with enough votes, the LP can **divorce** a GP. 
+
+# GP-GP Engagement 
+
+This is defined in the **equity partners agreement**, and defines: 
+
+* How fees and profits are split
+* Who bares the legal burden - **indemnification** 
+
+Generally, this agreement has benefits for the VCs based on seniority.  Those who leave are punished, and those who stay are rewarded.
+
+# Startup Formation 
+
+## Company Form 
+
+**C corporation** 
+
+Advantages: 
+* **Equity distribution simplicity** - most startups are reinvesting profits rather than paying employees
+* Unlimited shareholders which can have different rights (important for VCs)
+* **Taxes** - VCs avoid investing in pass-throughs b/c UBIT in tax code means this would cause LPs to pay extra taxes 
+
+Disadvantages: 
+* **Double taxation** for the startup owners because it is non-passthrough, meaning losses can't be deducted from owners's incomes
+
+## Prenups 
+
+Not actually called a prenup, but how do we prevent *founder breakups* from destroying the startup? 
+
+<span class="keyword1">Big Picture: </span>Incentivize long-term service. 
+
+### Founder Stock Vesting 
+
+Reward long term equity holders with some financial incentive, such as increasing your current equity percentage. 
+
+Most of the time, founders are *fully vested*, or receiving the full equity package after four years.  If you're worried your cofounder might screw you, increase that number!  
+
+There are other controls you can put in place 
+
+### Board Seats 
+
+Often, founder seats are **hard-wired** to prevent VCs from voting away startups, and that's a good thing.  Make this dependent on company service so that a non-employed founder (for any number of reasons) can't **rule from the grave**. 
+
+### Blanket Transfer Restriction 
+
+What if your cofounder leaves and wants to sell their stock, preventing you from acquiring more capital because of the competitition?
+
+Prevent this from the start by instituting blanket transfer restriction, **making selling shares only doable with board consent**. 
+
+### Accelerated Vesting 
+
+Two cases: 
+
+* Single trigger - upon acquisition
+* Double trigger - upon acquisition and acquirer says "we don't need your job anymore" 
+
+## IP 
+
+Make sure you haven't used *anything at all* from your original company.  
+
+> The best thing a founder can do is invest in a clean room to build his product. 
+
+## Stock Options 
+
+Let's say you've opened your *employmee option pool* to give split 15% among the employees.  You have some different ways you can set up the stock options. 
+
+* Incentive (ISO) - employee does not have to pay taxes until selling, and *because the capital gains tax is less than the income tax*, this is beneficial. 
+* Non-qualified (NSO) - less favorable for the employee, they have to pay taxes up-front 
+
+FYI, the NSO is only used specially because of the few restrictions on ISOs, which are: 
+
+* \$100k issuing cap in a single year
+* Must be exercised within 90 days of an employee leaving the company 
+
+Frequently stock options are set with **four year vesting periods**, the first where the employee gets nothing, and then it gradually increases after that. 
+
+
+### IPO Increase 
+
+The time increase from founding to the IPO for startups is changing the four-year norm. 
+
+* Legislation has increased IPO cost 
+* SEC efficiency rules make it tough for small-caps to raise funding in the public markets 
+* Mutual funds are concentrated in large-cap stocks
+* Alternative forms of private financing to public markets 
+* More pressure 
+
+This IPO increase has altered the stock option trend for startups.  Now, **refresher grants** are put in place to keep the employees interested. 
+
+# Is VC Right? 
+
+> But, as a general rule of thumb, you should be able to credibly convince yourself (and your potential VC partners) that the market opportunity for your business is sufficiently large to be able to generate a profitable, high-growth, several-hundred-million-dollar-revenue business over a seven-to-ten-year period.
+
+## Size matters 
+
+Choose a VC size based on the potential market size - if you don't expect to be the next Google, you can still benefit from VC help if you choose a smaller one. 
+
+## How much?
+
+> The answer is to raise as much money as you can that enables you to safely achieve the key milestones you will need for the next fund-raising.
+In other words, the advice we often give to entrepreneurs is to think about your next round of financing when you are raising the current round of financing.
+
+### Milestones 
+
+A milestone for a software company might be your first, consumer or business ready, beta-testable product. 
+
+#### The Series Lifecycle 
+
+* Series A - I've got nothing but an idea and a heart. 
+* Series B - Here's my product.  It's not done, but I have some contracts in the works.  Give me a chance? 
+
+Keep going, keep improving, keep getting funded. 
+
+## Valuation 
+
+You want to thread the needle here.  Too much, and your next valuations will be tough to achieve.  Too little, and you don't have enough to reach the next milestone. 
+
+Additionally, overvaluation at one round and subsequent undervaluation at the next *may seem* like it all evens out, but it **hampers employee motivation**.
+
+Keep in mind that employees judge startup success based on:
+
+1. Comparison to competing companies' valuations 
+2. Absolute valuation 
+3. Momentum
+
+> Ultimately, the best story for you as a CEO is to be able to point to the proverbial “up and to the right” valuation graph.
+
+### Metrics 
+
+* Comparing companies 
+* Discounted cash flow 
+
+
+# Pitching 
+
+## Foot in the Door 
+
+Avenues: 
+
+1. Angel or seed investors 
+2. Law firms 
+3. Creativity and luck
+
+## Components 
+
+We need to show that *this company* is the home run.  To do this, we need to include: 
+
+* Our **market size** - consider getting creative with how you show that *this market is massive* 
+* **Team** - self-aggrandizement is *not bad* here!  Tell them why *you* as the CEO are the best man for the job. 
+    * Be a positive storyteller (of course, with credibility)
+* **Product** - show the whole *idea maze* 
+* **Go-to-market** - How do you plan, and what are the costs, of reaching your customers? 
+
+# Term Sheet Econ 
+
+## Prefereed Shares 
+
+VC purchases *preferred shares*, which because of the C corp structure, gives them unique sets of rights to other members. 
+
+## Aggregate Proceeds 
+
+Sets the amount of money that is being invested and the stake that will be given to the VC in return 
+
+## [Convertible Debt](https://medium.com/@bsheridan/convertible-debt-in-plain-english-aa0e22f444c9#:~:text=A%20convertible%20note%20is%20debt,convertible%E2%80%9D%20part%20of%20the%20note.)
+
+Terms quoted in this section come from the article linked above. 
+
+A couple key takeaways 
+
+* Typically done in **early/seed stage** for simplicity
+* A common mistake is getting too much, with discounts and caps causing too much equity being lost at valuation time.
+    * If you do this, make sure you **calculate the maximum** amount of equity you could lose, and what this will leave you with.  Are you okay with that?
+
+> For every dollar of VC you take, do the calculation to figure out what that means for your existing crew of people involved.
+
+### Capped Notes 
+
+> Notes often have a cap, which means, “This is the maximum valuation that my investment will convert at.” Let’s say an investor gives you \$100,000 through a convertible note with a \$1 million cap. That investor now owns a minimum of 10% of your company. If you raise venture capital at a \$10 million valuation, your convertible note holder still gets 10%, i.e. $1 million worth of equity. Of course, if you raise money at a \$500,000 valuation, then your note holder gets \$100,000 / \$500,000 = 20%. In other words, **higher caps (or better yet, no cap) are better for entrepreneurs**.
+
+### Discount 
+
+> This is kind of like a floating-rate cap. It basically means that, whatever the value of your company when you take your first equity investment, I get to invest as if it’s happening at a lower valuation. So if a \$100,000 note has a 25% discount, and you raise money at a $1 million valuation, your note holder gets \$100,000 / (\$1 million * 0.75 = \$750,000) = 13.3% of your company (rather than 10%). Sometimes a note will have both a cap and a discount, and give the note holder the right to convert at the lower of the two valuations. In general, **an entrepreneur prefers less of a discount (or no discount)**.
+
+### Too much 
+
+Improper calculation leads to too much equity being given away.  This causes: 
+
+* **Demotivation** of the entrepreneur 
+* **Share dilution** - additional shares may be created to increase the entrepreneur's equity while still satisfying the VC's, which then dilutes the ownership of the employees
+
+## Capitalization 
+
+Often in the form of a **cap table** - specifies the equity percentages.
+
+Keep in mind: 
+
+* VCs have a best interest to **increase the pool size** before financing
+* CEOs have a best interest to **decrease the pool size** before financing
+
+![Cap table](https://2utfff4d3dkt3biit53nsvep-wpengine.netdna-ssl.com/wp-content/uploads/2017/09/IoW-Cap-Table-at-Founding.png)
+
+## Dividends 
+
+This section is meaningless, for the most part, for startups.  We aren't dividending out cash so early.  This is to protect founders from pillaging, because if they want to dend cash to themselves, they have to pay VCs first. 
+
+## Liquidation Preferences 
+
+Liquidation preferences define the actions for circumstances under which the company goes bankrupt or winds down.  
+
+**Too many** liquidation preferences leads to **prohibitively high acquisition prices**.  Avoid this! 
+
+### Components: 
+
+* Multiple - 1x, 2x, or any number multiple that defines how much of the original investment the VC recoups
+* Participating or nonparticipating - whether or not the VC gets to take the liquidation preference **and** the equity value.  The entrepreneur **wants nonparticipating**, and should only accept participating under special circumstances for later round investors 
+
+Here's a good example of participating vs nonparticipating: 
+
+> Assume that VCF1 has invested its \$10 million (for which we said it owns 20 percent of the company) and a year later the company gets sold for \$40 million. Because we have a 1x nonparticipating liquidation preference, VCF1 has to choose between taking its 1x off the top or converting into common. Which does she choose? The answer is the liquidation preference, because that nets her $10 million, whereas if she were to convert into common, she would receive only \$8 million (0.20 × \$40 million). That will leave \$30 million for the common shareholders to take from the acquisition.
+
+## Redemption 
+
+Uncommon, but this allows the VC to receive a refund and give their shares back in exchange. 
+
+## Conversion of Shares 
+
+Sometimes, a VC wants to convert preferred stock to common.  In this part of the term sheet lie the provisions.
+
+### Types  
+
+* Auto-conversion - automatically converts preferred to common stock at IPO time, with a minimum market cap to prevent trading volume hang-ups 
+* Voluntary - a majority vote of preferred stock shareholders allows for conversion 
+    * This also provides a mechanism for VCs to **restart** the company to clean it up and re-energize employees if liquidation preferences have made acquisition theoretically implausible 
+
+## Antidilution 
+
+Antidilution provisions protect for **downrounds**, when the valuation is lower than a previous round.  Different types favor the VC more or less - one common type is a **weighted average antidilution protection**, which essentially gives a midpoint between *full ratchet* (complete protection) and no protection 
+
+Remember that the <span class="keyword1">greater the antidilution for the VC means more dilution for the founder and employees</span>.  So, full ratchet is a nightmare for a founder in the case of a down round! 
+
+# Term Sheet Gov 
+
+## The Board 
+
+The most important thing the board does is **hire/fire** the CEO. 
+
+### Structure 
+
+Often comprised of one **lead investor** and potentially other investors who run the show for the VC's votes. 
+
+<span class="keyword1">Seat Composition:</span>
+
+* **Lead investor**
+    * VC representation
+* **CEO/Founder** - sometimes, the founder/CEO places a provision that makes it be in **their name**, which exacerbates the *ruling from the grave* issue.  However, this could be in your favor if you're the CEO - the VC might have to pay you to remove you if things to haywire.  Generally, though, don't mess with this.
+    * Common shareholders' representation
+* **Independent(s)** - investors, officers, third parties
+    * Neutral representation
+
+Wisdom: 
+
+1. Lump preferred stock into a **single voting class**, rather than different ones for different rounds of financing 
+2. 
+
+### Actions 
+
+1. **Stock issuance** - the mechanism through which new classes of stock are created 
+2. **Corporate actions** - acquisitions, IP sales, etc. 
+3. **Liquidation or recapitalization** 
+4. **Increases in the option plan**
+
+## Registration Rights 
+
+How are we going to make these shares public?  That's defined in this section. 
+
+### Pro Rata 
+
+Gives the VC the right to avoid dilution in subsequent financing rounds. 
+
+> You invest \$50k in a seed round at a \$5mm cap and own 1% of the company. The next round is a \$3mm round at \$9mm pre, \$12mm post. If you don’t participate, you will be diluted 25% and will then own 0.75% of the company. On the other hand, if you buy 1% of the round, a \$30k investment, you will continue to own 1% of the company. Your ‘pro-rata right’ in this situation is a \$30k allocation in the next round.
+
+### Stock Restriction 
+
+How do we deal with the selling of stocks? 
+
+#### ROFR 
+
+Right of first refusal; says that before someone can sell stock, they have to give the company the chance to buy it. 
+
+##### Purposes 
+
+* Discourages external bidding 
+* Allows startups to control whose hands hold stock 
+
+### Drag Along 
+
+Business way of saying **majority rules**.
+
+To provide *some* protection to the minority, there are three majorities needed: 
+
+1. The Board 
+2. The common shareholders as a separate class 
+3. The preferred shareholders as a separate class 

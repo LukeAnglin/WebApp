@@ -4,7 +4,7 @@ Here's a quote from the book that you **must not forget** before reading these n
 
 > The point is that just reading this book is not enough.  It takes actual focus and effort to put these principles into practice, and only then will the returns start pouring in.  The good news is that these returns are enormous.  
 
-# Success != Happiness
+# Success $\neq$ Happiness
 
 This broken formula states that success will bring us joy.  However, we simply continue to push our goals farther each time we accomplish a new feat.  
 
@@ -234,5 +234,26 @@ We often show scowls without even realizing.  Make a concious effort to show you
 
 The sister of the author fell on all fours and broke her bones.  Yet, *the author told her she was a unicorn* and her pain dissipated.  What does this tell us? 
 
+> Because our brain’s resources are limited, we are left with a choice: to use those finite resources to see only pain, negativity, stress, and uncertainty, or to use those resources to look at things through a lens of gratitude, hope, resilience, optimism, and meaning.
 
+## Archmides' Formula 
 
+Consider a see saw.  If one kid is heavier than another, he will be at the bottom.  But, move the fulcrum, and everything can change.  
+
+> Our potential is not fixed. The more we move our fulcrum (or mindset), the more our lever lengthens and so the more power we generate. Move the fulcrum so that all the advantage goes to a negative mindset, and we never rise off the ground. Move the fulcrum to a positive mindset, and the lever’s power is magnified—ready to move everything up.
+
+## Theory of Relativity 
+
+Einstein's Theory of Relativity piggy backs off this - we can change everything if we *change our perspective*. 
+
+## Time Travel 
+
+A group of 75-year old men were instructed to live like they were 55.  And what happened? 
+
+> After the retreat, most of the men had improved in every category; they were significantly more flexible, had better posture, and even much-improved hand strength. Their average eyesight even improved by almost 10 percent, as did their performance on tests of memory.
+
+Excerpt From: Shawn Achor. “The Happiness Advantage: The Seven Principles of Positive Psychology That Fuel Success and Performance at Work.” Apple Books. 
+
+## Placebo 
+
+Placebos are about 60% as effective as regular pain medications, can grow fake hair, and be just as effective as knee surgery! 

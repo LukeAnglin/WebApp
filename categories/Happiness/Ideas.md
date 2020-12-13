@@ -1,13 +1,19 @@
-# Gaming
+# Gamification 
 
-## Addict 
+* Build a system that industries can hook into upon events 
+* Have communities/teams and organizations be creatable 
+* Allow permissions sets by role in companies/teams  
+* Consider how the point system will work - global or not? 
+* Show graphs of progress 
+* Have the higher permission people set rewards based on reached points 
+* Allow different teams to see how others they are competing with are doing to motivate them 
+* Change rewards based on ML
 
-A venture dedicating to making gaming companies addict their users.  Could also be leveraged into a worldwide gamification company.  Uses deep learning or machine learning. 
+# Outsource
 
-## Measured 
+Build something that makes outsourcing super easy and consistent
 
-Measure the progress of gamers.  Show them charts and stuff.
+# Application ML 
 
-## Gambling 
+Use machine/deep learning to change application process.  Imagine hiring processes as a combination of q and a analyzed by an algorithm and then all the other info that is given on a resume rather be fed to the algorithm. Labels created by managers/owners based on their valued worth of employees 
 
-Same idea but allow gamers to bet on other gamers in Twitch streams and YouTube vids. 
