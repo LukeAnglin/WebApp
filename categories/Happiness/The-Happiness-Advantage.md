@@ -257,3 +257,212 @@ Excerpt From: Shawn Achor. “The Happiness Advantage: The Seven Principles of P
 ## Placebo 
 
 Placebos are about 60% as effective as regular pain medications, can grow fake hair, and be just as effective as knee surgery! 
+
+Reverse placebos also are amazing.  Imagining rubbing poison ivy on people's arms caused real boils. 
+
+The point is, **our mindsets change events**.  Consider the example of maids - those told that they would burn more calories *really did*. 
+
+## Gamify and Create Objectives 
+
+This is so beautifully written, I can't summarize it. 
+
+> Think of the last interminable meeting you were forced to sit through (you probably won’t have to think back very far). You may have decided in the first three minutes that the stated objective of the meeting was not going to be met, or that you didn’t care about the objective to begin with. Those two hours that followed suddenly became a tremendous waste of time, a drain on your energy and productivity and probably also your motivation. But what if, instead, you chose to see the meeting as an opportunity, and created your own objective? What if you forced yourself to learn three new things before the end? 
+
+Next time your doing schoolwork you "hate," figure out how you can turn it into something that you love.  What can you get out of it for yourself? 
+
+### Ignore Constraints
+
+Whereas the author ignored the deadline, you should ignore your grades!  **Focus on the intrinsic value** you can garner from schoolwork! 
+
+### Workaholic's Curse 
+
+This is so me. 
+
+> I wanted to be productive because that’s what makes me happy, so I tried to maximize the time I spent working. But, as I later realized, I had too narrowly defined what ‘being productive’ was. I started to feel guilty when I did anything that wasn’t work. Nothing else, not exercise or time with my wife or relaxation, was productive. So I never had time to recharge my batteries, which meant that, ironically, the more I worked, the more my productivity plummeted.
+
+Recognize that <span class="keyword1">anything that makes you happy is productive!</span>
+
+## The Possibility Lever 
+
+> What I mean is that the more you believe in your own ability to succeed, the more likely it is that you will.
+
+### Choose your Calling 
+
+Three categories: 
+
+* Job - I have to work.  I hate it.  I live for weekends and lunch breaks. 
+* Career - This doesn't suck.  I want to do well. 
+* Calling - I am making a difference and enjoy what I do. 
+
+**Live and work for your calling**. 
+
+### Find Pleasure 
+
+Joy might not be obvious - you need to **actively** seek it.  
+
+> If you can't change your daily work, ask yourself what potential meaning and pleasure already exists in what you do.
+
+A nice exercise is through circular reasoning.  Make a flow chart mapping the task to something you get out of it, and repeat this over and over until you arrive at something **meaningful to you**. 
+
+### Priming 
+
+This can be negative or positive (of course, we want positive!)
+
+Consider the "Saving the Dolphins" example.  Priming employees with negativity infused it. 
+
+> The fastest way to disengage an employee is to tell him his work is meaningful only because of the paycheck 
+
+> You can have the best job in the world, but if you can't find the meaning in it, you won't enjoy it, whether you are a moviemaker or an NFL playmaker. 
+
+This resonates with me. I am constantly thinking about my future job - but I need to be **searching for meaning**.  Just as Pastor Singer preached in his *Keys to the Kingdom* series. 
+
+#### On Others 
+
+Don't just focus on this for yourself - prime others!  Leaders <span class="keyword1">will utilize priming</span> to encourage their employees!
+
+> . . . the best managers and leaders view each interaction as an opportunity to prime their employees for excellence
+
+### Pymagalion Effect
+
+Teachers who believed students would perform better unconciously made them do so.  Theory X managers make Theory X employees.  **Believe in others, and it comes to life**. 
+
+# Tetris Effect 
+
+Addiction is a **powerful tool**.  Let's use it for positivity!
+
+> For days after the study, some participants literally couldn’t stop dreaming about shapes falling from the sky. Others couldn’t stop seeing these shapes everywhere, even in their waking hours. Quite simply, they couldn’t stop seeing their world as being made up of sequences of Tetris blocks.
+
+Every time a negative thought comes into your head, **punish yourself**.  When a positive one comes, **reward yourself**. 
+
+## Patterned Thought
+
+A **negative** tetris: 
+
+> Trained to be on the lookout for the flaws in every argument, the holes in every case, they start “to overestimate the significance and permanence of the problems they encounter,” the fastest route to depression and anxiety—which in turn interferes with their ability to do their job.
+
+A **spam filter**: 
+
+> If we have programmed our brain’s filter to delete the positive, that data will cease to exist for us as surely as the chain letters and advertisements cease to exist in our inbox. As you are about to learn, we see what we look for, and we miss the rest.
+
+Don't filter *everything*!  Use **selective perception** to see the positives in all situations. 
+
+## Gratefulness 
+
+To reap the rewards of a **positive tetris effect**, we need to be **grateful**.  
+
+## Optimistim 
+
+Optimism has also been proven to be a **predictor of success**, rather than the other way around. 
+
+## Creating the Tetris 
+
+* Three positives from each day 
+* Positivity habits
+
+# Falling Up 
+
+> By scanning our mental map for positive opportunities, and by rejecting the belief that every down in life leads us only further downward, we give ourselves the greatest power possible: the ability to move up not *despite* the setbacks, but *because* of them. In this chapter, you’ll learn how.
+
+> The most successful people see adversity not as a stumbling block, but as a stepping-stone to greatness.
+
+Maybe I should just fail my way to a job.  Let's apply to a bunch and see what happens. 
+
+## Strategies 
+
+### Counterfacts 
+
+Counterfacts are the *alternative scenarios* we invent when proposed with an event to describe.  Consider describing getting shot in the right arm.  We could be negative, and imagine that we could have *not been shot*, or we could be positive, and recognize that a bunch of other people could have been shot too, but weren't. 
+
+Counterfacts are **hypothetical**, so we have the power to change them! 
+
+### Explanatory Style 
+
+Change the **permanence** and **optimism** of your statements.
+
+Rather than "This sucks and will always be this way," say "This isn't too bad, and it may change."
+
+### ABCDs
+
+This reminds me of my **cognitive therapy**
+
+A - Adversity 
+B - Belief 
+C - Consequence 
+D - Disputation and Decatrophization (if you make it this far!)
+
+### Locus of Control 
+
+We want to have an **internal locus of control**, meaning that we feel our actions have influence over results.  
+
+# Zorro Circle
+
+Start by controlling the small, and slowly graduate. 
+
+1. Self-awareness - what is causing me stress?  **Verbalize**! 
+2. Identify the aspects that you have control over, and those you don't
+3. Prioritize and conquer, *one step at a time* 
+
+# The 20-Second Rule 
+
+**Habit is power**! 
+
+> Habits are like financial capital—forming one today is an investment that will automatically give out returns for years to come.
+
+## Willpower
+
+Do not suppress willpower!  The more we use willpower to solve our problems, the more we use up. 
+
+## Leisure paradox 
+
+**Active leisure** is much more effective than **passive**.  
+
+> Studies have found that American teenagers are two and half times more likely to experience elevated enjoyment when engaged in a hobby than when watching TV, and three times more likely when playing a sport. And yet here’s the paradox: These same teenagers spend *four* times as many hours watching TV as they do engaging in sports or hobbies.
+
+To create our habits, we need to **lower the activation energy**.  That might take the form of putting your gym clothes out in front of you for the morning.  
+
+Alternatively, we can increase the activation energy of activities we want to avoid.  Maybe put the cookies in a box that is difficult to open and store it in a dark corner. 
+
+## Choice Paralysis 
+
+To decrease the activation energy of choice, we should set **rules of engagement**.  This could, for example, forcing yourself to thank someone publicly every morning as one of your acts of kindness. 
+
+# Social Investment 
+
+When CS2150 comes this semester, and the hash lab comes to destroy you, you need an **offensive line**.  Make friends.  Network.  Talk to family.  Anything to get you through it! 
+
+Additionally, be a **glue guy**.  That guy who always keeps everyone motivated?  Who invests in the team?  Be him! 
+
+## Active-Constructive 
+
+When people tell you good news, respond with an active comment (something positive) and a constructive one (something specific).
+
+"I increased my grade to an A!"
+
+"Great!  I knew you could do it!  What specific assignment did you do so well on to bring it up?"
+
+## Introductions 
+
+Ask yourself - how would I want someone to **introduce me**?  
+
+Maybe: 
+
+"Here's our most good-looking and intelligent team member, Luke.  His data science work will blow your mind."
+
+Not:
+
+"This is Luke, IT.  Moving on . . ."
+
+## Feedback and Recognition
+
+Constantly, *constantly* show much you appreciate others.  The dividends will be immense!  Just think - how much does it mean to you when someone tells you how much you mean to them?
+
+# Ripple Effect
+
+Just *smile*.  Laugh.  Joke!  It is absolutely contagious.  Remember the smile experiment the author has his students perform - who can't not smile (excuse the double negative)!
+
+This is a real thing, too.  **Fake it til you make it** ain't so fake. 
+
+## Negative Influences
+
+I have the most negative sister in the world.  Keep my distance, and I'll probably be a lot happier! 
+

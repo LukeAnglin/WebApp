@@ -5,74 +5,77 @@
 <!-- Use the super block to include this and more, or just override it. -->
 <div class="{{ title }}-intro">
 
-    <!-- Title of section (ex. Data Science) -->
+        <!-- Title of section (ex. Data Science) -->
 
-    <h1>{{ title }}</h1>
+        <h1>{{ title }}</h1>
 
-    <!-- Responsive, representative image (ex. Linear Regression image) -->
+        <!-- Responsive, representative image (ex. Linear Regression image) -->
 
-    {% if image_route %}
-    <img src="../{{ image_route }}" alt="{{ title }} image" class="img-responsive center"
-        style="max-height:30%; align: center;">
-    {% else %}
-    {% endif%}
+        {% if image_route %}
+        <img src="../{{ image_route }}" alt="{{ title }} image" class="img-responsive center"
+                style="max-height:30%; align: center;">
+        {% else %}
+        {% endif%}
 
-    <!-- Description of section -->
-    <p>{{ description }}</p><br>
+        <!-- Description of section -->
+        <p>{{ description }}</p><br>
 
-    <!-- Notes/Links (ex, probability.html) -->
-    <h1 id=notes>Notes/Resources: </h1>
+        <!-- Notes/Links (ex, probability.html) -->
+        <h1 id=notes>Notes/Resources: </h1>
 </div>
 <div class="{{ title }}-notes">
-    <!-- Loop through category files and display a header fileing to their page -->
-    {% for file in category_files %}
+        <!-- Loop through category files and display a header fileing to their page -->
+        {% for file in category_files %}
 
-    <!-- Only display published files or ones without the attribute by default (auto-publish) -->
-    {% if not 'publish' in note_dict[file].keys() or note_dict[file].publish == True %}
+        <!-- Only display published files or ones without the attribute by default (auto-publish) -->
+        {% if not 'publish' in note_dict[file].keys() or note_dict[file].publish == True %}
 
-    <!-- If it's a data sci note, display that url and title. -->
-    {% if title == 'Data Science Foundations' %}
+        <!-- If it's a data sci note, display that url and title. -->
+        {% if title == 'Data Science Foundations' %}
 
-    <h2 class="file-title"><a href="{{ url_for('data_sci_note', note_title=note_dict[file].title)}}"
-            class="file-file">{{ note_dict[file].title }}</a></h2>
+        <h2 class="file-title"><a href="{{ url_for('data_sci_note', note_title=note_dict[file].title)}}"
+                        class="file-file">{{ note_dict[file].title }}</a></h2>
 
-    {% endif %}
+        {% endif %}
 
-    <!-- If it's a data sci note, display that url and title. -->
-    {% if title == 'Deep Learning' %}
-    <h2 class="file-title"><a href="{{ url_for('deep_learning_note', note_title=note_dict[file].title)}}"
-            class="file-file">{{ note_dict[file].title }}</a></h2>
-    {% endif %}
+        <!-- If it's a data sci note, display that url and title. -->
+        {% if title == 'Deep Learning' %}
+        <h2 class="file-title"><a href="{{ url_for('deep_learning_note', note_title=note_dict[file].title)}}"
+                        class="file-file">{{ note_dict[file].title }}</a></h2>
+        {% endif %}
 
-    <!-- If python title -->
-    {% if title == 'Python' %}
-    <h2 class="file-title"><a href="{{ url_for('python_note', note_title=note_dict[file].title)}}"
-            class="file-file">{{ note_dict[file].title }}</a></h2>
-    {% endif %}
+        <!-- If python title -->
+        {% if title == 'Python' %}
+        <h2 class="file-title"><a href="{{ url_for('python_note', note_title=note_dict[file].title)}}"
+                        class="file-file">{{ note_dict[file].title }}</a></h2>
+        {% endif %}
 
-    <!-- If stat title -->
-    {% if title == 'Statistics and Probability' %}
-    <h2 class="file-title"><a href="{{ url_for('stat_note', note_title=note_dict[file].title)}}"
-            class="file-file">{{ note_dict[file].title }}</a></h2>
-    {% endif %}
+        <!-- If stat title -->
+        {% if title == 'Statistics and Probability' %}
+        <h2 class="file-title"><a href="{{ url_for('stat_note', note_title=note_dict[file].title)}}"
+                        class="file-file">{{ note_dict[file].title }}</a></h2>
+        {% endif %}
 
-    <!-- If it's a Python note, display that url -->
+        <!-- If happiness title, display that url -->
+        {% if title == 'Happiness and Interests' %}
+        <h2 class="file-title"><a href="{{ url_for('happiness_note', note_title=note_dict[file].title)}}"
+                        class="file-file">{{ note_dict[file].title }}</a></h2>
+        {% endif %}
+        <!-- Display a description of the file -->
+        <p class="file-description">{{ note_dict[file].description }}</p>
 
-    <!-- Display a description of the file -->
-    <p class="file-description">{{ note_dict[file].description }}</p>
+        <!-- Display the topics covered if that attribute exists -->
 
-    <!-- Display the topics covered if that attribute exists -->
+        {% if note_dict[file].topics %}
 
-    {% if note_dict[file].topics %}
+        <p class="file-topics"><b>Topics covered:</b> {{ note_dict[file].topics }}</p>
 
-    <p class="file-topics"><b>Topics covered:</b> {{ note_dict[file].topics }}</p>
-
-    {% endif %}
+        {% endif %}
 
 
-    <!-- Display an image -->
-    <img src="{{ note_dict[file].image }}" alt="">
-    {% endif %}
-    {% endfor %}
+        <!-- Display an image -->
+        <img src="{{ note_dict[file].image }}" alt="">
+        {% endif %}
+        {% endfor %}
 </div>
 {% endblock content %}

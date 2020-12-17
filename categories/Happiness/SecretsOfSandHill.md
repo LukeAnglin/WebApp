@@ -256,8 +256,6 @@ Less common, more severe than the hurdle rate is the preferred return:
 
 > Unlike the “clear the bar and take the money” aspect of a hurdle rate, a preferred return doesn’t just fall away when you clear it. Rather, if the preferred return were 8 percent, the LPs would get 100 percent of the money back until the preferred return is met, and then the GP participates in any profits above the preferred return. In our ten-year, \$100 million fund, an 8 percent preferred return would amount to about \$216 million $\frac{\$100\text{ million}}{1.08\times10}$ at the end of ten years; thus, a $200 million total fund return would garner our GP a big fat zero in profits!
 
-Excerpt From: Scott Kupor. “Secrets of Sand Hill Road.” Apple Books. 
-
 # LPA 
 
 ## Invest Domain 
@@ -582,3 +580,250 @@ To provide *some* protection to the minority, there are three majorities needed:
 1. The Board 
 2. The common shareholders as a separate class 
 3. The preferred shareholders as a separate class 
+
+## Vesting 
+
+Includes the rate, frequency, and whether or not it is accelerated. 
+
+## Other inclusions 
+
+* NDAs 
+* D&R
+* No-shop 
+
+# Deal Dilemma 
+
+## Economics 
+
+* *Exactly* how much money you want.  Any more, and you'll likely suffer more dilution, whereas less will prevent you from reaching milestones 
+* **Payout matrices** are useful when you have dilemmas in liquidation preferences
+* **Antidilution provisions** are crucial - if you go full ratched, a down round could swipe your soul
+
+## Governance 
+
+* Is the P series-specific?  Ideally, so that you can easily obtain subsequent financing, you **don't want series-specific P**. 
+* **Board control** - common?  More VC power?  Can they fire me? 
+
+# Board of Directors 
+
+## Private vs Public 
+
+**Public**:
+* Board members elected by the common shareholders
+* Protective provisions aren't in play 
+
+**Private**:
+* Varying statuses of board members and shareholders
+* Protective provisions may cause a small shareholder with non broad P provisions to prevent an acquisition or some other major corporate action
+
+## Roles 
+
+* Hire/fire the CEO 
+* General aid
+    * As a CEO, **talk to your board** willingly 
+    * Budget talk 
+* Approving corporate actions 
+* Evaluate CEO and key founders 
+* Ensure key contributors have sufficient vesting to keep them incentivized 
+* Fulfill legal requirements by having regular meetings 
+* **Networking** 
+
+## Non-Roles 
+
+Boards **should not**: 
+
+* Run the company 
+* Dictate **product strategy** 
+
+## CEO-Board Dynamic 
+
+The CEO should: 
+
+* Set expectations of board members 
+    * One-on-ones are a good way to do this, and increase your likability!
+* Agree with the board on how feedback will be given - one-on-ones through a representative? Entire board forum? 
+* Agree on engagement between board members and other execs 
+* **Orchestrate and agend-ize** the meetings
+
+## Legal 
+
+* Duty of Care
+* Duty of Loyalty - the dual fiduciary problem of VCs sometimes causes suits on this. 
+* Duty of Confidentiality
+* Duty of Candor 
+
+### Pivot Issue 
+
+One company pivots into another's space.  The duties may now have to be split, which brings up legal issues.
+
+One solution is the **Chinese wall**.  This is a formalistic boundary of information between GPs holding board positions in similar but different startups.  Of course, **this only works when the participating GPs are different**.  If they aren't, they'll have to recuse themselves from some meetings!
+
+## Common vs Preferred 
+
+Board members only owe fiduciary duties to **common** shareholders.
+
+## Review Metrics
+
+### BJR 
+
+The **Business Judgement Rule** states that courts can't second-guess a board decision if they had an informed, deliberate decision-making process. <span class="keyword1">Keep good minutes</span>!
+
+This is the preferable for the defendant; the burden of proof is on the plaintiff.
+
+### Entire Fairness
+
+Entire fairness is more severe, and is applied when **the board is conflicted**. 
+
+Asks two questions about a board decision: 
+
+1. Was the process fair? 
+2. Was the price fair? 
+
+This is a nightmare for the defendant; the burden of proof is on the defendant him/herself. 
+
+### Trados 
+
+The *Trados* case helps explain these review metrics.  Let's see a **conflicted board**. 
+
+* The VCs with 1x nonparticipation liquidation had less to gain from increases in acquisition price after a certain point than common shareholders
+* The MIP led to **non-equitable sharing** with respect to common shareholders and P's 
+* Court also ruled conlflicted because it benefits the VCs to finish acquisitions quickly rather than pushing for higher prices
+
+#### Conflicts
+
+* Execs who gain materially
+* Independents can still be conflicting
+
+#### Takeaways 
+
+* Most VC-backed startups have conflicted, non-independent boards 
+* Always assume in legal situations that you're going to undergo entire fairness 
+* Make your board processes **fair** 
+    * Hire bankers 
+* MIPs - good for incentive, but be careful **be careful about rash changes** that might benefit some more than others and **consider the relative contribution between commons and P's**
+* Make sure boards don't overreach 
+* Make potential conflicts **open in board meetings** so that you can get rid of them 
+    * Document this in the minutes 
+
+# Financing Troubles 
+
+## First steps 
+
+Before recaps or down rounds, we start with **bridge financing** - this is a cash infusion from the investors we've already got, likely as a convertible note or extension to the last round. 
+
+Often, this doesn't solve the underlying problem, but it might be worth a shot at first. 
+
+Other steps:
+
+* Reducing liquidation preferences 
+* Pull ups 
+* Reverse splits
+* MIPs 
+
+## Legal 
+
+* Do full market checks 
+* Don't entagle option grants to employees closely with inside financing 
+* Use **go-shops** 
+* Give other investors (and especially major common shareholders) **rights offerings** - let everyone know that you're getting finance again, don't keep it private.
+
+# Exit 
+
+## Acquisition 
+
+Make friends with potential acquire, and network with those leading the charge.
+
+### Share Transfer
+
+One acquisition method is exchanging the buyer's shares for those of the acquired company.  The board then evaluates the price based on the buyer's shares pricing, and creates a **collar** to insure immense stock movements in the interim of the transaction. 
+
+#### Considerations 
+
+* Is the stock *immediately* **freely tradable**? 
+* How are employee options affected?  Accelerated, left untouched, or changed completely?
+
+## Escrows 
+
+Escrow accounts are a form of insurance for the acquirer.  They reserve some portion of the purchase price in a 3rd party account that will cover potential . . . 
+
+* company representation fees 
+* litigation costs 
+* ownership and claims against IP 
+
+It also may include *bells and whistle* provisions, like:
+
+* Thresholds before dipping into the escrow 
+* Time frames for claiming the escrow 
+* An **exclusivity period** 
+
+### Indemnification
+
+Acquirers generally want the sellers to bear the legal burden.  Talk to your lawyer about how suits *greater than the escrow's coverage potential* may affect the company.
+
+### Revlon 
+
+Board members are required to act in the acquisition process with **duty of loyalty**, trying to get the **best price for the commons**. 
+
+The process: 
+
+1. Run outreach with multiple acquirers (use bankers!)
+2. Consider other possible paths 
+3. Consider **go-shops** 
+4. Document everything 
+
+### CEO's Role 
+
+The role of the CEO includes: 
+
+* Helping current employees who *aren't needed by the acquirer* exit without a thirst for vengeance 
+* Influencing the **organizational structure** 
+
+## IPO 
+
+### Benefits 
+
+Many of the benefits have diminished to date, and that's why we see many more company's staying private.  
+
+* Raising capital - this one can be done easily in private markets now.
+* Branding - how many people didn't know AirBNB before it IPO'd? 
+* Liquidity - partially.  It's tougher to sell private stock than public, so as a shareholder, this is a benefit. 
+    * **Tender shares** somewhat disable the need, though. 
+* B2B Credibility - transparent financials and reputation 
+* M&A Valuation 
+
+### Process 
+
+1. Pick the **underwriters** and hold a kickoff meeting to pitch your product to them 
+2. Draft the prospectus 
+3. Price
+4. Stabilize (green-shoe)
+
+
+#### Underwriters 
+
+You want bankers who: 
+
+* Have domain expertise in the industry 
+* Have relationships with institutional investors who could be buyers of the IPO 
+* Will help create an orderly trading environment
+* Will be available to help after the IPO with M&A advice, follow-on financings, etc. 
+
+These guys will take part in the **road show**, figuring out how much demand there is.
+
+#### Prospectus 
+
+The JOBS act has simplified this legal document, as long as the startup qualifies to be an **EGC**, or emerging growth company (has \$1B in revenue)
+
+Benefits of becoming an ECG: 
+
+* Testing the waters
+* Confidential filings 
+* Lighter financial and regulatory disclosure requirements
+
+#### Pricing 
+
+Too high, and the trickle-down effect could lead to prolonged down spells.  Too low, and the commons feel that they've been diluted.  The underwriters have very little wiggle room!
+
+# Questions 
+1. Payoff matrix for Indigo 
+2. Why does reducing liquidation improve incentive? 

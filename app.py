@@ -122,6 +122,22 @@ stat_route_params = {
     'note_dict': note_dict,
 }
 
+happiness_route_params = {
+    'title': 'Happiness and Interests',
+
+    'description': 'This is a collection of my interests, hobbies, book reads, comic relief, business advice and more.',
+
+    'image_route': 'static/assets/media/happiness-home.jpg',
+
+    'get_note_content': get_note_content,
+
+    'category_files': category_files['Happiness'],
+
+    'note_dict': note_dict,
+
+}
+
+
 # First, initialize a dictionary containing the content of the title you gave your category.  Here's an example:
 
 data_sci_title_dict = title_dict['Data Science']
@@ -145,6 +161,11 @@ python_notes_params = {
 stat_title_dict = title_dict['Stat And Probability']
 stat_notes_params = {
     'title_dict': stat_title_dict,
+}
+
+happiness_title_dict = title_dict['Happiness']
+happiness_notes_params = {
+    'title_dict': happiness_title_dict,
 }
 
 
@@ -178,9 +199,15 @@ def deep_learning():
 def python():
     return render_template('/category-indices/python.html', **python_route_params)
 
+
 @app.route('/stat')
 def stat():
     return render_template('/category-indices/stat.html', **stat_route_params)
+
+
+@app.route('/happiness')
+def happiness():
+    return render_template('/category-indices/happiness.html', **happiness_route_params)
 # Deep Learning Notes
 
 # @app.route('/js')
@@ -209,10 +236,16 @@ def deep_learning_note(note_title):
 def python_note(note_title):
     return render_template('notes.html', note_title=note_title, **python_notes_params)
 
+
 @app.route('/stat-notes/<note_title>')
 def stat_note(note_title):
     return render_template('notes.html', note_title=note_title, **stat_notes_params)
 
-if __name__ == "__main__":
-    app.run()
 
+@app.route('/happiness-notes/<note_title>')
+def happiness_note(note_title):
+    return render_template('notes.html', note_title=note_title, **happiness_notes_params)
+
+
+if __name__ == "__main__":
+    app.run(port=5000)
