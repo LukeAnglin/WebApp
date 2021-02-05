@@ -50,6 +50,21 @@ def home():
 # Route parameters to be unpacked in category homepages
 
 
+cs_route_params = {
+    'title': 'CS 2150',
+
+    'description': '',
+
+    'image_route': 'static/assets/media/stat-homepage-violin-plots.png',
+
+    'get_note_content': get_note_content,
+
+    'category_files': category_files['CS'],
+
+    'note_dict': note_dict,
+}
+
+
 data_sci_route_params = {
     'title': 'Data Science Foundations',
 
@@ -148,6 +163,12 @@ data_sci_notes_params = {
     'title_dict': data_sci_title_dict,
 }
 
+cs_title_dict = title_dict['CS']
+
+cs_notes_params = {
+    'title_dict': cs_title_dict
+}
+
 deep_learning_title_dict = title_dict['Deep Learning']
 deep_learning_notes_params = {
     'title_dict': deep_learning_title_dict,
@@ -183,6 +204,11 @@ happiness_notes_params = {
 @app.route('/data-science')
 def data_science():
     return render_template('/category-indices/data-science.html', **data_sci_route_params)
+
+
+@app.route('/cs')
+def cs():
+    return render_template('/category-indices/cs.html', **cs_route_params)
 
 
 @app.route('/notebook-reference')
@@ -225,6 +251,11 @@ def happiness():
 @app.route('/data-science-notes/<note_title>')
 def data_sci_note(note_title):
     return render_template('notes.html', note_title=note_title, **data_sci_notes_params)
+
+
+@app.route('/cs-notes/<note_title>')
+def cs_note(note_title):
+    return render_template('notes.html', note_title=note_title, **cs_notes_params)
 
 
 @app.route('/deep-learning-notes/<note_title>')

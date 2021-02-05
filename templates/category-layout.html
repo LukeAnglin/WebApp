@@ -38,6 +38,13 @@
 
         {% endif %}
 
+        {% if title == 'CS 2150' %}
+
+        <h2 class="cs-title"><a href="{{ url_for('cs_note', note_title=note_dict[file].title)}}" class="file-file">{{
+                        note_dict[file].title }}</a></h2>
+
+        {% endif %}
+
         <!-- If it's a data sci note, display that url and title. -->
         {% if title == 'Deep Learning' %}
         <h2 class="file-title"><a href="{{ url_for('deep_learning_note', note_title=note_dict[file].title)}}"
