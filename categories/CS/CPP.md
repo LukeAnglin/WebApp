@@ -33,6 +33,30 @@ int main() {
 * Compile resulting file 
 * Link resulting files from compilation 
 
+## Preprocessor 
+
+**Pre-pounding** - All the `#include`, `#ifndef`, `#endif` and `#define` 
+
+* `include` is for direct file copies. Only use `.h` files. 
+* `define` is for **macros** - constants, text replacement
+
+### In practice 
+
+Every `.h` file should have: 
+
+```cpp 
+// Check if it's define, and then define
+#ifndef HEADER_H 
+#define HEADER_H 
+
+// Includes 
+#include "other_header.h"
+
+// Code goes here
+
+#endif
+```
+
 ## `using`
 
 * Uses a **namespace**
@@ -179,3 +203,32 @@ CPP:
 
 
 
+# Pointers 
+
+Can be for **primitive or object** types 
+
+* `int * x;` - A pointer to an int. The address where that integer lives. 
+
+## Dereferences 
+
+The non-spaced, non-declaring asterisk can also be used to <span class="keyword1">evaluate</span> the object to which the pointer points 
+    * `*x = 2;`
+
+The star **follows a pointer** to the pointee, and deal with its **target/value.**
+
+It really means **whatever is at that address** . . . 
+
+## & 
+
+Means **address of** 
+
+```cpp 
+// Sir! Fetch the address of John, and put it in folder.
+folder = &John;
+```
+
+## Initialization
+
+Initialize your pointers to `NULL`! Otherwise, <span class="keyword1">RUNTIME ERRORS</span> will occur. 
+
+Then, you just **check** for a `NULL` value before proceeding.

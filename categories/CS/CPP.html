@@ -432,7 +432,27 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>Compile resulting file</li>
 <li>Link resulting files from compilation</li>
 </ul>
-<h2 class="mume-header" id="using"><code>using</code></h2>
+<h2 class="mume-header" id="preprocessor">Preprocessor</h2>
+
+<p><strong>Pre-pounding</strong> - All the <code>#include</code>, <code>#ifndef</code>, <code>#endif</code> and <code>#define</code></p>
+<ul>
+<li><code>include</code> is for direct file copies. Only use <code>.h</code> files.</li>
+<li><code>define</code> is for <strong>macros</strong> - constants, text replacement</li>
+</ul>
+<h3 class="mume-header" id="in-practice">In practice</h3>
+
+<p>Every <code>.h</code> file should have:</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token comment">// Check if it&apos;s define, and then define</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">HEADER_H </span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HEADER_H</span> </span>
+
+<span class="token comment">// Includes </span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;other_header.h&quot;</span></span>
+
+<span class="token comment">// Code goes here</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+</pre><h2 class="mume-header" id="using"><code>using</code></h2>
 
 <ul>
 <li>Uses a <strong>namespace</strong></li>
@@ -568,6 +588,27 @@ IntCell <span class="token function">m2</span> <span class="token punctuation">(
 <ul>
 <li>Implementation</li>
 </ul>
+<h1 class="mume-header" id="pointers">Pointers</h1>
+
+<p>Can be for <strong>primitive or object</strong> types</p>
+<ul>
+<li><code>int * x;</code> - A pointer to an int. The address where that integer lives.</li>
+</ul>
+<h2 class="mume-header" id="dereferences">Dereferences</h2>
+
+<p>The non-spaced, non-declaring asterisk can also be used to <span class="keyword1">evaluate</span> the object to which the pointer points<br>
+* <code>*x = 2;</code></p>
+<p>The star <strong>follows a pointer</strong> to the pointee, and deal with its <strong>target/value.</strong></p>
+<p>It really means <strong>whatever is at that address</strong> . . .</p>
+<h2 class="mume-header" id>&amp;</h2>
+
+<p>Means <strong>address of</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token comment">// Sir! Fetch the address of John, and put it in folder.</span>
+folder <span class="token operator">=</span> <span class="token operator">&amp;</span>John<span class="token punctuation">;</span>
+</pre><h2 class="mume-header" id="initialization">Initialization</h2>
+
+<p>Initialize your pointers to <code>NULL</code>! Otherwise, <span class="keyword1">RUNTIME ERRORS</span> will occur.</p>
+<p>Then, you just <strong>check</strong> for a <code>NULL</code> value before proceeding.</p>
 
 
 
