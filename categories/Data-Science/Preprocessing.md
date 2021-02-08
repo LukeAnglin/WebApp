@@ -8,7 +8,7 @@ topics: standardization, feature adherence, sparse data, distributional mappings
 
 # Standardization  
 
-Estimators do not perform well when features are not close to normal distributions.  Considering the <span class="keyword1">Central Limit Theorem</span>, we want at least $n > 30$ samples.  
+Estimators do not perform well when features are not close to normal distributions.  Considering the <span class="red">Central Limit Theorem</span>, we want at least $n > 30$ samples.  
 
 ## Feature Adherence
 

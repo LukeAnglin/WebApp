@@ -91,7 +91,7 @@ Some things you might do:
 * Change hyperparameters (learning rate, hidden units)
 * Feature engineering 
 
-Note that <span class="keyword1">too much fine-tuning</span> will lead towards <span class="keyword1">information leaks</span>. 
+Note that <span class="red">too much fine-tuning</span> will lead towards <span class="red">information leaks</span>. 
 
 # Evaluate/Predict 
 

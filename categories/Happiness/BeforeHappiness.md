@@ -24,7 +24,7 @@ That quote also makes me think that A students are less risky.
 
 We have a prism, not a triangle. The fourth dimension is the ability to **see a reality in which success is possible**, rather than the alternative. 
 
-Additionally, to utilize this dimension, you should work on improving your <span class="keyword1">efficacy</span>, or the belief that your actions have impacts. 
+Additionally, to utilize this dimension, you should work on improving your <span class="red">efficacy</span>, or the belief that your actions have impacts. 
 
 
 # Multiple Realities 
@@ -120,7 +120,7 @@ Receiving social support is significant. Highly in fact - 0.7 correlation! Howev
 
 Map **success routes** prior to **escape routes**. Both are self-fulfilling prophecies. 
 
-<span class="keyword1">Defensive pessimism</span>, the prepare-for-the-worst-and-I-won't-be-disappointed mentality, is dangerous!
+<span class="red">Defensive pessimism</span>, the prepare-for-the-worst-and-I-won't-be-disappointed mentality, is dangerous!
 
 ## Summarized 
 

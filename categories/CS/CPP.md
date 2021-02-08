@@ -118,8 +118,9 @@ IntCell m2 ( 37 );
 
 * Need all the preprocessor lines in the code below. 
     * `#ifndef <identifier (generally file name)>`
-    * `#efine <identifier (generally file name)>`
+    * `#define <identifier (generally file name)>`
     * And at the bottom, `#endif`
+* Class Definition
 ```cpp
 #ifndef INTCELL_H
 #define INTCELL_H
@@ -145,7 +146,7 @@ class IntCell {
 Actually *write* your methods at some point!
 
 * Define the methods with form `return_type Class::method_name() maybe_const`
-* If you're **not modifying fields**, for example with <span class="keyword1">getters</span>, you need to use `const`
+* If you're **not modifying fields**, for example with <span class="red">getters</span>, you need to use `const`
 
 ```cpp 
 // Include your header 
@@ -172,7 +173,9 @@ int IntCell::max(int m) const {
 ```
 ### Main File
 
-Class definition 
+* Include your headers 
+* Non-member function prototypes above `main` and static variables
+* Below main, non-member method definitions
 
 ```cpp 
 #include <iostream>
@@ -203,7 +206,13 @@ CPP:
 
 
 
+## Friends 
+
+The `friend` keyword (ex. `friend class List`) in the fields of a class allow one class to access another's **private** members. 
+
 # Pointers 
+
+![Pointer vs References](/static/assets/media/pointers_vs_references.png)
 
 Can be for **primitive or object** types 
 
@@ -211,7 +220,7 @@ Can be for **primitive or object** types
 
 ## Dereferences 
 
-The non-spaced, non-declaring asterisk can also be used to <span class="keyword1">evaluate</span> the object to which the pointer points 
+The non-spaced, non-declaring asterisk can also be used to <span class="red">evaluate</span> the object to which the pointer points 
     * `*x = 2;`
 
 The star **follows a pointer** to the pointee, and deal with its **target/value.**
@@ -229,6 +238,117 @@ folder = &John;
 
 ## Initialization
 
-Initialize your pointers to `NULL`! Otherwise, <span class="keyword1">RUNTIME ERRORS</span> will occur. 
+Initialize your pointers to `NULL`! Otherwise, <span class="red">RUNTIME ERRORS</span> will occur. 
 
 Then, you just **check** for a `NULL` value before proceeding.
+
+## References 
+
+Differences between references and pointers, remember icky (**ICI**): 
+
+* **I**mplicit dereferencing 
+* **C**onstant - address doesn't change 
+* **I**nitialized - has to be initialized
+```cpp
+List sampleList
+// Holds an address
+List & theList = sampleList;
+```
+
+# Memory Allocation 
+
+ ## Types 
+
+ * **Static** - you know how much. `float myArray[5]` 
+ * **Dynamic** - need on the fly
+    * Create with `type * somePointer = new type` 
+    * You need to **clean up** 
+    * **Outlives** the usual scope
+    * On the heap 
+
+Stack addressed memory would be something like `Entity e()` using the default constructor. 
+
+```cpp 
+// Creation 
+int * myIntPointer = new int
+int * myArrayPointer = new int [5]
+
+// Deletion 
+delete myIntPointer
+delete [] myArrayPointer
+```
+
+## Object Field Access 
+
+* Use `.` for non-pointers and references 
+* Use `->` for pointers, equivalent to `(*object).field`
+
+# Parameter Passing 
+
+Call by value, reference, or const? 
+
+## Value 
+
+* Actual param **copied** into formal 
+* You **don't change** the arguments 
+
+## Reference 
+
+* Passes in the **address**
+* Use when you **want to change** the arguments 
+
+```cpp
+void swap (int &x, int &y);
+```
+
+## Const Reference 
+
+* Use when you want to access a non-copy **class reference**, but **don't** want to modify it. 
+
+```CPP 
+bool compare(const Rational & left, 
+             const Rational & right);
+```
+
+# Constructors 
+
+## Default 
+
+No params, just for compilation 
+
+## Destructors 
+
+Called when 
+* Object leaves scope 
+* `delete` 
+
+Uses the `~`, like `~ObjectName();`
+
+## Copy Constructor 
+
+```cpp 
+IntCell original;
+IntCell copy = original; // or IntCell copy(original);
+```
+
+Called in the following situations: 
+* Declaration with initialization 
+* Objects passed by value 
+* Object returned by value 
+
+# Operators
+
+## Overload 
+
+```cpp 
+class Box {
+    public: 
+        // Overload + operator to add two Box objects.
+        Box operator+(const Box& b) {
+            Box box;
+            box.length = this->length + b.length;
+            box.breadth = this->breadth + b.breadth;
+            box.height = this->height + b.height;
+            return box;
+}
+```

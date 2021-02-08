@@ -173,7 +173,7 @@ Random forests are easy to understand and visualize.  Just take a look at the be
 
 I group gradient boosts with Random Forest because gradient boost tends to be an ensemble of random forests and, maybe, some other ML algorithms.  To date, gradient boosts provide **the best** algorithm for classifications.  
 
-What makes these really special is the <span class="keyword1">iterative tweaking</span> that they perform.  Imagine your random forest is on a domain of [0, 1], and it performs great everywhere except in the (0.4, 0.6) range.  
+What makes these really special is the <span class="red">iterative tweaking</span> that they perform.  Imagine your random forest is on a domain of [0, 1], and it performs great everywhere except in the (0.4, 0.6) range.  
 
 Gradient boost says:  "Hey, let's train a *new* algorithm in that range.  Then, we're good everywhere"
 

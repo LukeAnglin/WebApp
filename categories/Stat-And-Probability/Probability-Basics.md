@@ -23,7 +23,7 @@ $$Q_{n}(A + B) = Q_{n}(A) + Q_{n}(B)$$
 
 Consider it logically.  Flip a coin ten times.  The relative frequency of both events should equal ten, and this formula proves it.
 
-<span class="keyword1">Mutually exclusive events</span> are <span class="keyword1">disjoint sets</span>
+<span class="red">Mutually exclusive events</span> are <span class="red">disjoint sets</span>
 
 # Countable
 

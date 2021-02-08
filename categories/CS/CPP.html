@@ -368,7 +368,7 @@ pre[data-line] .line-highlight[data-end]:after {
 .markdown-preview.markdown-preview nav[data-toggle="toc"] .nav .active .nav {
   display: none;
 }
-.markdown-preview.markdown-preview .keyword1 {
+.markdown-preview.markdown-preview .red {
   color: #c25c5c;
   font-weight: bold;
 }
@@ -511,10 +511,11 @@ IntCell <span class="token function">m2</span> <span class="token punctuation">(
 <li>Need all the preprocessor lines in the code below.
 <ul>
 <li><code>#ifndef &lt;identifier (generally file name)&gt;</code></li>
-<li><code>#efine &lt;identifier (generally file name)&gt;</code></li>
+<li><code>#define &lt;identifier (generally file name)&gt;</code></li>
 <li>And at the bottom, <code>#endif</code></li>
 </ul>
 </li>
+<li>Class Definition</li>
 </ul>
 <pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">INTCELL_H</span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">INTCELL_H</span></span>
@@ -538,7 +539,7 @@ IntCell <span class="token function">m2</span> <span class="token punctuation">(
 <p>Actually <em>write</em> your methods at some point!</p>
 <ul>
 <li>Define the methods with form <code>return_type Class::method_name() maybe_const</code></li>
-<li>If you&apos;re <strong>not modifying fields</strong>, for example with <span class="keyword1">getters</span>, you need to use <code>const</code></li>
+<li>If you&apos;re <strong>not modifying fields</strong>, for example with <span class="red">getters</span>, you need to use <code>const</code></li>
 </ul>
 <pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token comment">// Include your header </span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;IntCell.h&quot;</span> </span>
@@ -563,7 +564,11 @@ IntCell <span class="token function">m2</span> <span class="token punctuation">(
 <span class="token punctuation">}</span>
 </pre><h3 class="mume-header" id="main-file">Main File</h3>
 
-<p>Class definition</p>
+<ul>
+<li>Include your headers</li>
+<li>Non-member function prototypes above <code>main</code> and static variables</li>
+<li>Below main, non-member method definitions</li>
+</ul>
 <pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span> 
 
@@ -588,15 +593,19 @@ IntCell <span class="token function">m2</span> <span class="token punctuation">(
 <ul>
 <li>Implementation</li>
 </ul>
+<h2 class="mume-header" id="friends">Friends</h2>
+
+<p>The <code>friend</code> keyword (ex. <code>friend class List</code>) in the fields of a class allow one class to access another&apos;s <strong>private</strong> members.</p>
 <h1 class="mume-header" id="pointers">Pointers</h1>
 
+<p><img src="../../static/assets/media/pointers_vs_references.png" alt="Pointer vs References"></p>
 <p>Can be for <strong>primitive or object</strong> types</p>
 <ul>
 <li><code>int * x;</code> - A pointer to an int. The address where that integer lives.</li>
 </ul>
 <h2 class="mume-header" id="dereferences">Dereferences</h2>
 
-<p>The non-spaced, non-declaring asterisk can also be used to <span class="keyword1">evaluate</span> the object to which the pointer points<br>
+<p>The non-spaced, non-declaring asterisk can also be used to <span class="red">evaluate</span> the object to which the pointer points<br>
 * <code>*x = 2;</code></p>
 <p>The star <strong>follows a pointer</strong> to the pointee, and deal with its <strong>target/value.</strong></p>
 <p>It really means <strong>whatever is at that address</strong> . . .</p>
@@ -607,9 +616,108 @@ IntCell <span class="token function">m2</span> <span class="token punctuation">(
 folder <span class="token operator">=</span> <span class="token operator">&amp;</span>John<span class="token punctuation">;</span>
 </pre><h2 class="mume-header" id="initialization">Initialization</h2>
 
-<p>Initialize your pointers to <code>NULL</code>! Otherwise, <span class="keyword1">RUNTIME ERRORS</span> will occur.</p>
+<p>Initialize your pointers to <code>NULL</code>! Otherwise, <span class="red">RUNTIME ERRORS</span> will occur.</p>
 <p>Then, you just <strong>check</strong> for a <code>NULL</code> value before proceeding.</p>
+<h2 class="mume-header" id="references">References</h2>
 
+<p>Differences between references and pointers, remember icky (<strong>ICI</strong>):</p>
+<ul>
+<li><strong>I</strong>mplicit dereferencing</li>
+<li><strong>C</strong>onstant - address doesn&apos;t change</li>
+<li><strong>I</strong>nitialized - has to be initialized</li>
+</ul>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp">List sampleList
+<span class="token comment">// Holds an address</span>
+List <span class="token operator">&amp;</span> theList <span class="token operator">=</span> sampleList<span class="token punctuation">;</span>
+</pre><h1 class="mume-header" id="memory-allocation">Memory Allocation</h1>
+
+<h2>Types</h2>
+<ul>
+<li><strong>Static</strong> - you know how much. <code>float myArray[5]</code></li>
+<li><strong>Dynamic</strong> - need on the fly
+<ul>
+<li>Create with <code>type * somePointer = new type</code></li>
+<li>You need to <strong>clean up</strong></li>
+<li><strong>Outlives</strong> the usual scope</li>
+<li>On the heap</li>
+</ul>
+</li>
+</ul>
+<p>Stack addressed memory would be something like <code>Entity e()</code> using the default constructor.</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token comment">// Creation </span>
+<span class="token keyword">int</span> <span class="token operator">*</span> myIntPointer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span>
+<span class="token keyword">int</span> <span class="token operator">*</span> myArrayPointer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span>
+
+<span class="token comment">// Deletion </span>
+<span class="token keyword">delete</span> myIntPointer
+<span class="token keyword">delete</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> myArrayPointer
+</pre><h2 class="mume-header" id="object-field-access">Object Field Access</h2>
+
+<ul>
+<li>Use <code>.</code> for non-pointers and references</li>
+<li>Use <code>-&gt;</code> for pointers, equivalent to <code>(*object).field</code></li>
+</ul>
+<h1 class="mume-header" id="parameter-passing">Parameter Passing</h1>
+
+<p>Call by value, reference, or const?</p>
+<h2 class="mume-header" id="value">Value</h2>
+
+<ul>
+<li>Actual param <strong>copied</strong> into formal</li>
+<li>You <strong>don&apos;t change</strong> the arguments</li>
+</ul>
+<h2 class="mume-header" id="reference">Reference</h2>
+
+<ul>
+<li>Passes in the <strong>address</strong></li>
+<li>Use when you <strong>want to change</strong> the arguments</li>
+</ul>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token keyword">void</span> <span class="token function">swap</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">&amp;</span>x<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">&amp;</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h2 class="mume-header" id="const-reference">Const Reference</h2>
+
+<ul>
+<li>Use when you want to access a non-copy <strong>class reference</strong>, but <strong>don&apos;t</strong> want to modify it.</li>
+</ul>
+<pre data-role="codeBlock" data-info="CPP" class="language-cpp"><span class="token keyword">bool</span> <span class="token function">compare</span><span class="token punctuation">(</span><span class="token keyword">const</span> Rational <span class="token operator">&amp;</span> left<span class="token punctuation">,</span> 
+             <span class="token keyword">const</span> Rational <span class="token operator">&amp;</span> right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h1 class="mume-header" id="constructors">Constructors</h1>
+
+<h2 class="mume-header" id="default">Default</h2>
+
+<p>No params, just for compilation</p>
+<h2 class="mume-header" id="destructors">Destructors</h2>
+
+<p>Called when</p>
+<ul>
+<li>Object leaves scope</li>
+<li><code>delete</code></li>
+</ul>
+<p>Uses the <code>~</code>, like <code>~ObjectName();</code></p>
+<h2 class="mume-header" id="copy-constructor">Copy Constructor</h2>
+
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp">IntCell original<span class="token punctuation">;</span>
+IntCell copy <span class="token operator">=</span> original<span class="token punctuation">;</span> <span class="token comment">// or IntCell copy(original);</span>
+</pre><p>Called in the following situations:</p>
+<ul>
+<li>Declaration with initialization</li>
+<li>Objects passed by value</li>
+<li>Object returned by value</li>
+</ul>
+<h1 class="mume-header" id="operators">Operators</h1>
+
+<h2 class="mume-header" id="overload">Overload</h2>
+
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Box</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span> 
+        <span class="token comment">// Overload + operator to add two Box objects.</span>
+        Box <span class="token keyword">operator</span><span class="token operator">+</span><span class="token punctuation">(</span><span class="token keyword">const</span> Box<span class="token operator">&amp;</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Box box<span class="token punctuation">;</span>
+            box<span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token keyword">this</span><span class="token operator">-&gt;</span>length <span class="token operator">+</span> b<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+            box<span class="token punctuation">.</span>breadth <span class="token operator">=</span> <span class="token keyword">this</span><span class="token operator">-&gt;</span>breadth <span class="token operator">+</span> b<span class="token punctuation">.</span>breadth<span class="token punctuation">;</span>
+            box<span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token keyword">this</span><span class="token operator">-&gt;</span>height <span class="token operator">+</span> b<span class="token punctuation">.</span>height<span class="token punctuation">;</span>
+            <span class="token keyword">return</span> box<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
 
 
 

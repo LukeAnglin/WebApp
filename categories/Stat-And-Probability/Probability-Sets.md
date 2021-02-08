@@ -10,7 +10,7 @@ topics: sample space, set operations, set laws, indicators, symbols
 
 **Meaning**: No duplicates. 
 
-The <span class="keyword1">sample space</span> is denoted by $\Omega$
+The <span class="red">sample space</span> is denoted by $\Omega$
 
 ## Sample Space 
 
@@ -25,7 +25,7 @@ $$\Omega = \{1, 2, 3, 4, 5, 6\} $$
 
 ## Set Laws
 
-Sets are <span class="keyword1">commutative</span> and <span class="keyword1">associative</span>.  
+Sets are <span class="red">commutative</span> and <span class="red">associative</span>.  
 
 <!-- Associativity Warning -->
 <div class="alert alert-danger" role="alert">
@@ -44,7 +44,7 @@ Sets are <span class="keyword1">commutative</span> and <span class="keyword1">as
 
 ## Indicators
 
-A <span class="keyword1">function</span> that maps a sample point to a member of a binary value is known as an <span class="keyword1">indicator</span>. 
+A <span class="red">function</span> that maps a sample point to a member of a binary value is known as an <span class="red">indicator</span>. 
 
 ![Indicator Function](https://wikimedia.org/api/rest_v1/media/math/render/svg/e14a338f7566bf9113eaffc7cc2a51e5db37261d)
 

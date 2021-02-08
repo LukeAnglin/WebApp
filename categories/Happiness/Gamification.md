@@ -24,9 +24,9 @@
 
 # Motivation 
 
-Whiles video games are for **entertainment**, and rewards programs for **compensation**, gamification is about <span class="keyword1">motivation</span>.
+Whiles video games are for **entertainment**, and rewards programs for **compensation**, gamification is about <span class="red">motivation</span>.
 
-Gamification makes the <span class="keyword1">organization's goals</span> overlap with the <span class="keyword1">employee's goals</span>. 
+Gamification makes the <span class="red">organization's goals</span> overlap with the <span class="red">employee's goals</span>. 
 
 ## Targets
 
@@ -42,7 +42,7 @@ Gamification makes the <span class="keyword1">organization's goals</span> overla
 
 ## Leveraging Pride 
 
-**Competition and social recognition** are crucial to gamification.  Make everything <span class="keyword1">visual and public</span>.
+**Competition and social recognition** are crucial to gamification.  Make everything <span class="red">visual and public</span>.
 
 # Tik Tok Case Study
 

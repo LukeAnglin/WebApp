@@ -37,7 +37,7 @@ We had 28 x 28 pixel images in this exmample.  Convolutional operations broke th
 
 ## Filters 
 
-The <span class="keyword1">filter, feature detector or kernel</span> is the iterative, moving piece over the feature map (our input image). 
+The <span class="red">filter, feature detector or kernel</span> is the iterative, moving piece over the feature map (our input image). 
 
 ![](https://miro.medium.com/max/500/1*GcI7G-JLAQiEoCON7xFbhg.gif)
 

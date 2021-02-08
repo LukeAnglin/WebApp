@@ -368,7 +368,7 @@ pre[data-line] .line-highlight[data-end]:after {
 .markdown-preview.markdown-preview nav[data-toggle="toc"] .nav .active .nav {
   display: none;
 }
-.markdown-preview.markdown-preview .keyword1 {
+.markdown-preview.markdown-preview .red {
   color: #c25c5c;
   font-weight: bold;
 }
@@ -540,7 +540,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <h2 class="mume-header" id="gradient-boosts">Gradient Boosts</h2>
 
 <p>I group gradient boosts with Random Forest because gradient boost tends to be an ensemble of random forests and, maybe, some other ML algorithms.  To date, gradient boosts provide <strong>the best</strong> algorithm for classifications.</p>
-<p>What makes these really special is the <span class="keyword1">iterative tweaking</span> that they perform.  Imagine your random forest is on a domain of [0, 1], and it performs great everywhere except in the (0.4, 0.6) range.</p>
+<p>What makes these really special is the <span class="red">iterative tweaking</span> that they perform.  Imagine your random forest is on a domain of [0, 1], and it performs great everywhere except in the (0.4, 0.6) range.</p>
 <p>Gradient boost says:  &quot;Hey, let&apos;s train a <em>new</em> algorithm in that range.  Then, we&apos;re good everywhere&quot;</p>
 <p>One last thing to note.  Gradient boost uses <em>lots</em> of <em>weak</em> classifiers.</p>
 <p><img src="https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-3-030-34482-5_25/MediaObjects/482246_1_En_25_Fig2_HTML.png" alt></p>

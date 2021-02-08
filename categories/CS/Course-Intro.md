@@ -54,7 +54,7 @@ On Gradescope. All assignments are autograded, and it checks:
 * Is the output format correct?
 * Execute and check output on 1 or 2 simple cases 
 
-Afterwards, **more secret tests**. You will see a <span class="keyword1">- / 10</span>
+Afterwards, **more secret tests**. You will see a <span class="red">- / 10</span>
 
 As many submissions as you want before the deadline. 
 

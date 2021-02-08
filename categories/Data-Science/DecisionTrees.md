@@ -45,7 +45,7 @@ All of these are mirrored in Sci-Kit with the appropriate code naming convention
 
 ### Root 
 
-The **root node** should be the one with the <span class="keyword1">least impurity</span>
+The **root node** should be the one with the <span class="red">least impurity</span>
 
 ## Regularization 
 
@@ -89,7 +89,7 @@ $O(log_2(m))$, so it's **very fast**.
 
 # Ensemble 
 
-Let's graduate from trees to forests.  We can improve accuracy by choosing the <span class="keyword1">most frequent</span> prediction of a group of weak classifiers.  
+Let's graduate from trees to forests.  We can improve accuracy by choosing the <span class="red">most frequent</span> prediction of a group of weak classifiers.  
 
 Let's take Sci-Kit's `VotingClassifier` as an example
 

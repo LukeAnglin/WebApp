@@ -120,7 +120,7 @@ graph LR
 >Instead of narrowing our actions down to fight or flight as negative emotions do, positive ones broaden the amount of possibilities we process, making us more thoughtful, creative, and open to new ideas. 
 > -- **Book**
 
-From a business perspective, <span class="keyword1">invest in your employee's happiness!</span>
+From a business perspective, <span class="red">invest in your employee's happiness!</span>
 
 > The Happiness Advantage is why cutting-edge software companies have foosball tables in the employee lounge, why Yahoo! has an in-house massage parlor, and why Google engineers are encouraged to bring their dogs to work. These aren’t just PR gimmicks. Smart companies cultivate these kinds of working environments because every time employees experience a small burst of happiness, they get primed for creativity and innovation. They see solutions they might otherwise have missed.
 > -- **Book**
@@ -143,7 +143,7 @@ Maybe watch some funny tweets or Reddits before your next presentation!
 > Well, that's great for happy people, but what about the rest of us? 
 > -- **Executive** 
 
-Happiness is a <span class="keyword1">work ethic</span>.  
+Happiness is a <span class="red">work ethic</span>.  
 
 ## Strategies
 
@@ -280,7 +280,7 @@ This is so me.
 
 > I wanted to be productive because that’s what makes me happy, so I tried to maximize the time I spent working. But, as I later realized, I had too narrowly defined what ‘being productive’ was. I started to feel guilty when I did anything that wasn’t work. Nothing else, not exercise or time with my wife or relaxation, was productive. So I never had time to recharge my batteries, which meant that, ironically, the more I worked, the more my productivity plummeted.
 
-Recognize that <span class="keyword1">anything that makes you happy is productive!</span>
+Recognize that <span class="red">anything that makes you happy is productive!</span>
 
 ## The Possibility Lever 
 
@@ -318,7 +318,7 @@ This resonates with me. I am constantly thinking about my future job - but I nee
 
 #### On Others 
 
-Don't just focus on this for yourself - prime others!  Leaders <span class="keyword1">will utilize priming</span> to encourage their employees!
+Don't just focus on this for yourself - prime others!  Leaders <span class="red">will utilize priming</span> to encourage their employees!
 
 > . . . the best managers and leaders view each interaction as an opportunity to prime their employees for excellence
 

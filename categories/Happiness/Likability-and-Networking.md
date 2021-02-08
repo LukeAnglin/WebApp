@@ -486,7 +486,7 @@ Roosevelt would never have been president if Thomas Collier Platt had not challe
 
 The end result is the Roosevelt of history that we know and love. 
 
-If I'm a manager or CEO one day, then remember this - <span class="keyword1">Inspire</span> the team with competition.
+If I'm a manager or CEO one day, then remember this - <span class="red">Inspire</span> the team with competition.
 
 ## Pride Utilization 
 

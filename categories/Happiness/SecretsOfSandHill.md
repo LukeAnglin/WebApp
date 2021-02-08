@@ -52,13 +52,13 @@ Choose equity when:
 
 ## Convertible Notes 
 
-A VC may lend a company money and say "Pay this back by date $x$, or it get's converted into equity."  This is called a <span class="keyword1">convertible note</span>. 
+A VC may lend a company money and say "Pay this back by date $x$, or it get's converted into equity."  This is called a <span class="red">convertible note</span>. 
 
 ## As an Asset Class
 
 **Asset classes** are simply categories of investments - bonds, stocks, etc. 
 
-The author admits that VCs are <span class="keyword1">traditionally poor</span> asset classes.  
+The author admits that VCs are <span class="red">traditionally poor</span> asset classes.  
 
 > . . . the median ten year returns in VC were 160 basis points below those of Nasdaq.  A "basis point" is just a fancy way of saying 1/100th of a percent - so 200 basis points is 2%
 
@@ -87,7 +87,7 @@ In VC, my papa's quote flips - he says "It's not the good deals you miss, it's t
 
 # How do they choose?
 
-Venture returns are <span class="keyword1">also based on the power law curve</span>
+Venture returns are <span class="red">also based on the power law curve</span>
 
 VCs look for the home runs, not a *good batting average*.  Thus, as an entrepreneur, you want to sell your business as **one that could be that home run**, not just one that might be a *good investment*. 
 
@@ -103,7 +103,7 @@ The three prospects:
 
 ## People 
 
-If there is a great idea, VCs assume other companies will try to hijack it.  Therefore, they need to want to invest in <span class="keyword1">your team</span> rather than other ones. 
+If there is a great idea, VCs assume other companies will try to hijack it.  Therefore, they need to want to invest in <span class="red">your team</span> rather than other ones. 
 
 > So what matters most is, why do I as a VC want to back this particular team versus any of the x-number of other teams that might show up to execute this idea? 
 
@@ -194,12 +194,12 @@ Yale's endowment is one of the best-performing endowments to-date.  Why?
 
 Largely invested ($\approx$ 50%) in **illiquid assets**, meaning they count on the fact that at VCs will relatively eventually **push a venture to an exit**.
 
-<span class="keyword1">Always ask the firm what point in the life cycle they are at.</span> 
+<span class="red">Always ask the firm what point in the life cycle they are at.</span> 
 
 * Early fund stage - **less pressure** on the entrepreneur, **more reserves** for subsequent financing, **less conflicts**
 * Late - **more pressure** on the entrepreneur, **less reserves**, **more conflicts** 
 
-Additionally, <span class="keyword1">assess the likelihood</span> that the firm can generate more funding based on it's pass success. 
+Additionally, <span class="red">assess the likelihood</span> that the firm can generate more funding based on it's pass success. 
 
 > in the vast majority of cases, your best bet here is to just do reference checks on your proposed VC partners with others in the community to at least get a sense, reputation-wise, for how the firm is doing.
 
@@ -306,7 +306,7 @@ Disadvantages:
 
 Not actually called a prenup, but how do we prevent *founder breakups* from destroying the startup? 
 
-<span class="keyword1">Big Picture: </span>Incentivize long-term service. 
+<span class="red">Big Picture: </span>Incentivize long-term service. 
 
 ### Founder Stock Vesting 
 
@@ -515,7 +515,7 @@ Sometimes, a VC wants to convert preferred stock to common.  In this part of the
 
 Antidilution provisions protect for **downrounds**, when the valuation is lower than a previous round.  Different types favor the VC more or less - one common type is a **weighted average antidilution protection**, which essentially gives a midpoint between *full ratchet* (complete protection) and no protection 
 
-Remember that the <span class="keyword1">greater the antidilution for the VC means more dilution for the founder and employees</span>.  So, full ratchet is a nightmare for a founder in the case of a down round! 
+Remember that the <span class="red">greater the antidilution for the VC means more dilution for the founder and employees</span>.  So, full ratchet is a nightmare for a founder in the case of a down round! 
 
 # Term Sheet Gov 
 
@@ -527,7 +527,7 @@ The most important thing the board does is **hire/fire** the CEO.
 
 Often comprised of one **lead investor** and potentially other investors who run the show for the VC's votes. 
 
-<span class="keyword1">Seat Composition:</span>
+<span class="red">Seat Composition:</span>
 
 * **Lead investor**
     * VC representation
@@ -666,7 +666,7 @@ Board members only owe fiduciary duties to **common** shareholders.
 
 ### BJR 
 
-The **Business Judgement Rule** states that courts can't second-guess a board decision if they had an informed, deliberate decision-making process. <span class="keyword1">Keep good minutes</span>!
+The **Business Judgement Rule** states that courts can't second-guess a board decision if they had an informed, deliberate decision-making process. <span class="red">Keep good minutes</span>!
 
 This is the preferable for the defendant; the burden of proof is on the plaintiff.
 

@@ -221,7 +221,7 @@ my_same_set = set(a_list)
 
 ```
 
-Note that converting a <span class="keyword1">list to a set</span> will <span class="keyword1">remove all repeats</span>
+Note that converting a <span class="red">list to a set</span> will <span class="red">remove all repeats</span>
 
 ## Operations 
 
@@ -833,7 +833,7 @@ Don't forget to convert to a `dict` if you want that type of output.  Otherwise,
 
 Any function containing the keyword `yield` is a generator. These functions don't lose their variables when iterating, and are generally **recursive** functions. 
 
-Generators are often <span class="keyword1">more efficient</span> than regular `Iterables` because they do **not store all values in memory**.  
+Generators are often <span class="red">more efficient</span> than regular `Iterables` because they do **not store all values in memory**.  
 
 This comes with one drawback though.  You can only iterate over a generator *once*, because they generate values *on the fly*. 
 
@@ -924,7 +924,7 @@ with open('cool-file.txt') as f:
 
 ## raise 
 
-Use `raise` when you want to signal <span class="keyword1">your own exceptions</span>! 
+Use `raise` when you want to signal <span class="red">your own exceptions</span>! 
 
 ```python 
 x = -1

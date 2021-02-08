@@ -368,7 +368,7 @@ pre[data-line] .line-highlight[data-end]:after {
 .markdown-preview.markdown-preview nav[data-toggle="toc"] .nav .active .nav {
   display: none;
 }
-.markdown-preview.markdown-preview .keyword1 {
+.markdown-preview.markdown-preview .red {
   color: #c25c5c;
   font-weight: bold;
 }
@@ -452,7 +452,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </li>
 <li><strong>Data Representativeness</strong> - If you&apos;re classifying something, don&apos;t train on classes 0-7 and test on 8-9!</li>
 <li><strong>Arrow of Time</strong> - When we are using time data, we have to train on the most recent data and test on the older.  Otherwise, we might end up with <em>temporal leaks</em>, where we are predicting on data from the future that we can&apos;t evaluate properly.</li>
-<li><strong>Train-Test Redundancy</strong> - If you have redundant samples in your train and test set, you&apos;re effectively <em>testing on your training data</em>. Ensure that your <span class="keyword1">validation and train sets are disjoint</span>!</li>
+<li><strong>Train-Test Redundancy</strong> - If you have redundant samples in your train and test set, you&apos;re effectively <em>testing on your training data</em>. Ensure that your <span class="red">validation and train sets are disjoint</span>!</li>
 </ul>
 <h1 class="mume-header" id="validation-techniques">Validation Techniques</h1>
 

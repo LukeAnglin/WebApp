@@ -21,7 +21,7 @@ Posterior probabilities lead us to update our theory.
 
 ![BayesianPosterior](assets/BayesianPosterior.png)
 
-The <span class="keyword1">wider</span> the curve, the greater the <span class="keyword1">uncertainty</span>. 
+The <span class="red">wider</span> the curve, the greater the <span class="red">uncertainty</span>. 
 
 Often, we plot the <span class="keyword2">prior probability</span> vs the <span class="keyword2">posterior probability</span>.  The x value is the **initial probability**, and the y value is our **updated probability**. 
 

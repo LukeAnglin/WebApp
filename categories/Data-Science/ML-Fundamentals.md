@@ -51,7 +51,7 @@ Currently, this field has less practical successes, but this gamification idea i
     * These are the reason we need **validation sets**
 * **Data Representativeness** - If you're classifying something, don't train on classes 0-7 and test on 8-9! 
 * **Arrow of Time** - When we are using time data, we have to train on the most recent data and test on the older.  Otherwise, we might end up with *temporal leaks*, where we are predicting on data from the future that we can't evaluate properly. 
-* **Train-Test Redundancy** - If you have redundant samples in your train and test set, you're effectively *testing on your training data*. Ensure that your <span class="keyword1">validation and train sets are disjoint</span>!
+* **Train-Test Redundancy** - If you have redundant samples in your train and test set, you're effectively *testing on your training data*. Ensure that your <span class="red">validation and train sets are disjoint</span>!
 
 # Validation Techniques
 

@@ -368,7 +368,7 @@ pre[data-line] .line-highlight[data-end]:after {
 .markdown-preview.markdown-preview nav[data-toggle="toc"] .nav .active .nav {
   display: none;
 }
-.markdown-preview.markdown-preview .keyword1 {
+.markdown-preview.markdown-preview .red {
   color: #c25c5c;
   font-weight: bold;
 }
@@ -409,7 +409,7 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <h1 class="mume-header" id="standardization">Standardization</h1>
 
-<p>Estimators do not perform well when features are not close to normal distributions.  Considering the <span class="keyword1">Central Limit Theorem</span>, we want at least <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&gt;</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">n &gt; 30</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">0</span></span></span></span> samples.</p>
+<p>Estimators do not perform well when features are not close to normal distributions.  Considering the <span class="red">Central Limit Theorem</span>, we want at least <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&gt;</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">n &gt; 30</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">0</span></span></span></span> samples.</p>
 <h2 class="mume-header" id="feature-adherence">Feature Adherence</h2>
 
 <p>SKLearn estimators assume a <strong>zero mean and unit variance</strong> for <strong>all features</strong>.  Use <code>StandardScalar</code> to ensure adherence, or the <code>scale()</code> function</p>
