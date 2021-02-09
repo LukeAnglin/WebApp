@@ -9,7 +9,7 @@ sources: <a href="https://uva-cs.github.io/pdr/slides/01-cpp.html#/3/3">C++ Intr
 publish: True
 ---
 
-## Simple Hello World 
+# Basics
 
 ```cpp
 // C++
@@ -218,6 +218,7 @@ Can be for **primitive or object** types
 
 * `int * x;` - A pointer to an int. The address where that integer lives. 
 
+
 ## Dereferences 
 
 The non-spaced, non-declaring asterisk can also be used to <span class="red">evaluate</span> the object to which the pointer points 
@@ -260,6 +261,7 @@ List & theList = sampleList;
  ## Types 
 
  * **Static** - you know how much. `float myArray[5]` 
+    * Compiler also **deallocates** it after the subroutine
  * **Dynamic** - need on the fly
     * Create with `type * somePointer = new type` 
     * You need to **clean up** 

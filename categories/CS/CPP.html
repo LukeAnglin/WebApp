@@ -407,7 +407,7 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <div class="navbar"></div><div class="note-content">
 
-<h2 class="mume-header" id="simple-hello-world">Simple Hello World</h2>
+<h1 class="mume-header" id="basics">Basics</h1>
 
 <pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token comment">// C++</span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
@@ -633,7 +633,11 @@ List <span class="token operator">&amp;</span> theList <span class="token operat
 
 <h2>Types</h2>
 <ul>
-<li><strong>Static</strong> - you know how much. <code>float myArray[5]</code></li>
+<li><strong>Static</strong> - you know how much. <code>float myArray[5]</code>
+<ul>
+<li>Compiler also <strong>deallocates</strong> it after the subroutine</li>
+</ul>
+</li>
 <li><strong>Dynamic</strong> - need on the fly
 <ul>
 <li>Create with <code>type * somePointer = new type</code></li>
