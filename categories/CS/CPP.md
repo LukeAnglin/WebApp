@@ -256,7 +256,7 @@ List sampleList
 List & theList = sampleList;
 ```
 
-# Memory Allocation 
+ # Memory Allocation 
 
  ## Types 
 
@@ -267,7 +267,7 @@ List & theList = sampleList;
     * You need to **clean up** 
     * **Outlives** the usual scope
     * On the heap 
-
+ 
 Stack addressed memory would be something like `Entity e()` using the default constructor. 
 
 ```cpp 
@@ -306,6 +306,7 @@ void swap (int &x, int &y);
 ## Const Reference 
 
 * Use when you want to access a non-copy **class reference**, but **don't** want to modify it. 
+* Speed and security! 
 
 ```CPP 
 bool compare(const Rational & left, 

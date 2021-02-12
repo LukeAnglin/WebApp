@@ -629,8 +629,7 @@ folder <span class="token operator">=</span> <span class="token operator">&amp;<
 <pre data-role="codeBlock" data-info="cpp" class="language-cpp">List sampleList
 <span class="token comment">// Holds an address</span>
 List <span class="token operator">&amp;</span> theList <span class="token operator">=</span> sampleList<span class="token punctuation">;</span>
-</pre><h1 class="mume-header" id="memory-allocation">Memory Allocation</h1>
-
+</pre><h1>Memory Allocation</h1>
 <h2>Types</h2>
 <ul>
 <li><strong>Static</strong> - you know how much. <code>float myArray[5]</code>
@@ -681,6 +680,7 @@ List <span class="token operator">&amp;</span> theList <span class="token operat
 
 <ul>
 <li>Use when you want to access a non-copy <strong>class reference</strong>, but <strong>don&apos;t</strong> want to modify it.</li>
+<li>Speed and security!</li>
 </ul>
 <pre data-role="codeBlock" data-info="CPP" class="language-cpp"><span class="token keyword">bool</span> <span class="token function">compare</span><span class="token punctuation">(</span><span class="token keyword">const</span> Rational <span class="token operator">&amp;</span> left<span class="token punctuation">,</span> 
              <span class="token keyword">const</span> Rational <span class="token operator">&amp;</span> right<span class="token punctuation">)</span><span class="token punctuation">;</span>
