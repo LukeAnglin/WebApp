@@ -28,20 +28,24 @@ Despite all the benefits of trees, also **recognize the cons**
 
 **Single** rotation, **single** direction.
 
-Parent **loses pointer** in the **opposite direction**  of the rotation, child **gains pointer** to the parent in the *same direction** of the rotation
+Parent **loses pointer** in the **opposite direction**  of the rotation (which is replaced by the left pointer of the child), child **gains pointer** to the parent in the *same direction** of the rotation
 
 #### Single Left
 
 ![AVL Single Left](https://www.tutorialspoint.com/data_structures_algorithms/images/avl_left_rotation.jpg)
 
+**Note**: This does not show the general case, where B has a left child as well. In that case, the left child of B would become the right child of A. 
+
 * Left subtree, left child
     * Unbalanced **towards left** means **rotate right**
 
-<span class="red">Pointers Swapped: </span> Parent loses its child pointer, child gains a left pointer to parent
+<span class="red">Pointers Swapped: </span> Parent loses its child pointer, it's right pointer becoming that of the left of the child, child gains a left pointer to parent
 
 #### Single Right 
 
 ![AVL Single Right](https://www.tutorialspoint.com/data_structures_algorithms/images/avl_right_rotation.jpg)
+
+**Note**: This does not show the general case, where B has a right child as well. In that case, the right child of B would become the left child of A. 
 
 * Right subtree, right child (but a **left** rotation)
     * Unbalanced  Unbalanced **towards right** means **rotate left**
