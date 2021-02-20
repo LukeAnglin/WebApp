@@ -28,7 +28,7 @@ Despite all the benefits of trees, also **recognize the cons**
 
 **Single** rotation, **single** direction.
 
-Parent **loses pointer** in the direction of the rotation, child **gains pointer** to the parent in the **opposite direction** of the rotation
+Parent **loses pointer** in the **opposite direction**  of the rotation, child **gains pointer** to the parent in the *same direction** of the rotation
 
 #### Single Left
 
