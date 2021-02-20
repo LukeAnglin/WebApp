@@ -315,6 +315,15 @@ bool compare(const Rational & left,
 
 # Constructors 
 
+C++ automatically provides us with: 
+
+* <span class="red">D</span>efault constructor 
+* <span class="red">O</span>perator = ()
+* <span class="red">C</span>opy constructor
+* <span class="red">D</span>estructor 
+
+Just remember **DOCD**, like docked, because boats are constructed and have to then be docked. 
+
 ## Default 
 
 No params, just for compilation 
@@ -324,6 +333,8 @@ No params, just for compilation
 Called when 
 * Object leaves scope 
 * `delete` 
+
+
 
 Uses the `~`, like `~ObjectName();`
 
@@ -355,3 +366,5 @@ class Box {
             return box;
 }
 ```
+
+

@@ -55,7 +55,7 @@ for ( vector<int>::iterator it = v.begin();
     cout << *it << endl;
 ```
 
-# Templates 
+ # Templates 
 
 Basically **generics** for functions and/or classes 
 
