@@ -13,7 +13,7 @@ publish: True
 
 LU Decomposition is a widely used method of decomposing large systems of equations. It has common implementations and implications in **data science** and **machine learning**. 
 
-LU Decomposition involves taking a matrix and transforming it into smaller triangular matrices. 
+LU Decomposition involves taking a matrix and transforming it into the product of a *lower* and *upper* triangular matrix. 
 
 ![LU Decomp](https://static.packt-cdn.com/products/9781789346466/graphics/99d9ce90-5f1c-4435-a2b1-74f8ca726700.png)
 
@@ -32,7 +32,7 @@ $$
 
 ### End Goal 
 
-We want to transform this into the product of two triangular matrix. The upper is commonly referred to as $L$, and the lower as $U$. The upper contains the diagonal that contains the $1$s of the identity matrix, $I$. 
+We want to transform this into the product of two triangular matrices. The upper is commonly referred to as $L$, and the lower as $U$. The upper contains the diagonal that contains the $1$s of the identity matrix, $I$. 
 
 In mathematical form, we want two matrices $L$ and $U$ such that
 
@@ -62,7 +62,7 @@ c & c & c\\
 \end{bmatrix}
 $$
 
-where $c$, in both cases, are some arbitrary constants. 
+where $c$, in both cases, are some arbitrary constants ($c$ is **not necessarily the same** in those positions, it is solely a representation).
 
 ## Methodology
 
@@ -101,7 +101,7 @@ L =
 \end{bmatrix}
 $$
 
-Our first reversed row operation involves the multiplication of $-\frac{1}{2}R_1$, meaning that our first respective entry in the lower triantle will be the **opposite** of that <span class="red">multiplier coefficient</span>.
+Our first reversed row operation involves the multiplication of $-\frac{1}{2}R_1$, meaning that our first respective entry in the lower triangle will be the **opposite** of that <span class="red">multiplier coefficient</span>.
 
 $$
 L = 
@@ -166,7 +166,7 @@ LY = B
 $$
 and 
 $$
-UX = Y
+U\vec{x} = Y
 $$
 
 Again, let's look at an example!
@@ -280,9 +280,9 @@ x_2 = 6\newline
 x_3 = -3 
 $$
 
-And that's really all there is too it! 
+And that's really all there is too it! We have solved **the unique solution** in this case, but this method works for no solution or general solutions as well.
 
-## Square Matrices and LU Decomp 
+## Square Matrices and LU Decomposition
 
 This brings us to the question: **Do all square matrices *even have* an LU Decomposition?**
 
@@ -298,3 +298,5 @@ $$
 $$
 
 which immediately disprove the idea, there are also examples where the specific matrix does not have an LU decomposition *but does* have what is called a **PLU Decomposition**, where the $P$ stands for **permuted**. This is when **rearranging the rows** can permit for LU Decomposition. 
+
+To summarize, if you're working with **large matrices**, especially once you use computers for machine learning operations, LU Decomposition is an effective strategy if the conditions for it's usage are satisfied.
