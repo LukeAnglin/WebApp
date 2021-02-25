@@ -90,6 +90,7 @@ Could also be represented by the **sign complement**, flipping the bits if negat
 
 * Sign bit 
 * Mantissa - the value, in range $1.0 \leq m < 10.0$ for sci notation, or $1.0 \leq m < 2.0$
+    * Example - $106$ is the same as $1.06 * 10^2$
 * Base 
 * Exponent 
 
@@ -107,3 +108,19 @@ Once you follow these steps, it's viable to convert to binary.
 * Bit 1 - Sign bit 
 * Bits 2-9 - Exponent (8 bits)
 * Bits 10-32 - Mantissa (23 bits)
+
+### Exponent Values
+
+These *don't* use two's complement 
+
+* 0 is for zeros 
+* 1-254 - exponent-127 
+    * The exponent offset or bias is 127
+* 255 is for NaN and overflow 
+
+### Mantissa 
+
+Each bit set represents a power of $\frac{1}{2}$ 
+
+Mantissa $= 1+ \sum_{i=1}^{23} \frac{b_i}{2^i}$
+
