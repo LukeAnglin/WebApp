@@ -1,3 +1,14 @@
+---
+export_on_save:
+    html: true
+title: Beyfore Happiness
+image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLs8cv9kyCTSmZ31DLKRlGlDJmHI4rGfUU8A&usqp=CAU
+description: Shawn Anchor's Next Book on Happiness
+topics: Beyond Happiness Notes
+sources: 
+publish: True
+---
+
 # Positive Genius 
 
 Positive genius is about seeing the full pitcher - not just the half-full or half-empty glass. 

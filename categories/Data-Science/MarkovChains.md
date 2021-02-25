@@ -74,7 +74,7 @@ $$
 \end{bmatrix}
 $$
 
-Note that **in this case** we only have ones and zeroes, because the states are <span class="red">mutually exclusive</span>. However, some Markov chains will not have mutually exclusive states, and therefore the initial state vector may have non-binary values. To clarify, the **steady state vector** is the vector that represents
+Note that **in this case** we only have ones and zeroes, because the states are <span class="red">mutually exclusive</span>. However, some Markov chains will not have mutually exclusive states, and therefore the initial state vector may have non-binary values. 
 
 We can represent this as matrix vector multiplication now, where the product, $\vec{b}$ is equivalent to the probability distribution of being in a growing state or a shrinking state the next day. 
 
@@ -152,7 +152,7 @@ $$
 \end{bmatrix}
 $$
 
-Solving the corresponding system through RREF row operations, we find that $x = \frac{1}{2}$ and $y = \frac{1}{2}$ 
+Solving the corresponding system through RREF row operations, we find that $x = \frac{1}{2}$ and $y = \frac{1}{2}$.
 
 # More Real Life Examples 
 

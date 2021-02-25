@@ -1,0 +1,880 @@
+<!DOCTYPE html><html><head>
+      <title>The Happiness Advantage</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+      
+      
+      
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid@8.8.4/dist/mermaid.min.js"></script>
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+.markdown-preview.markdown-preview {
+  /* PICK ONE */
+  /* don't expand nested items, which pushes down the rest of the page when navigating */
+  /* Effect 3: bottom line slides/fades in */
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/opensans/v18/mem6YaGs126MiZpBA-UFUK0Zdcg.ttf) format('truetype');
+}
+.markdown-preview.markdown-preview body {
+  padding: 7vh;
+}
+.markdown-preview.markdown-preview ol.toc-list {
+  font-size: x-small;
+}
+.markdown-preview.markdown-preview #toc a {
+  color: #47404e;
+}
+.markdown-preview.markdown-preview h1,
+.markdown-preview.markdown-preview h2,
+.markdown-preview.markdown-preview h3 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.markdown-preview.markdown-preview blockquote {
+  margin: 50px auto;
+  font-style: italic;
+  color: #555555;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid #47404e;
+  line-height: 1.6;
+  position: relative;
+  background: #ededed;
+}
+.markdown-preview.markdown-preview blockquote::before {
+  font-family: Arial;
+  content: "\201C";
+  color: #47404e;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+.markdown-preview.markdown-preview blockquote::after {
+  content: "";
+}
+.markdown-preview.markdown-preview .bs-example {
+  position: relative;
+  padding: 45px 15px 15px;
+  margin: 0 -15px 15px;
+  border-color: #e5e5e5 #eee #eee;
+  border-style: solid;
+  border-width: 1px 0;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+.markdown-preview.markdown-preview .bs-example:after {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #959595;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  content: "Example";
+}
+.markdown-preview.markdown-preview .panel-heading {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.42857143;
+  box-sizing: border-box;
+  height: 3vh;
+  padding-bottom: 5vw;
+  border-bottom: 0.2vh solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+.markdown-preview.markdown-preview .panel-body {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.42857143;
+  color: #333;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.markdown-preview.markdown-preview div.panel-heading > h5 {
+  padding-left: 1vw;
+  padding-top: 1vh;
+  font-size: 1.5rem;
+}
+.markdown-preview.markdown-preview img {
+  width: 100%;
+  height: auto;
+}
+.markdown-preview.markdown-preview .img-row img {
+  height: 30vh;
+}
+.markdown-preview.markdown-preview a.is-active-link::before {
+  background-color: #47404e;
+}
+.markdown-preview.markdown-preview nav[data-toggle="toc"] {
+  top: 42px;
+}
+.markdown-preview.markdown-preview nav[data-toggle="toc"] .nav .active .nav {
+  display: none;
+}
+.markdown-preview.markdown-preview .red {
+  color: #c25c5c;
+  font-weight: bold;
+}
+.markdown-preview.markdown-preview .keyword2 {
+  color: #2e7caa;
+  font-weight: bold;
+}
+.markdown-preview.markdown-preview .keyword3 {
+  color: #709925;
+  font-weight: bold;
+}
+.markdown-preview.markdown-preview a {
+  color: #b17f7f;
+}
+.markdown-preview.markdown-preview a:hover {
+  text-decoration: none;
+  color: #47404e;
+  font-weight: bold;
+}
+.markdown-preview.markdown-preview .navbar a {
+  color: #47404e;
+}
+.markdown-preview.markdown-preview body > div.mume.markdown-preview {
+  padding: 3vw;
+}
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">    <link type="text/css" rel="stylesheet" href="../../static/assets/styles/style.css">    <div class="container">              <div class="row">                        <div class="col-3">                <nav id="toc" data-toggle="toc" class="sticky-top toc"></nav>            </div>                 <div class="col-9 content">
+
+<div class="navbar"></div><div class="note-content">
+
+<h1 class="mume-header" id="preface">Preface</h1>
+
+<p>Here&apos;s a quote from the book that you <strong>must not forget</strong> before reading these notes.</p>
+<blockquote>
+<p>The point is that just reading this book is not enough.  It takes actual focus and effort to put these principles into practice, and only then will the returns start pouring in.  The good news is that these returns are enormous.</p>
+</blockquote>
+<h1 class="mume-header" id="success-neq-happiness">Success <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo mathvariant="normal">&#x2260;</mo></mrow><annotation encoding="application/x-tex">\neq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel">&#xE020;</span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span></span></span></span> Happiness</h1>
+
+<p>This broken formula states that success will bring us joy.  However, we simply continue to push our goals farther each time we accomplish a new feat.</p>
+<blockquote>
+<p>More than a decade of groundbreaking research in the fields of positive psychology has proven that the relationship between success and happiness works the other way around.  Happiness and optimism fuel performance, achievement, and give us the competitive edge - the Happiness Advantage.</p>
+</blockquote>
+<h1 class="mume-header" id="stats">Stats</h1>
+
+<ul>
+<li>Depression rates are 10 times higher than in 19</li>
+<li>The mean onset age of depression continues to decrease logarithmically - 50 years ago, it was 29.5, and now, it&apos;s 14.5</li>
+<li>4 out of 5 students at Harvard are chronically depressed</li>
+<li>Optimistic salespeople outsell their pessimistic counterparts by 56%</li>
+<li>Doctors make more accurate diagnoses, and faster ones, when optimistic</li>
+</ul>
+<h2 class="mume-header" id="cult-of-the-average">Cult of the Average</h2>
+
+<p>In statistics, outliers are <em>problems</em>.</p>
+<ul>
+<li>Consider training kids to read.  We tailor to the average child, not the faster, nor the slower.</li>
+</ul>
+<p>Rather than <em>deleting the outliers</em>, we must <strong>study the exceptional</strong>.</p>
+<h2 class="mume-header" id="negative-focus">Negative Focus</h2>
+
+<p>Many positive psychologists focus on the average <em>and those below average</em>.</p>
+<p>In the late 90&apos;s, there was a <strong>17 to 1</strong> negative-to-positive psychologist ratio.</p>
+<p>However, this leads many to simply reduce or eliminate the negative.  How often do we look at a depressed person and ask &quot;how can we make him optimistic?&quot;  Rather, we say &quot;how can we cure his sadness?&quot;  This is an error.</p>
+<blockquote>
+<p>You can study gravity forever without learning how to fly.</p>
+</blockquote>
+<h1 class="mume-header" id="med-school-syndrome">Med School Syndrome</h1>
+
+<p>The author had to go to a boarding school for &quot;Wellness Weak.&quot;  This entailed talks on eating disorders, sicknesses, and risky sex.  That&apos;s not a <em>wellness week</em>, it&apos;s a <em>sickness week</em>.</p>
+<p>Focusing on the negative tricks our brains into believing the universe has <strong>negative patterns</strong>.</p>
+<p>Take med students. Being exposed to constant sickness talk, they begin to believe they have all the sicknesses.  The pattern infects their brains.</p>
+<p>The takeaway?</p>
+<p>Let&apos;s study what works, not what is broken.</p>
+<h1 class="mume-header" id="comparison">Comparison</h1>
+
+<p>Harvard students are all in the top 1% of the top 1%.  That is, before they walk into the Ivory Tower.</p>
+<blockquote>
+<p>And then they get into Harvard . . . and have a terrible realization: <em>50 percent of them are suddenly below average.</em><br>
+-- <b>Book</b></p>
+</blockquote>
+<blockquote>
+<p>Comparison is the thief of joy<br>
+-- <b>Teddy Roosevelt</b></p>
+</blockquote>
+<blockquote>
+<p>We wouldn&#x2019;t put ourselves in the same class with or compare ourselves to those who are bold enough to make their own recommendations. Certainly, when they measure themselves by themselves and compare themselves to themselves, they show how foolish they are.<br>
+-- <b>2 Corinthians 10:12</b></p>
+</blockquote>
+<blockquote>
+<p>A heart at peace gives life to the body, but envy rots the bones.<br>
+-- <b>Proverbs 14:30</b></p>
+</blockquote>
+<blockquote>
+<p>I like to tell my advisees: If my calculations are correct, 99 percent of Harvard students do not graduate in the top 1 percent.<br>
+-- <b>Book</b></p>
+</blockquote>
+<h1 class="mume-header" id="social-aspect">Social Aspect</h1>
+
+<p>Often, when we&apos;re depressed, we shut people out.  I&apos;m guilty of this myself.  Ironically, we do this at the time we need affection the most.</p>
+<p>All those missed calls from dad.  Those angry replies in texts . . . what was I doing?</p>
+<blockquote>
+<p>Honor your father and your mother, so that you may live long in the land the Lord your God gave you<br>
+-- <b>Exodus 20:12</b></p>
+</blockquote>
+<blockquote>
+<p>Based on my study of Harvard undergraduates, the average number of romantic relationships over four years is less than one.<br>
+-- <b>Book</b></p>
+</blockquote>
+<blockquote>
+<p>Countless studies have found that social relationships are the best guarantee of heightened well-being and lowered stress, both an antidote for depression and a prescription for high performance.<br>
+-- <b>Book</b></p>
+</blockquote>
+<h1 class="mume-header" id="the-seven-principles">The Seven Principles</h1>
+
+<ul>
+<li><strong>The Happiness Advantage</strong> - Happiness leads us towards success, not the other way around</li>
+<li><strong>The Fulcrum and the Lever</strong> - Our mindset is the fulcrum which gives us the power (the lever) to be both more fulfilled and successful</li>
+<li><strong>The Tetris Effect</strong> - Seize positive experiences!</li>
+<li><strong>Falling Up</strong> - Failure propellant</li>
+<li><strong>Zorro Circle</strong> - Manageable goals which won&apos;t leave you crushed</li>
+<li><strong>The 20-Second Rule</strong> - Small energy adjustments can help us replace bad habits</li>
+<li><strong>Social Investment</strong></li>
+</ul>
+<h1 class="mume-header" id="neuroplasticity">Neuroplasticity</h1>
+
+<p>You <strong>can</strong> change your brain.  You have to make a choice everyday to be happy.  The more you do it, the more effective it will be.</p>
+<h1 class="mume-header" id="happiness-advantage">Happiness Advantage</h1>
+
+<p>Don&apos;t fret on the negative, empower yourself based on what you are grateful for and have already accomplished!</p>
+<blockquote>
+<p>The most successful people, the ones with the competitive edge, don&apos;t look to happiness as some distant reward for their achievements, nor grind through their days on neutral or negative; they are the one who <strong>capitalize on the positive and reap the rewards at every turn</strong>.</p>
+</blockquote>
+<p>I just love this quote from my dad.  What a great business move from Truess!</p>
+<blockquote>
+<p>The most memorable moment for me?  My boss bought me dinner.  That&apos;s it.  Jim Truess.  Loyalty for life.<br>
+-- <strong>Scott Anglin</strong></p>
+</blockquote>
+<p>An incredible study.</p>
+<blockquote>
+<p>One of the most famous longitudinal studies on happiness comes from an unlikely place: the old diaries of Catholic nuns.10 These 180 nuns from the School Sisters of Notre Dame, all born before 1917, were asked to write down their thoughts in autobiographical journal entries. More than five decades later, a clever group of researchers decided to code the entries for positive emotional content. Could their level of positivity as 20-year-olds predict how the rest of their lives turned out? In fact, yes. The nuns whose journal entries had more overtly joyful content lived nearly ten years longer than the nuns whose entries were more negative or neutral. By age 85, 90 percent of the happiest quartile of nuns were still alive, compared to only 34 percent of the least happy quartile.11 Clearly, the nuns who were happy at 20 didn&#x2019;t feel that way because they knew they would go on to live longer; their superior health and longer life spans could only be the result of their happiness, not the cause.<br>
+-- <strong>Book</strong></p>
+</blockquote>
+<div class="mermaid">graph LR 
+    Happiness --&gt; Success
+</div><blockquote>
+<p>Instead of narrowing our actions down to fight or flight as negative emotions do, positive ones broaden the amount of possibilities we process, making us more thoughtful, creative, and open to new ideas.<br>
+-- <strong>Book</strong></p>
+</blockquote>
+<p>From a business perspective, <span class="red">invest in your employee&apos;s happiness!</span></p>
+<blockquote>
+<p>The Happiness Advantage is why cutting-edge software companies have foosball tables in the employee lounge, why Yahoo! has an in-house massage parlor, and why Google engineers are encouraged to bring their dogs to work. These aren&#x2019;t just PR gimmicks. Smart companies cultivate these kinds of working environments because every time employees experience a small burst of happiness, they get primed for creativity and innovation. They see solutions they might otherwise have missed.<br>
+-- <strong>Book</strong></p>
+</blockquote>
+<p>Use <strong>happiness priming</strong> to fuel your success.</p>
+<ul>
+<li>Kids who were told to assemble legoes in elementary school performed better after being told to &quot;think of something that makes them happy.&quot;</li>
+<li>Happy-primed children perform better on standardized tests.</li>
+</ul>
+<h1 class="mume-header" id="priming">Priming</h1>
+
+<p>Even the smallest acts of positivity give a massive competitive edge.</p>
+<blockquote>
+<p>Doctors who were given candy before their diagnoses (note, they <em>didn&apos;t even get to eat it</em>), made 20% better diagnoses.</p>
+</blockquote>
+<p>Maybe watch some funny tweets or Reddits before your next presentation!</p>
+<h1 class="mume-header" id="cultivating-happiness">Cultivating Happiness</h1>
+
+<blockquote>
+<p>Well, that&apos;s great for happy people, but what about the rest of us?<br>
+-- <strong>Executive</strong></p>
+</blockquote>
+<p>Happiness is a <span class="red">work ethic</span>.</p>
+<h2 class="mume-header" id="strategies">Strategies</h2>
+
+<p>Try to come up with your own, personally-tailored ones.  Here are some good ones, though:</p>
+<h3 class="mume-header" id="meditate">Meditate</h3>
+
+<p>One study found that monks who meditated <strong>literally grew the happiness sector of their brain</strong>.</p>
+<h3 class="mume-header" id="anticipation">Anticipation</h3>
+
+<p>Often, anticipation brings anxiety.  But, if you anticipate <strong>positive events</strong>, like your next vacation, you may find yourself much happier in the valleys of life.</p>
+<h3 class="mume-header" id="kindness">Kindness</h3>
+
+<p>Committing <strong>concious</strong> acts of kindness is crucial.  The Bible says it, and so does psychology.</p>
+<blockquote>
+<p>Individuals told to complete five acts of kindness report feeling much happier than control groups.  If you want to reap the psychological benefit, do this deliberately and conciously . . . you can&apos;t declare your acts post hoc.</p>
+</blockquote>
+<blockquote>
+<p>But love your enemies, and do good, and lend, expecting nothing in return, and your reward will be great, and you will be sons of the Most High, for he is kind to the ungrateful and the evil.<br>
+-- <strong>Luke 6:35</strong></p>
+</blockquote>
+<blockquote>
+<p>Whoever is generous to the poor lends to the Lord, and he will repay him for his deed.<br>
+-- <strong>Proverbs 19:17</strong></p>
+</blockquote>
+<blockquote>
+<p>In all things I have shown you that by working hard in this way we must help the weak and remember the words of the Lord Jesus, how he himself said, &#x2018;It is more blessed to give than to receive.&#x2019;<br>
+-- <strong>Acts 20:35</strong></p>
+</blockquote>
+<h3 class="mume-header" id="postitive-environments">Postitive Environments</h3>
+
+<p>Put up pictures of your love ones.  Go outside in nice weather.</p>
+<p>Similarly, <em>kill negative environments</em>.  If stocks aren&apos;t doing great, don&apos;t have CNBC on in the background!</p>
+<h3 class="mume-header" id="exercise">Exercise</h3>
+
+<p>A study comparing anti-depressant medication, meditation, and exercise found that exercise single-handedly combatted depression more than all three.  Get those endorphins going!</p>
+<h3 class="mume-header" id="prosocial-spending">Prosocial Spending</h3>
+
+<p>Spend on experiences, not stuff.</p>
+<blockquote>
+<p>People were given 40 dollars.  Half were told to spend it on themselves, while others were told to spend it on others.  At the end of the day, surveys showed those who spent on others were happier.</p>
+</blockquote>
+<blockquote>
+<p>At the end of the month, look back over each column and think about the pleasure each purchase brought you, and for how long. You may quickly find yourself wanting to reapportion money from your &apos;having&apos; column to your &#x201C;doing&#x201D; column.</p>
+</blockquote>
+<h3 class="mume-header" id="exercise-skills">Exercise Skills</h3>
+
+<p>What are you good at?  Do that more!</p>
+<blockquote>
+<p>When 577 volunteers were encouraged to pick one of their signature strengths and use it in a new way each day for a week, they became significantly happier and less depressed than control groups.<br>
+-- <strong>Book</strong></p>
+</blockquote>
+<p>The author&apos;s example was &quot;love of learning.&quot;  Not sure I can think of a better one for myself!</p>
+<h1 class="mume-header" id="spreading-positivity">Spreading Positivity</h1>
+
+<h2 class="mume-header" id="workplace">Workplace</h2>
+
+<p>Spread positivity in the workplace, both for the ROI, and to make yourself and others feel joy.</p>
+<blockquote>
+<p>And the bosses who discourage positivity in their employees are at a double disadvantage, because these tend to be people who are most negative themselves. In short, sacrificing positivity in the name of time management and efficiency actually slows us down.<br>
+-- <strong>Book</strong></p>
+</blockquote>
+<p>Some proven examples:</p>
+<ul>
+<li>Google&apos;s scooters, ping-pong tables, and more</li>
+<li>Companies instituting gym memberships and health benefits</li>
+<li>Patagonia&apos;s <em>Let&apos;s go surfing</em> policy</li>
+</ul>
+<h3 class="mume-header" id="recognition">Recognition</h3>
+
+<p><em>The Order of the Elephant</em> - in this case, employees gave a stuffed elephant to others when they did something exemplary.</p>
+<p>Don&apos;t forget about creative ways to do this, like the Danish elephant example.</p>
+<p>If you ever are a <strong>CEO</strong>, make those employees happy, and find ways to recognize them!</p>
+<h1 class="mume-header" id="fake-til-make">Fake til Make</h1>
+
+<p>We often show scowls without even realizing.  Make a concious effort to show your positivity with your facial expression and tone all the time.  You will be rewarded.</p>
+<h2 class="mume-header" id="losadas-ratio">Losada&apos;s Ratio</h2>
+
+<p>2.9013.  For every 3 positive actions, you can mullify one negative one.  The more positives you do, the easier it is to get away with screwing up.  And we screw up.  A lot.</p>
+<h1 class="mume-header" id="fulcrum-and-the-lever">Fulcrum and the Lever</h1>
+
+<p>The sister of the author fell on all fours and broke her bones.  Yet, <em>the author told her she was a unicorn</em> and her pain dissipated.  What does this tell us?</p>
+<blockquote>
+<p>Because our brain&#x2019;s resources are limited, we are left with a choice: to use those finite resources to see only pain, negativity, stress, and uncertainty, or to use those resources to look at things through a lens of gratitude, hope, resilience, optimism, and meaning.</p>
+</blockquote>
+<h2 class="mume-header" id="archmides-formula">Archmides&apos; Formula</h2>
+
+<p>Consider a see saw.  If one kid is heavier than another, he will be at the bottom.  But, move the fulcrum, and everything can change.</p>
+<blockquote>
+<p>Our potential is not fixed. The more we move our fulcrum (or mindset), the more our lever lengthens and so the more power we generate. Move the fulcrum so that all the advantage goes to a negative mindset, and we never rise off the ground. Move the fulcrum to a positive mindset, and the lever&#x2019;s power is magnified&#x2014;ready to move everything up.</p>
+</blockquote>
+<h2 class="mume-header" id="theory-of-relativity">Theory of Relativity</h2>
+
+<p>Einstein&apos;s Theory of Relativity piggy backs off this - we can change everything if we <em>change our perspective</em>.</p>
+<h2 class="mume-header" id="time-travel">Time Travel</h2>
+
+<p>A group of 75-year old men were instructed to live like they were 55.  And what happened?</p>
+<blockquote>
+<p>After the retreat, most of the men had improved in every category; they were significantly more flexible, had better posture, and even much-improved hand strength. Their average eyesight even improved by almost 10 percent, as did their performance on tests of memory.</p>
+</blockquote>
+<p>Excerpt From: Shawn Achor. &#x201C;The Happiness Advantage: The Seven Principles of Positive Psychology That Fuel Success and Performance at Work.&#x201D; Apple Books.</p>
+<h2 class="mume-header" id="placebo">Placebo</h2>
+
+<p>Placebos are about 60% as effective as regular pain medications, can grow fake hair, and be just as effective as knee surgery!</p>
+<p>Reverse placebos also are amazing.  Imagining rubbing poison ivy on people&apos;s arms caused real boils.</p>
+<p>The point is, <strong>our mindsets change events</strong>.  Consider the example of maids - those told that they would burn more calories <em>really did</em>.</p>
+<h2 class="mume-header" id="gamify-and-create-objectives">Gamify and Create Objectives</h2>
+
+<p>This is so beautifully written, I can&apos;t summarize it.</p>
+<blockquote>
+<p>Think of the last interminable meeting you were forced to sit through (you probably won&#x2019;t have to think back very far). You may have decided in the first three minutes that the stated objective of the meeting was not going to be met, or that you didn&#x2019;t care about the objective to begin with. Those two hours that followed suddenly became a tremendous waste of time, a drain on your energy and productivity and probably also your motivation. But what if, instead, you chose to see the meeting as an opportunity, and created your own objective? What if you forced yourself to learn three new things before the end?</p>
+</blockquote>
+<p>Next time your doing schoolwork you &quot;hate,&quot; figure out how you can turn it into something that you love.  What can you get out of it for yourself?</p>
+<h3 class="mume-header" id="ignore-constraints">Ignore Constraints</h3>
+
+<p>Whereas the author ignored the deadline, you should ignore your grades!  <strong>Focus on the intrinsic value</strong> you can garner from schoolwork!</p>
+<h3 class="mume-header" id="workaholics-curse">Workaholic&apos;s Curse</h3>
+
+<p>This is so me.</p>
+<blockquote>
+<p>I wanted to be productive because that&#x2019;s what makes me happy, so I tried to maximize the time I spent working. But, as I later realized, I had too narrowly defined what &#x2018;being productive&#x2019; was. I started to feel guilty when I did anything that wasn&#x2019;t work. Nothing else, not exercise or time with my wife or relaxation, was productive. So I never had time to recharge my batteries, which meant that, ironically, the more I worked, the more my productivity plummeted.</p>
+</blockquote>
+<p>Recognize that <span class="red">anything that makes you happy is productive!</span></p>
+<h2 class="mume-header" id="the-possibility-lever">The Possibility Lever</h2>
+
+<blockquote>
+<p>What I mean is that the more you believe in your own ability to succeed, the more likely it is that you will.</p>
+</blockquote>
+<h3 class="mume-header" id="choose-your-calling">Choose your Calling</h3>
+
+<p>Three categories:</p>
+<ul>
+<li>Job - I have to work.  I hate it.  I live for weekends and lunch breaks.</li>
+<li>Career - This doesn&apos;t suck.  I want to do well.</li>
+<li>Calling - I am making a difference and enjoy what I do.</li>
+</ul>
+<p><strong>Live and work for your calling</strong>.</p>
+<h3 class="mume-header" id="find-pleasure">Find Pleasure</h3>
+
+<p>Joy might not be obvious - you need to <strong>actively</strong> seek it.</p>
+<blockquote>
+<p>If you can&apos;t change your daily work, ask yourself what potential meaning and pleasure already exists in what you do.</p>
+</blockquote>
+<p>A nice exercise is through circular reasoning.  Make a flow chart mapping the task to something you get out of it, and repeat this over and over until you arrive at something <strong>meaningful to you</strong>.</p>
+<h3 class="mume-header" id="priming-1">Priming</h3>
+
+<p>This can be negative or positive (of course, we want positive!)</p>
+<p>Consider the &quot;Saving the Dolphins&quot; example.  Priming employees with negativity infused it.</p>
+<blockquote>
+<p>The fastest way to disengage an employee is to tell him his work is meaningful only because of the paycheck</p>
+</blockquote>
+<blockquote>
+<p>You can have the best job in the world, but if you can&apos;t find the meaning in it, you won&apos;t enjoy it, whether you are a moviemaker or an NFL playmaker.</p>
+</blockquote>
+<p>This resonates with me. I am constantly thinking about my future job - but I need to be <strong>searching for meaning</strong>.  Just as Pastor Singer preached in his <em>Keys to the Kingdom</em> series.</p>
+<h4 class="mume-header" id="on-others">On Others</h4>
+
+<p>Don&apos;t just focus on this for yourself - prime others!  Leaders <span class="red">will utilize priming</span> to encourage their employees!</p>
+<blockquote>
+<p>. . . the best managers and leaders view each interaction as an opportunity to prime their employees for excellence</p>
+</blockquote>
+<h3 class="mume-header" id="pymagalion-effect">Pymagalion Effect</h3>
+
+<p>Teachers who believed students would perform better unconciously made them do so.  Theory X managers make Theory X employees.  <strong>Believe in others, and it comes to life</strong>.</p>
+<h1 class="mume-header" id="tetris-effect">Tetris Effect</h1>
+
+<p>Addiction is a <strong>powerful tool</strong>.  Let&apos;s use it for positivity!</p>
+<blockquote>
+<p>For days after the study, some participants literally couldn&#x2019;t stop dreaming about shapes falling from the sky. Others couldn&#x2019;t stop seeing these shapes everywhere, even in their waking hours. Quite simply, they couldn&#x2019;t stop seeing their world as being made up of sequences of Tetris blocks.</p>
+</blockquote>
+<p>Every time a negative thought comes into your head, <strong>punish yourself</strong>.  When a positive one comes, <strong>reward yourself</strong>.</p>
+<h2 class="mume-header" id="patterned-thought">Patterned Thought</h2>
+
+<p>A <strong>negative</strong> tetris:</p>
+<blockquote>
+<p>Trained to be on the lookout for the flaws in every argument, the holes in every case, they start &#x201C;to overestimate the significance and permanence of the problems they encounter,&#x201D; the fastest route to depression and anxiety&#x2014;which in turn interferes with their ability to do their job.</p>
+</blockquote>
+<p>A <strong>spam filter</strong>:</p>
+<blockquote>
+<p>If we have programmed our brain&#x2019;s filter to delete the positive, that data will cease to exist for us as surely as the chain letters and advertisements cease to exist in our inbox. As you are about to learn, we see what we look for, and we miss the rest.</p>
+</blockquote>
+<p>Don&apos;t filter <em>everything</em>!  Use <strong>selective perception</strong> to see the positives in all situations.</p>
+<h2 class="mume-header" id="gratefulness">Gratefulness</h2>
+
+<p>To reap the rewards of a <strong>positive tetris effect</strong>, we need to be <strong>grateful</strong>.</p>
+<h2 class="mume-header" id="optimistim">Optimistim</h2>
+
+<p>Optimism has also been proven to be a <strong>predictor of success</strong>, rather than the other way around.</p>
+<h2 class="mume-header" id="creating-the-tetris">Creating the Tetris</h2>
+
+<ul>
+<li>Three positives from each day</li>
+<li>Positivity habits</li>
+</ul>
+<h1 class="mume-header" id="falling-up">Falling Up</h1>
+
+<blockquote>
+<p>By scanning our mental map for positive opportunities, and by rejecting the belief that every down in life leads us only further downward, we give ourselves the greatest power possible: the ability to move up not <em>despite</em> the setbacks, but <em>because</em> of them. In this chapter, you&#x2019;ll learn how.</p>
+</blockquote>
+<blockquote>
+<p>The most successful people see adversity not as a stumbling block, but as a stepping-stone to greatness.</p>
+</blockquote>
+<p>Maybe I should just fail my way to a job.  Let&apos;s apply to a bunch and see what happens.</p>
+<h2 class="mume-header" id="strategies-1">Strategies</h2>
+
+<h3 class="mume-header" id="counterfacts">Counterfacts</h3>
+
+<p>Counterfacts are the <em>alternative scenarios</em> we invent when proposed with an event to describe.  Consider describing getting shot in the right arm.  We could be negative, and imagine that we could have <em>not been shot</em>, or we could be positive, and recognize that a bunch of other people could have been shot too, but weren&apos;t.</p>
+<p>Counterfacts are <strong>hypothetical</strong>, so we have the power to change them!</p>
+<h3 class="mume-header" id="explanatory-style">Explanatory Style</h3>
+
+<p>Change the <strong>permanence</strong> and <strong>optimism</strong> of your statements.</p>
+<p>Rather than &quot;This sucks and will always be this way,&quot; say &quot;This isn&apos;t too bad, and it may change.&quot;</p>
+<h3 class="mume-header" id="abcds">ABCDs</h3>
+
+<p>This reminds me of my <strong>cognitive therapy</strong></p>
+<p>A - Adversity<br>
+B - Belief<br>
+C - Consequence<br>
+D - Disputation and Decatrophization (if you make it this far!)</p>
+<h3 class="mume-header" id="locus-of-control">Locus of Control</h3>
+
+<p>We want to have an <strong>internal locus of control</strong>, meaning that we feel our actions have influence over results.</p>
+<h1 class="mume-header" id="zorro-circle">Zorro Circle</h1>
+
+<p>Start by controlling the small, and slowly graduate.</p>
+<ol>
+<li>Self-awareness - what is causing me stress?  <strong>Verbalize</strong>!</li>
+<li>Identify the aspects that you have control over, and those you don&apos;t</li>
+<li>Prioritize and conquer, <em>one step at a time</em></li>
+</ol>
+<h1 class="mume-header" id="the-20-second-rule">The 20-Second Rule</h1>
+
+<p><strong>Habit is power</strong>!</p>
+<blockquote>
+<p>Habits are like financial capital&#x2014;forming one today is an investment that will automatically give out returns for years to come.</p>
+</blockquote>
+<h2 class="mume-header" id="willpower">Willpower</h2>
+
+<p>Do not suppress willpower!  The more we use willpower to solve our problems, the more we use up.</p>
+<h2 class="mume-header" id="leisure-paradox">Leisure paradox</h2>
+
+<p><strong>Active leisure</strong> is much more effective than <strong>passive</strong>.</p>
+<blockquote>
+<p>Studies have found that American teenagers are two and half times more likely to experience elevated enjoyment when engaged in a hobby than when watching TV, and three times more likely when playing a sport. And yet here&#x2019;s the paradox: These same teenagers spend <em>four</em> times as many hours watching TV as they do engaging in sports or hobbies.</p>
+</blockquote>
+<p>To create our habits, we need to <strong>lower the activation energy</strong>.  That might take the form of putting your gym clothes out in front of you for the morning.</p>
+<p>Alternatively, we can increase the activation energy of activities we want to avoid.  Maybe put the cookies in a box that is difficult to open and store it in a dark corner.</p>
+<h2 class="mume-header" id="choice-paralysis">Choice Paralysis</h2>
+
+<p>To decrease the activation energy of choice, we should set <strong>rules of engagement</strong>.  This could, for example, forcing yourself to thank someone publicly every morning as one of your acts of kindness.</p>
+<h1 class="mume-header" id="social-investment">Social Investment</h1>
+
+<p>When CS2150 comes this semester, and the hash lab comes to destroy you, you need an <strong>offensive line</strong>.  Make friends.  Network.  Talk to family.  Anything to get you through it!</p>
+<p>Additionally, be a <strong>glue guy</strong>.  That guy who always keeps everyone motivated?  Who invests in the team?  Be him!</p>
+<h2 class="mume-header" id="active-constructive">Active-Constructive</h2>
+
+<p>When people tell you good news, respond with an active comment (something positive) and a constructive one (something specific).</p>
+<p>&quot;I increased my grade to an A!&quot;</p>
+<p>&quot;Great!  I knew you could do it!  What specific assignment did you do so well on to bring it up?&quot;</p>
+<h2 class="mume-header" id="introductions">Introductions</h2>
+
+<p>Ask yourself - how would I want someone to <strong>introduce me</strong>?</p>
+<p>Maybe:</p>
+<p>&quot;Here&apos;s our most good-looking and intelligent team member, Luke.  His data science work will blow your mind.&quot;</p>
+<p>Not:</p>
+<p>&quot;This is Luke, IT.  Moving on . . .&quot;</p>
+<h2 class="mume-header" id="feedback-and-recognition">Feedback and Recognition</h2>
+
+<p>Constantly, <em>constantly</em> show much you appreciate others.  The dividends will be immense!  Just think - how much does it mean to you when someone tells you how much you mean to them?</p>
+<h1 class="mume-header" id="ripple-effect">Ripple Effect</h1>
+
+<p>Just <em>smile</em>.  Laugh.  Joke!  It is absolutely contagious.  Remember the smile experiment the author has his students perform - who can&apos;t not smile (excuse the double negative)!</p>
+<p>This is a real thing, too.  <strong>Fake it til you make it</strong> ain&apos;t so fake.</p>
+<h2 class="mume-header" id="negative-influences">Negative Influences</h2>
+
+<p>I have the most negative sister in the world.  Keep my distance, and I&apos;ll probably be a lot happier!</p>
+
+
+
+
+</div>
+
+
+</div>        </div>        <footer>                    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>            <script>tocbot.init({                                       tocSelector: '.toc',                                        contentSelector: '.content',                                        headingSelector: 'h1, h2, h3',                                       hasInnerContainers: true,                    base: (window.location.pathname + window.location.search)                });</script>            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">                </script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script><script>document.querySelector("body").setAttribute("data-spy", "scroll"); document.querySelector("body").setAttribute("data-target","#toc");</script>            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">                </script><script type="text/javascript" src="/scripts/main.js" < script>
+      </div>
+      
+      
+    </body>
+    
+    <script>
+// config mermaid init call
+// http://knsv.github.io/mermaid/#configuration
+//
+// You can edit the 'MERMAID_CONFIG' variable below.
+MERMAID_CONFIG = {
+  startOnLoad: true
+}
+
+if (window['MERMAID_CONFIG']) {
+  window['MERMAID_CONFIG'].startOnLoad = false
+  window['MERMAID_CONFIG'].cloneCssStyles = false
+  window['MERMAID_CONFIG'].theme = "default"
+}
+mermaid.initialize(window['MERMAID_CONFIG'] || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidechanged', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+} else {
+  mermaid.init(null, document.getElementsByClassName('mermaid'))
+}
+</script>
+    
+    
+    
+    
+    
+  
+    </footer></div></div></body></html>
