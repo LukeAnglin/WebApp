@@ -415,7 +415,23 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>Complex implementation</li>
 <li>Doesn&apos;t give a constant time on retrieves or operations, which vector <code>get()</code> and hash tables can get you respectively</li>
 </ul>
-<h1 class="mume-header" id="avl">AVL</h1>
+<h1 class="mume-header" id="bsts">BSTs</h1>
+
+<p>For operations, see <a href="https://www.guru99.com/binary-search-tree-data-structure.%C3%A7">this</a> page.</p>
+<p>For a C++ implementation, see <a href="https://gist.github.com/harish-r/a7df7ce576dda35c9660">this</a> page.</p>
+<h2 class="mume-header" id="removals">Removals</h2>
+
+<ul>
+<li>Two children - Replace with a successor, a <code>findMin()</code> on the right subtree</li>
+</ul>
+<h2 class="mume-header" id="formulas">Formulas</h2>
+
+<p>For an <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> node tree</p>
+<ul>
+<li>Worst case depth is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n - 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
+<li>Max nodes is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>h</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{h+1} -1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9324379999999999em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
+</ul>
+<h1 class="mume-header" id="avlhttpsvisualgonetbnbst"><a href="https://visualgo.net/bn/bst">AVL</a></h1>
 
 <ul>
 <li>The <strong>balance</strong> is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>R</mi><mo stretchy="false">)</mo><mo>&#x2212;</mo><mi>H</mi><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(R) - H(L)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathnormal">L</span><span class="mclose">)</span></span></span></span></li>
@@ -426,7 +442,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <h3 class="mume-header" id="single-rotations">Single Rotations</h3>
 
 <p><strong>Single</strong> rotation, <strong>single</strong> direction.</p>
-<p>Parent <strong>loses pointer</strong> in the <strong>opposite direction</strong>  of the rotation (which is replaced by the left pointer of the child), child <strong>gains pointer</strong> to the parent in the <em>same direction</em>* of the rotation</p>
+<p>Parent <strong>loses pointer</strong> in the <strong>opposite direction</strong>  of the rotation (which is replaced by the left pointer of the child), child <strong>gains pointer</strong> to the parent in the <em>same direction</em>* of the rotation. If the child has a child towards the parent, make that the child of the parent.</p>
 <h4 class="mume-header" id="single-left">Single Left</h4>
 
 <p><img src="https://www.tutorialspoint.com/data_structures_algorithms/images/avl_left_rotation.jpg" alt="AVL Single Left"></p>
@@ -439,6 +455,15 @@ pre[data-line] .line-highlight[data-end]:after {
 </li>
 </ul>
 <p><span class="red">Pointers Swapped: </span> Parent loses its child pointer, it&apos;s right pointer becoming that of the left of the child, child gains a left pointer to parent</p>
+<p>Say we have the inserted node, it&apos;s parent, grandparent, and grand-grandparent.</p>
+<h5 class="mume-header" id="3-or-4-pointer-changes">3 or 4 Pointer changes</h5>
+
+<ul>
+<li>Grand-grandparent right -&gt; Parent</li>
+<li>Grandparent&apos;s right -&gt; <code>NULL</code> or parent&apos;s left child</li>
+<li>Parent&apos;s left -&gt; Grandparent</li>
+<li>Parent&apos;s right -&gt; inserted node</li>
+</ul>
 <h4 class="mume-header" id="single-right">Single Right</h4>
 
 <p><img src="https://www.tutorialspoint.com/data_structures_algorithms/images/avl_right_rotation.jpg" alt="AVL Single Right"></p>
@@ -451,6 +476,14 @@ pre[data-line] .line-highlight[data-end]:after {
 </li>
 </ul>
 <p><span class="red">Pointers Swapped: </span> Parent loses its child pointer, child gains a right pointer to parent</p>
+<h5 class="mume-header" id="3-or-4-pointer-changes-1">3 or 4 Pointer changes</h5>
+
+<ul>
+<li>Grand-grandparent left -&gt; Parent</li>
+<li>Grandparent&apos;s left -&gt; <code>NULL</code> or parent&apos;s right child</li>
+<li>Parent&apos;s right -&gt; Grandparent</li>
+<li>Parent&apos;s left -&gt; inserted node</li>
+</ul>
 <h3 class="mume-header" id="double-rotationshttpswwwtutorialspointcomdata_structures_algorithmsavl_tree_algorithmhtm"><a href="https://www.tutorialspoint.com/data_structures_algorithms/avl_tree_algorithm.htm">Double Rotations</a></h3>
 
 <p><strong>Double</strong> rotation, <strong>double</strong> direction</p>

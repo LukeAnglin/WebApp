@@ -101,7 +101,7 @@ Once you follow these steps, it's viable to convert to binary.
 * Get the mantissa between 1 and 2
 * Make the base 2
 
-## IEEE Bit Splitting 
+## IEEE Bit Splitting (Floats)
 
 32 bits split into 
 
@@ -115,7 +115,7 @@ These *don't* use two's complement
 
 * 0 is for zeros 
 * 1-254 - exponent-127 
-    * The exponent offset or bias is 127
+    * The exponent offset or bias is 127 for binary, also known as $2^\text{num exponent digits - 1} -1$
 * 255 is for NaN and overflow 
 
 ### Mantissa 
@@ -124,3 +124,13 @@ Each bit set represents a power of $\frac{1}{2}$
 
 Mantissa $= 1+ \sum_{i=1}^{23} \frac{b_i}{2^i}$
 
+For floating point, must be between 1 and 2. See the paper for examples worked out from past exams.
+
+# Doubles 
+
+## Bit Splitting 
+
+* Bit 1 is for sign 
+* Bits 2-12 are for exponent (11)
+* Bits 13-64 are for mantissa (52)
+* Exponent offset works out to 1023 ($2^{11-1}-1$)

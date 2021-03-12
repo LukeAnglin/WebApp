@@ -17,7 +17,24 @@ Despite all the benefits of trees, also **recognize the cons**
 * Complex implementation 
 * Doesn't give a constant time on retrieves or operations, which vector `get()` and hash tables can get you respectively
 
-# AVL 
+# BSTs 
+
+For operations, see [this](https://www.guru99.com/binary-search-tree-data-structure.%C3%A7) page.
+
+For a C++ implementation, see [this](https://gist.github.com/harish-r/a7df7ce576dda35c9660) page.
+
+## Removals 
+
+* Two children - Replace with a successor, a `findMin()` on the right subtree
+
+## Formulas 
+
+For an $n$ node tree 
+
+* Worst case depth is $n - 1$
+* Max nodes is $2^{h+1} -1$
+
+# [AVL](https://visualgo.net/bn/bst)
 
 * The **balance** is $H(R) - H(L)$
 * Runtime analysis of $\Theta (d)$ where **$d$ is the depth** of the node being found r inserted. Operations are $\Theta (log n)$
@@ -28,7 +45,7 @@ Despite all the benefits of trees, also **recognize the cons**
 
 **Single** rotation, **single** direction.
 
-Parent **loses pointer** in the **opposite direction**  of the rotation (which is replaced by the left pointer of the child), child **gains pointer** to the parent in the *same direction** of the rotation
+Parent **loses pointer** in the **opposite direction**  of the rotation (which is replaced by the left pointer of the child), child **gains pointer** to the parent in the *same direction** of the rotation. If the child has a child towards the parent, make that the child of the parent. 
 
 #### Single Left
 
@@ -41,6 +58,15 @@ Parent **loses pointer** in the **opposite direction**  of the rotation (which i
 
 <span class="red">Pointers Swapped: </span> Parent loses its child pointer, it's right pointer becoming that of the left of the child, child gains a left pointer to parent
 
+Say we have the inserted node, it's parent, grandparent, and grand-grandparent. 
+
+##### 3 or 4 Pointer changes
+
+* Grand-grandparent right -> Parent 
+* Grandparent's right -> `NULL` or parent's left child 
+* Parent's left -> Grandparent 
+* Parent's right -> inserted node 
+
 #### Single Right 
 
 ![AVL Single Right](https://www.tutorialspoint.com/data_structures_algorithms/images/avl_right_rotation.jpg)
@@ -51,6 +77,13 @@ Parent **loses pointer** in the **opposite direction**  of the rotation (which i
     * Unbalanced  Unbalanced **towards right** means **rotate left**
 
 <span class="red">Pointers Swapped: </span> Parent loses its child pointer, child gains a right pointer to parent
+
+##### 3 or 4 Pointer changes
+
+* Grand-grandparent left -> Parent 
+* Grandparent's left -> `NULL` or parent's right child 
+* Parent's right -> Grandparent 
+* Parent's left -> inserted node 
 
 ### [Double Rotations](https://www.tutorialspoint.com/data_structures_algorithms/avl_tree_algorithm.htm)
  
