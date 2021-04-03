@@ -54,3 +54,37 @@ See [this](http://www.cs.virginia.edu/~evans/cs216/guides/x86.html) page.
 * Prologue 
 * Call function 
 * Epilogue
+
+![Prologue](https://slideplayer.com/slide/12563972/75/images/7/Example+%28Prologue%29+caller_frame+%E2%80%A6+EBP+3+2+int+f%28int+a%2C+int+b%2C+int+c%29+%7B.jpg)
+
+## Prologue
+
+* Caller-saved registers (`r10, r11` and param registers)
+* Parameters 
+* Call the function 
+
+## Epilogue 
+
+Boils down to **fixing the stack** and putting the return value in `rax`
+
+* Restore parameters (restore the stack like `rdi`)
+* Return the value in `rax` 
+* Restore caller-saved registers (*popping* them off, values like `r10`)
+
+# Helpful Visualizations
+
+From the slides: 
+
+[Caller Rules Example](https://uva-cs.github.io/pdr/slides/08-assembly-64bit.html#/6/7)
+
+# Callee Rules 
+
+[Example](https://uva-cs.github.io/pdr/slides/08-assembly-64bit.html#/7/8) - **check out the visualizations** after it, those are the key.
+
+* Make space on the stack, like `sub rsp 8`
+* Save callee-save registers, like `rbx, rbp, r12-15`
+    * **Only** if callee plans to use them 
+* Restore callee-saved registers
+* Put ret value in `rax`
+* Deallocate local variables, like `add rsp 8`
+
