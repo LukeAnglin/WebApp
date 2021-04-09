@@ -7,7 +7,7 @@
         <script type="text/x-mathjax-config">
           MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
         </script>
-        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+        <script type="text/javascript" async src="file:////Users/lukeanglin/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.5.17/node_modules/@shd101wyy/mume/dependencies/mathjax/MathJax.js" charset="UTF-8"></script>
         
       
       
@@ -412,164 +412,137 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <div class="navbar"></div><div class="note-content">
 
-<h1 class="mume-header" id="conversion">Conversion</h1>
-
-<h2 class="mume-header" id="integers-radix-to-decimal">Integers - Radix to Decimal</h2>
-
-<p>$$<br>
-\sum_{i=0}^{n} d_i\ \times R^i<br>
-$$</p>
-<h2 class="mume-header" id="decimal-to-radix-example">Decimal to Radix Example</h2>
-
+<h1 id="conversion">Conversion</h1>
+<h2 id="integers-radix-to-decimal">Integers - Radix to Decimal</h2>
+<p><span class="math display">\[
+\sum_{i=0}^{n} d_i\ \times R^i
+\]</span></p>
+<h2 id="decimal-to-radix-example">Decimal to Radix Example</h2>
 <p>Use the <strong>remainder</strong> method specified <a href="https://www.youtube.com/watch?v=gvJYNAiwOhc">here</a></p>
-<h1 class="mume-header" id="in-c">In C++</h1>
-
+<h1 id="in-c">In C++</h1>
 <ul>
 <li>Any number that <strong>begins with 0</strong> is octal</li>
 <li>Any that <strong>begins with 0x</strong> is hex</li>
 </ul>
-<h1 class="mume-header" id="conversion-1">Conversion</h1>
-
-<h2 class="mume-header" id="binary-to-hex">Binary to Hex</h2>
-
-<ol>
+<h1 id="conversion-1">Conversion</h1>
+<h2 id="binary-to-hex">Binary to Hex</h2>
+<ol type="1">
 <li>Split the binary number into 4 bit nibbles</li>
 <li>Convert each to a <strong>single</strong> hex digit</li>
 </ol>
 <p>1000 1101 is equivalent to 8d</p>
-<h1 class="mume-header" id="endian">Endian</h1>
-
+<h1 id="endian">Endian</h1>
 <p>Byte reversal or lack thereof</p>
 <ul>
 <li>Big-endian - most significant <strong>first</strong>, <strong>lowest</strong> address
 <ul>
-<li>$1000 = 2^4$</li>
+<li><span class="math inline">\(1000 = 2^4\)</span></li>
 <li>0xdeadbeef</li>
-</ul>
-</li>
+</ul></li>
 <li>Little-endian - most significant <strong>last</strong>, <strong>highest</strong> address
 <ul>
-<li>$1000 = 2^0$</li>
+<li><span class="math inline">\(1000 = 2^0\)</span></li>
 <li>0xefbeadde</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h1 class="mume-header" id="integers">Integers</h1>
-
-<p>Commonly encoded by the <strong>two&apos;s complement</strong>, which flips the bits of negative numbers and then adds one.</p>
-<h2 class="mume-header" id="twos-complement">Two&apos;s Complement</h2>
-
+<h1 id="integers">Integers</h1>
+<p>Commonly encoded by the <strong>two&#x2019;s complement</strong>, which flips the bits of negative numbers and then adds one.</p>
+<h2 id="twos-complement">Two&#x2019;s Complement</h2>
 <ul>
-<li>Zero is $n$ zeroes</li>
-<li>Encode positives in $n-1$ bits
+<li>Zero is <span class="math inline">\(n\)</span> zeroes</li>
+<li>Encode positives in <span class="math inline">\(n-1\)</span> bits
 <ul>
-<li>Max val is $2^{n-1}-1$</li>
+<li>Max val is <span class="math inline">\(2^{n-1}-1\)</span></li>
 <li>Sign bit is zero</li>
 <li>This zero is <strong>positive</strong> (all zeroes)</li>
-</ul>
-</li>
+</ul></li>
 <li>Negatives, encode abs val
 <ul>
-<li>Subtract that from $2^n$</li>
-<li>Max value is $-2^{n-1}$</li>
+<li>Subtract that from <span class="math inline">\(2^n\)</span></li>
+<li>Max value is <span class="math inline">\(-2^{n-1}\)</span></li>
 <li><strong>OR</strong> encode abs val, flip bits, and add 1. The <span class="red">Luke method</span></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h1 class="mume-header" id="floating-point">Floating Point</h1>
-
-<h2 class="mume-header" id="four-parts">Four Parts</h2>
-
+<h1 id="floating-point">Floating Point</h1>
+<h2 id="four-parts">Four Parts</h2>
 <ul>
 <li>Sign bit</li>
-<li>Mantissa - the value, in range $1.0 \leq m &lt; 10.0$ for sci notation, or $1.0 \leq m &lt; 2.0$
+<li>Mantissa - the value, in range <span class="math inline">\(1.0 \leq m &lt; 10.0\)</span> for sci notation, or <span class="math inline">\(1.0 \leq m &lt; 2.0\)</span>
 <ul>
-<li>Example - $106$ is the same as $1.06 * 10^2$</li>
-</ul>
-</li>
+<li>Example - <span class="math inline">\(106\)</span> is the same as <span class="math inline">\(1.06 * 10^2\)</span></li>
+</ul></li>
 <li>Base</li>
-<li>Exponent - $2^(n exp -1)-1$</li>
+<li>Exponent - <span class="math inline">\(2^(n exp -1)-1\)</span></li>
 </ul>
-<h2 class="mume-header" id="conversion-2">Conversion</h2>
-
-<p>Once you follow these steps, it&apos;s viable to convert to binary.</p>
+<h2 id="conversion-2">Conversion</h2>
+<p>Once you follow these steps, it&#x2019;s viable to convert to binary.</p>
 <ul>
 <li>Get the mantissa between 1 and 2</li>
 <li>Make the base 2</li>
 </ul>
-<h2 class="mume-header" id="ieee-bit-splitting-floats">IEEE Bit Splitting (Floats)</h2>
-
+<h2 id="ieee-bit-splitting-floats">IEEE Bit Splitting (Floats)</h2>
 <p>32 bits split into</p>
 <ul>
 <li>Bit 1 - Sign bit</li>
-<li>Bits 2-9 - Exponent (8 bits) - Powers of $\frac{1}{2}$</li>
+<li>Bits 2-9 - Exponent (8 bits) - Powers of <span class="math inline">\(\frac{1}{2}\)</span></li>
 <li>Bits 10-32 - Mantissa (23 bits)</li>
 </ul>
-<h3 class="mume-header" id="exponent-values">Exponent Values</h3>
-
-<p>Exponents are <strong>not</strong> in two&apos;s complement!</p>
+<h3 id="exponent-values">Exponent Values</h3>
+<p>Exponents are <strong>not</strong> in two&#x2019;s complement!</p>
 <ul>
 <li>0 is for zeros - <strong>Reserved!</strong></li>
 <li>1-254 - exponent-127
 <ul>
-<li>The exponent offset or bias is 127 for binary, also known as $2^\text{num exponent digits - 1} -1$</li>
-</ul>
-</li>
+<li>The exponent offset or bias is 127 for binary, also known as <span class="math inline">\(2^\text{num exponent digits - 1} -1\)</span></li>
+</ul></li>
 <li>255 is for NaN and overflow. <strong>Reserved!</strong></li>
 </ul>
-<h3 class="mume-header" id="mantissa">Mantissa</h3>
-
-<p>Each bit set represents a power of $\frac{1}{2}$</p>
-<p>Mantissa $= 1+ \sum_{i=1}^{23} \frac{b_i}{2^i}$</p>
+<h3 id="mantissa">Mantissa</h3>
+<p>Each bit set represents a power of <span class="math inline">\(\frac{1}{2}\)</span></p>
+<p>Mantissa <span class="math inline">\(= 1+ \sum_{i=1}^{23} \frac{b_i}{2^i}\)</span></p>
 <p>For floating point, must be between 1 and 2. See the paper for examples worked out from past exams.</p>
-<h2 class="mume-header" id="conversion-examples">Conversion Examples</h2>
-
-<h3 class="mume-header" id="binary-to-decimal">Binary to Decimal</h3>
-
+<h2 id="conversion-examples">Conversion Examples</h2>
+<h3 id="binary-to-decimal">Binary to Decimal</h3>
 <p>For a text overview with an <span class="red">awesome formula</span> on binary to decimal floating point, see <a href="https://www.educative.io/edpresso/how-to-convert-a-single-precision-binary-float-to-decimal">this</a>.</p>
 <p>The formula is</p>
-<p>$$<br>
-(-1)^{ \text{sign} } \times (1 + \text{mantissa}) \times 2^{\text{exponent} - \text{exponent offset}}<br>
-$$</p>
-<h3 class="mume-header" id="decimal-to-binary">Decimal to Binary</h3>
-
+<p><span class="math display">\[
+(-1)^{ \text{sign} } \times (1 + \text{mantissa}) \times 2^{\text{exponent} - \text{exponent offset}}
+\]</span></p>
+<h3 id="decimal-to-binary">Decimal to Binary</h3>
 <p>For a video on decimal to binary, use this <a href="https://www.youtube.com/watch?v=8afbTaA-gOQ&amp;t=425s">numbers goddess</a></p>
 <p><strong>Steps</strong>:</p>
 <p><strong>Step one</strong> - Convert the left and right to powers of two, positive and negative respectively.</p>
 <p><strong>Example: 29.5</strong></p>
-<p>16 + 8 + 4 + 1 and $\frac{1}{2}$</p>
+<p>16 + 8 + 4 + 1 and <span class="math inline">\(\frac{1}{2}\)</span></p>
 <p>Which is also known as</p>
-<p>$$<br>
-1<em>2<sup>4+1*2</sup>3+1</em>2<sup>2+0*2</sup>1+1*2<sup>0+1*2</sup>{-1}<br>
-$$</p>
+<p><span class="math display">\[
+1*2^4+1*2^3+1*2^2+0*2^1+1*2^0+1*2^{-1}
+\]</span></p>
 <p><strong>Or, in binary</strong></p>
 <p>11101.1</p>
 <p><strong>Step two</strong> - Move the decimal so the mantissa is between one and two, with the respective exponent</p>
-<p>1.11011 * $2^4$</p>
-<p><strong>Step three</strong> - Take that exponent, and add the exponent offset, which is $2^{\text{exp bits} - 1} - 1$. Also, encode it in binary.</p>
-<p>$e = 4 + \text{offset} = 131$</p>
-<p>That&apos;s</p>
+<p>1.11011 * <span class="math inline">\(2^4\)</span></p>
+<p><strong>Step three</strong> - Take that exponent, and add the exponent offset, which is <span class="math inline">\(2^{\text{exp bits} - 1} - 1\)</span>. Also, encode it in binary.</p>
+<p><span class="math inline">\(e = 4 + \text{offset} = 131\)</span></p>
+<p>That&#x2019;s</p>
 <p>1000 0011</p>
 <p>in binary.</p>
 <p><strong>Step four</strong> - Finalize!</p>
 <p><strong>Sign</strong> <strong>exponent</strong> <strong>mantissa</strong></p>
-<p>1 1000001 11011------ a whole bunch of zeroes til u finish off the number</p>
-<h2 class="mume-header" id="maxs-and-mins">Maxs and Mins</h2>
-
+<p>1 1000001 11011&#x2014;&#x2014; a whole bunch of zeroes til u finish off the number</p>
+<h2 id="maxs-and-mins">Maxs and Mins</h2>
 <p>255 and 0 for exponent bits are reserved, so</p>
 <ul>
 <li><strong>Max positive number</strong> - Ones except for a zero in the final exponent bit position and a zero in the sign bit.</li>
 <li><strong>Min positive number</strong> - All zeroes except a one in the last exponent bit position. Basically <code>xor</code> the max, except for the sign bit</li>
 </ul>
-<h1 class="mume-header" id="doubles">Doubles</h1>
-
-<h2 class="mume-header" id="bit-splitting">Bit Splitting</h2>
-
+<h1 id="doubles">Doubles</h1>
+<h2 id="bit-splitting">Bit Splitting</h2>
 <ul>
 <li>Bit 1 is for sign</li>
 <li>Bits 2-12 are for exponent (11)</li>
 <li>Bits 13-64 are for mantissa (52)</li>
-<li>Exponent offset works out to 1023 ($2^{11-1}-1$)</li>
+<li>Exponent offset works out to 1023 (<span class="math inline">\(2^{11-1}-1\)</span>)</li>
 </ul>
 
 
