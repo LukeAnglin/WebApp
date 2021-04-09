@@ -7,7 +7,7 @@
         <script type="text/x-mathjax-config">
           MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
         </script>
-        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+        <script type="text/javascript" async src="file:////Users/lukeanglin/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.5.17/node_modules/@shd101wyy/mume/dependencies/mathjax/MathJax.js" charset="UTF-8"></script>
         
       
       
@@ -412,156 +412,139 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <div class="navbar"></div><div class="note-content">
 
-<h1 class="mume-header" id="disclaimer">Disclaimer</h1>
-
+<h1 id="disclaimer">Disclaimer</h1>
 <p>Despite all the benefits of trees, also <strong>recognize the cons</strong></p>
 <ul>
 <li>Require sorting</li>
 <li>Complex implementation</li>
-<li>Doesn&apos;t give a constant time on retrieves or operations, which vector <code>get()</code> and hash tables can get you respectively</li>
+<li>Doesn&#x2019;t give a constant time on retrieves or operations, which vector <code>get()</code> and hash tables can get you respectively</li>
 </ul>
-<h1 class="mume-header" id="bsts">BSTs</h1>
-
+<h1 id="bsts">BSTs</h1>
 <p>For operations, see <a href="https://www.guru99.com/binary-search-tree-data-structure.%C3%A7">this</a> page.</p>
 <p>For a C++ implementation, see <a href="https://gist.github.com/harish-r/a7df7ce576dda35c9660">this</a> page.</p>
-<h2 class="mume-header" id="removals">Removals</h2>
-
+<h2 id="removals">Removals</h2>
 <ul>
 <li>Two children - Replace with a successor, a <code>findMin()</code> on the right subtree</li>
 </ul>
-<h2 class="mume-header" id="formulas">Formulas</h2>
-
-<p>For an $n$ node tree</p>
+<h2 id="formulas">Formulas</h2>
+<p>For an <span class="math inline">\(n\)</span> node tree</p>
 <ul>
-<li>Worst case depth is $n - 1$</li>
-<li>Max nodes is $2^{h+1} -1$</li>
+<li>Worst case depth is <span class="math inline">\(n - 1\)</span></li>
+<li>Max nodes is <span class="math inline">\(2^{h+1} -1\)</span></li>
 </ul>
-<h1 class="mume-header" id="avlhttpsvisualgonetbnbst"><a href="https://visualgo.net/bn/bst">AVL</a></h1>
-
+<h1 id="avlhttpsvisualgonetbnbst"><a href="https://visualgo.net/bn/bst">AVL</a></h1>
 <ul>
-<li>The <strong>balance</strong> is $H(R) - H(L)$</li>
-<li>Runtime analysis of $\Theta (d)$ where <strong>$d$ is the depth</strong> of the node being found r inserted. Operations are $\Theta (log n)$</li>
+<li>The <strong>balance</strong> is <span class="math inline">\(H(R) - H(L)\)</span></li>
+<li>Runtime analysis of <span class="math inline">\(\Theta (d)\)</span> where <strong><span class="math inline">\(d\)</span> is the depth</strong> of the node being found r inserted. Operations are <span class="math inline">\(\Theta (log n)\)</span></li>
 </ul>
-<h2 class="mume-header" id="insertion-cases">Insertion Cases</h2>
-
-<h3 class="mume-header" id="single-rotations">Single Rotations</h3>
-
+<h2 id="insertion-cases">Insertion Cases</h2>
+<h3 id="single-rotations">Single Rotations</h3>
 <p><strong>Single</strong> rotation, <strong>single</strong> direction.</p>
 <p>Parent <strong>loses pointer</strong> in the <strong>opposite direction</strong> of the rotation (which is replaced by the left pointer of the child), child <strong>gains pointer</strong> to the parent in the <em>same direction</em> of the rotation. If the child has a child towards the parent, make that the child of the parent.</p>
-<h4 class="mume-header" id="single-left">Single Left</h4>
-
-<p><img src="https://www.tutorialspoint.com/data_structures_algorithms/images/avl_left_rotation.jpg" alt="AVL Single Left"></p>
+<h4 id="single-left">Single Left</h4>
+<figure>
+<img src="https://www.tutorialspoint.com/data_structures_algorithms/images/avl_left_rotation.jpg" alt="AVL Single Left"><figcaption aria-hidden="true">AVL Single Left</figcaption>
+</figure>
 <p><strong>Note</strong>: This does not show the general case, where B has a left child as well. In that case, the left child of B would become the right child of A.</p>
 <ul>
 <li>Left subtree, left child
 <ul>
 <li>Unbalanced <strong>towards left</strong> means <strong>rotate right</strong></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p><span class="red">Pointers Swapped: </span> Parent loses its child pointer, it&apos;s right pointer becoming that of the left of the child, child gains a left pointer to parent</p>
-<p>Say we have the inserted node, it&apos;s parent, grandparent, and grand-grandparent.</p>
-<h5 class="mume-header" id="3-or-4-pointer-changes">3 or 4 Pointer changes</h5>
-
+<p><span class="red">Pointers Swapped: </span> Parent loses its child pointer, it&#x2019;s right pointer becoming that of the left of the child, child gains a left pointer to parent</p>
+<p>Say we have the inserted node, it&#x2019;s parent, grandparent, and grand-grandparent.</p>
+<h5 id="or-4-pointer-changes">3 or 4 Pointer changes</h5>
 <ul>
 <li>Grand-grandparent right -&gt; Parent</li>
-<li>Grandparent&apos;s right -&gt; <code>NULL</code> or parent&apos;s left child</li>
-<li>Parent&apos;s left -&gt; Grandparent</li>
-<li>Parent&apos;s right -&gt; inserted node</li>
+<li>Grandparent&#x2019;s right -&gt; <code>NULL</code> or parent&#x2019;s left child</li>
+<li>Parent&#x2019;s left -&gt; Grandparent</li>
+<li>Parent&#x2019;s right -&gt; inserted node</li>
 </ul>
-<h4 class="mume-header" id="single-right">Single Right</h4>
-
-<p><img src="https://www.tutorialspoint.com/data_structures_algorithms/images/avl_right_rotation.jpg" alt="AVL Single Right"></p>
+<h4 id="single-right">Single Right</h4>
+<figure>
+<img src="https://www.tutorialspoint.com/data_structures_algorithms/images/avl_right_rotation.jpg" alt="AVL Single Right"><figcaption aria-hidden="true">AVL Single Right</figcaption>
+</figure>
 <p><strong>Note</strong>: This does not show the general case, where B has a right child as well. In that case, the right child of B would become the left child of A.</p>
 <ul>
 <li>Right subtree, right child (but a <strong>left</strong> rotation)
 <ul>
 <li>Unbalanced Unbalanced <strong>towards right</strong> means <strong>rotate left</strong></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <p><span class="red">Pointers Swapped: </span> Parent loses its child pointer, child gains a right pointer to parent</p>
-<h5 class="mume-header" id="3-or-4-pointer-changes-1">3 or 4 Pointer changes</h5>
-
+<h5 id="or-4-pointer-changes-1">3 or 4 Pointer changes</h5>
 <ul>
 <li>Grand-grandparent left -&gt; Parent</li>
-<li>Grandparent&apos;s left -&gt; <code>NULL</code> or parent&apos;s right child</li>
-<li>Parent&apos;s right -&gt; Grandparent</li>
-<li>Parent&apos;s left -&gt; inserted node</li>
+<li>Grandparent&#x2019;s left -&gt; <code>NULL</code> or parent&#x2019;s right child</li>
+<li>Parent&#x2019;s right -&gt; Grandparent</li>
+<li>Parent&#x2019;s left -&gt; inserted node</li>
 </ul>
-<h3 class="mume-header" id="double-rotationshttpswwwtutorialspointcomdata_structures_algorithmsavl_tree_algorithmhtm"><a href="https://www.tutorialspoint.com/data_structures_algorithms/avl_tree_algorithm.htm">Double Rotations</a></h3>
-
+<h3 id="double-rotationshttpswwwtutorialspointcomdata_structures_algorithmsavl_tree_algorithmhtm"><a href="https://www.tutorialspoint.com/data_structures_algorithms/avl_tree_algorithm.htm">Double Rotations</a></h3>
 <p>Consider the <strong>lowest unbalanced node</strong>, and let it be called the <strong>parent node</strong> in this case.</p>
 <p>The insert happened in the <strong>right</strong> subtree of the <span class="red">left</span> child.</p>
 <p>Then we perform a single <strong>left</strong> rotation on the child, and a single <span class="red">right</span> on the parent.</p>
-<h1 class="mume-header" id="red-blackhttpswwwyoutubecomwatchv5ibxa-bzzh8t118s"><a href="(https://www.youtube.com/watch?v=5IBxA-bZZH8&amp;t=118s)">Red Black</a></h1>
-
-<p><img src="https://www.cs.auckland.ac.nz/software/AlgAnim/fig/rb_tree1a.gif" alt="RB"></p>
+<h1 id="red-blackhttpswwwyoutubecomwatchv5ibxa-bzzh8t118s"><a href="(https://www.youtube.com/watch?v=5IBxA-bZZH8&amp;t=118s)">Red Black</a></h1>
+<figure>
+<img src="https://www.cs.auckland.ac.nz/software/AlgAnim/fig/rb_tree1a.gif" alt="RB"><figcaption aria-hidden="true">RB</figcaption>
+</figure>
 <p>Red black trees are <strong>less rigidly balanced</strong> than AVL, and better for performance in general.</p>
-<h2 class="mume-header" id="properties">Properties</h2>
-
+<h2 id="properties">Properties</h2>
 <ul>
 <li>Root and leaves (<code>NULL</code>) are <strong>black</strong></li>
 <li><span class="red">Red</span> nodes have <strong>black</strong> children</li>
 <li>Every path from a node to a descendant leaf (a <strong>black</strong> <code>NULL</code>) contains the same number of <strong>black</strong> nodes</li>
 </ul>
-<h2 class="mume-header" id="insertion">Insertion</h2>
-
+<h2 id="insertion">Insertion</h2>
 <p>Insert red, recolor and rotate.</p>
-<h3 class="mume-header" id="cases">Cases:</h3>
-
-<ol>
+<h3 id="cases">Cases:</h3>
+<ol type="1">
 <li>New node is the root node</li>
-<li>New node&apos;s parent is <strong>black</strong></li>
+<li>New node&#x2019;s parent is <strong>black</strong></li>
 <li>The parent and the uncle are <span class="red">red</span></li>
 <li>Parent is <span class="red">red</span>, uncle is <strong>black</strong>, new node is the right or left child of parent</li>
 </ol>
-<h3 class="mume-header" id="case-1">Case 1</h3>
-
+<h3 id="case-1">Case 1</h3>
 <p>Simply make sure it is <strong>black</strong></p>
-<h3 class="mume-header" id="case-2">Case 2</h3>
-
+<h3 id="case-2">Case 2</h3>
 <p>No violations! Hooray!</p>
-<h3 class="mume-header" id="case-3">Case 3</h3>
-
+<h3 id="case-3">Case 3</h3>
 <p>Make the grandparent <span class="red">red</span> and the parent and uncle <strong>black</strong>, recursively.</p>
-<p><img src="../../static/assets/media/case3.png" alt="Case 3"></p>
-<h3 class="mume-header" id="case-4">Case 4</h3>
-
-<h4 class="mume-header" id="triangle-case">Triangle Case</h4>
-
-<p><img src="../../static/assets/media/triangle.png" alt="Triangle Case"></p>
-<p>Single rotation of Z&apos;s parent in the <strong>opposite</strong> direction of Z</p>
-<h4 class="mume-header" id="line-case">Line Case</h4>
-
-<p><img src="../../static/assets/media/line.png" alt="Line Case"></p>
-<p>Single rotation of Z&apos;s grandparent in the <strong>opposite</strong> direction of Z</p>
-<h1 class="mume-header" id="splay-trees">Splay Trees</h1>
-
+<figure>
+<img src="../../static/assets/media/case3.png" alt="Case 3"><figcaption aria-hidden="true">Case 3</figcaption>
+</figure>
+<h3 id="case-4">Case 4</h3>
+<h4 id="triangle-case">Triangle Case</h4>
+<figure>
+<img src="../../static/assets/media/triangle.png" alt="Triangle Case"><figcaption aria-hidden="true">Triangle Case</figcaption>
+</figure>
+<p>Single rotation of Z&#x2019;s parent in the <strong>opposite</strong> direction of Z</p>
+<h4 id="line-case">Line Case</h4>
+<figure>
+<img src="../../static/assets/media/line.png" alt="Line Case"><figcaption aria-hidden="true">Line Case</figcaption>
+</figure>
+<p>Single rotation of Z&#x2019;s grandparent in the <strong>opposite</strong> direction of Z</p>
+<h1 id="splay-trees">Splay Trees</h1>
 <p>Rotate til most recent node becomes root</p>
-<h2 class="mume-header" id="pros">Pros</h2>
-
+<h2 id="pros">Pros</h2>
 <ul>
 <li>Easy implementation</li>
-<li>Still $\Theta (log (n))$ amortized</li>
+<li>Still <span class="math inline">\(\Theta (log (n))\)</span> amortized</li>
 <li>Good for caches</li>
 </ul>
-<h2 class="mume-header" id="cons">Cons</h2>
-
+<h2 id="cons">Cons</h2>
 <ul>
-<li>Not guaranteed $\Theta (log (n))$ for single ops, can be $\Theta (n)$</li>
+<li>Not guaranteed <span class="math inline">\(\Theta (log (n))\)</span> for single ops, can be <span class="math inline">\(\Theta (n)\)</span></li>
 <li>Poor in uniform accesses</li>
 </ul>
-<h1 class="mume-header" id="vector-amortized">Vector Amortized</h1>
-
-<p>We have to make about $n-100$ copies for insert</p>
-<h2 class="mume-header" id="inserts">Inserts</h2>
-
+<h1 id="vector-amortized">Vector Amortized</h1>
+<p>We have to make about <span class="math inline">\(n-100\)</span> copies for insert</p>
+<h2 id="inserts">Inserts</h2>
 <ul>
-<li>$O(n)$ worst case</li>
-<li>$\Theta (1)$ <em>amortized</em> for many ops</li>
+<li><span class="math inline">\(O(n)\)</span> worst case</li>
+<li><span class="math inline">\(\Theta (1)\)</span> <em>amortized</em> for many ops</li>
 </ul>
-<p>This shows that although an individual operation takes $n$ steps, a series of $c$ operations takes $cn$ steps, which, averaging by dividing by n, means we have <strong>an average of $c$ steps.</strong></p>
+<p>This shows that although an individual operation takes <span class="math inline">\(n\)</span> steps, a series of <span class="math inline">\(c\)</span> operations takes <span class="math inline">\(cn\)</span> steps, which, averaging by dividing by n, means we have <strong>an average of <span class="math inline">\(c\)</span> steps.</strong></p>
 
 
 
