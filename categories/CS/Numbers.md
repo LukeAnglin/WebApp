@@ -17,10 +17,6 @@ $$
 \sum_{i=0}^{n} d_i\ \times R^i
 $$
 
-In practice, that looks like:
-
-$25_6= 2(6^1)+5(6^0)$
-
 ## Decimal to Radix Example
 
 Use the **remainder** method specified [here](https://www.youtube.com/watch?v=gvJYNAiwOhc)
