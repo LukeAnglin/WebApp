@@ -59,3 +59,5 @@ See [this](https://www.cs.usfca.edu/~galles/JavascriptVisual/Heap.html)
 * Deletion - put it in, `percolateDown` - Move farthest down farthest right node to root, and percolate it down. 
 
 # Huffman Encoding
+
+Repeatedly take the two highest priority (smallest) node and create a joining node with the sum of them as its priority. 

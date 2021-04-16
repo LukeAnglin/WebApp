@@ -3,7 +3,12 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+      
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+        </script>
+        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+        
       
       
       
@@ -407,86 +412,45 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <div class="navbar"></div><div class="note-content">
 
-<h1 class="mume-header" id="std-lib">Std Lib</h1>
-
-<p>Implements</p>
-<ul>
-<li><code>vector</code>- solve capacity, index validity checking and copying issues of arrays</li>
-<li><code>string</code> - solve comparison issues with <code>char</code> arrays</li>
-</ul>
-<h2 class="mume-header" id="vectorshttpswwwcpluspluscomreferencevectorvector"><a href="https://www.cplusplus.com/reference/vector/vector/">Vectors</a></h2>
-
-<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token comment">// Create Vertex object </span>
-std<span class="token operator">::</span>vector<span class="token operator">&lt;</span>Vertex<span class="token operator">&gt;</span> vertices<span class="token punctuation">;</span> 
-
-<span class="token comment">// Add elements </span>
-
-vertices<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-<span class="token comment">// Remove that element </span>
-
-vertices<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>vertices<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token comment">// Insert an element at a position </span>
-it <span class="token operator">=</span> vertices<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-vertices<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>it<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-<span class="token comment">// You could also remove everything </span>
-vertices<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="iterators">Iterators</h3>
-
-<p>Represents <strong>position</strong></p>
-<ul>
-<li><code>.begin()</code> and <code>.end()</code></li>
-<li>Increment with <code>itr++</code> or <code>++itr</code></li>
-<li><code>==</code> and <code>!=</code> function properly</li>
-</ul>
-<p>Looping through:</p>
-<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span><span class="token operator">::</span>iterator it <span class="token operator">=</span> v<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-    it <span class="token operator">!=</span> v<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it<span class="token operator">++</span> <span class="token punctuation">)</span>
-    <span class="token comment">// Print the value at the iterator </span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token operator">*</span>it <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-</pre><h1>Templates</h1>
+<h1 id="templates">Templates</h1>
 <p>Basically <strong>generics</strong> for functions and/or classes</p>
 <p>Used for function/class that <strong>might take different types</strong>.</p>
-<h2 class="mume-header" id="functions">Functions</h2>
-
-<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> <span class="token class-name">Comparable</span><span class="token operator">&gt;</span> 
+<h2 id="functions">Functions</h2>
+<pre class="text language-text language-cpp" data-role="codeBlock" data-info="cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> <span class="token class-name">Comparable</span><span class="token operator">&gt;</span>
 <span class="token keyword">const</span> Comparable <span class="token operator">&amp;</span> <span class="token function">findMax</span> <span class="token punctuation">(</span><span class="token keyword">const</span> vector<span class="token operator">&lt;</span>Comparable<span class="token operator">&gt;</span> <span class="token operator">&amp;</span> a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">int</span> maxIndex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
-  <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> a<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span> 
+  <span class="token keyword">int</span> maxIndex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> a<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span>
       <span class="token keyword">if</span><span class="token punctuation">(</span> a<span class="token punctuation">[</span> maxIndex <span class="token punctuation">]</span> <span class="token operator">&lt;</span> a<span class="token punctuation">[</span> i <span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token comment">// note the use of &apos;&lt;&apos;</span>
-          maxIndex <span class="token operator">=</span> i<span class="token punctuation">;</span> 
-  <span class="token keyword">return</span> a<span class="token punctuation">[</span> maxIndex <span class="token punctuation">]</span><span class="token punctuation">;</span> 
-<span class="token punctuation">}</span>
-</pre><h2 class="mume-header" id="classes">Classes</h2>
-
-<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> <span class="token class-name">Object</span><span class="token operator">&gt;</span>
+          maxIndex <span class="token operator">=</span> i<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> a<span class="token punctuation">[</span> maxIndex <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></pre>
+<h2 id="classes">Classes</h2>
+<pre class="text language-text language-cpp" data-role="codeBlock" data-info="cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> <span class="token class-name">Object</span><span class="token operator">&gt;</span>
 <span class="token keyword">class</span> <span class="token class-name">ObjectCell</span> <span class="token punctuation">{</span>
   <span class="token keyword">public</span><span class="token operator">:</span>
-  <span class="token comment">// Initializes a holder for whatever the default constructor of the passed in Object parameter is </span>
-    <span class="token function">ObjectCell</span><span class="token punctuation">(</span><span class="token keyword">const</span> Object <span class="token operator">&amp;</span> initValue <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+  <span class="token comment">// Initializes a holder for whatever the default constructor of the passed in Object parameter is</span>
+    <span class="token function">ObjectCell</span><span class="token punctuation">(</span><span class="token keyword">const</span> Object <span class="token operator">&amp;</span> initValue <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
                 <span class="token operator">:</span> <span class="token function">storedValue</span><span class="token punctuation">(</span>initValue<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
     <span class="token keyword">const</span> Object <span class="token operator">&amp;</span> <span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
                <span class="token keyword">return</span> storedValue<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-</pre><h1 class="mume-header" id="stackshttpsuva-csgithubiopdrslides02-listshtml51"><a href="https://uva-cs.github.io/pdr/slides/02-lists.html#/5/1">Stacks</a></h1>
-
-<p>Applications:</p>
+    <span class="token punctuation">}</span></pre>
+<h1 id="stackshttpsuva-csgithubiopdrslides02-listshtml51"><a href="https://uva-cs.github.io/pdr/slides/02-lists.html#/5/1">Stacks</a></h1>
+<h2 id="applications">Applications:</h2>
 <ul>
 <li>Undo</li>
 <li>Symbol Balancing</li>
 <li>Postfix calculator</li>
 </ul>
-<h2 class="mume-header" id="linked-list">Linked List</h2>
-
-<p><img src="https://uva-cs.github.io/pdr/slides/images/02-lists/stack-diagram.svg" alt="Linked List Stack Implementation"></p>
-<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;StackNode.h&quot;</span></span>
+<h2 id="linked-list-implementation">Linked List Implementation</h2>
+<figure>
+<img src="https://uva-cs.github.io/pdr/slides/images/02-lists/stack-diagram.svg" alt="Linked List Stack Implementation"><figcaption aria-hidden="true">Linked List Stack Implementation</figcaption>
+</figure>
+<pre class="text language-text language-cpp" data-role="codeBlock" data-info="cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;StackNode.h&quot;</span></span>
 
 <span class="token comment">// assumes a stack of ints stored in StackNodes</span>
 <span class="token keyword">class</span> <span class="token class-name">Stack</span> <span class="token punctuation">{</span>
   <span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token function">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// constructor    </span>
+    <span class="token function">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// constructor</span>
     <span class="token operator">~</span><span class="token function">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">// destructor</span>
     <span class="token keyword">bool</span> <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>   <span class="token comment">// checks for empty</span>
     <span class="token keyword">void</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// push value onto stack</span>
@@ -495,24 +459,23 @@ vertices<span class="token punctuation">.</span><span class="token function">cle
 
   <span class="token keyword">private</span><span class="token operator">:</span>
     StackNode <span class="token operator">*</span>head<span class="token punctuation">;</span>        <span class="token comment">// like a ListNode...</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</pre><h2 class="mume-header" id="array">Array</h2>
-
-<p>Most operations <strong>fast, constant time</strong><br>
-Consists of</p>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></pre>
+<h2 id="array-implementation">Array Implementation</h2>
+<h3 id="pros">Pros</h3>
+<p>Most operations <strong>fast, constant time</strong> Consists of</p>
 <ul>
 <li><code>theArray</code> - the stack itself</li>
 <li><code>topOfStack</code></li>
 </ul>
+<h3 id="cons">Cons</h3>
 <p>Fails when array is full, so we need <code>vector</code></p>
-<h2 class="mume-header" id="vector">Vector</h2>
-
-<pre data-role="codeBlock" data-info="CPP" class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector&gt;</span></span>
+<h2 id="vector">Vector</h2>
+<pre class="text language-text language-cpp" data-role="codeBlock" data-info="CPP"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector&gt;</span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
 <span class="token keyword">class</span> <span class="token class-name">Stack</span> <span class="token punctuation">{</span>
   <span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token function">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// constructor    </span>
+    <span class="token function">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// constructor</span>
     <span class="token operator">~</span><span class="token function">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">// destructor</span>
     <span class="token keyword">bool</span> <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>   <span class="token comment">// checks for empty</span>
     <span class="token keyword">void</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// push value onto stack</span>
@@ -520,41 +483,30 @@ Consists of</p>
     <span class="token keyword">int</span> <span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>        <span class="token comment">// returns topOfStack</span>
 
   <span class="token keyword">private</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> theStack<span class="token punctuation">;</span>    
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</pre><h3 class="mume-header" id="pushing">Pushing</h3>
-
-<pre data-role="codeBlock" data-info="CPP" class="language-cpp"><span class="token keyword">void</span> <span class="token class-name">Stack</span><span class="token operator">::</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span><span class="token punctuation">{</span>
-  theStack<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</pre><h2 class="mume-header" id="summary">Summary</h2>
-
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> theStack<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></pre>
+<h2 id="summary">Summary</h2>
 <p>Attributes only include the <strong>top of the stack</strong>, and they can be implemented as <code>LinkedList</code>, arrays, or <code>vector</code>.</p>
 <p>The fundamental operations, <code>push_back</code>, <code>pop</code> and <code>top</code> are <strong>constant time</strong>.</p>
-<h1 class="mume-header" id="queueshttpsuva-csgithubiopdrslides02-listshtmlqueues"><a href="https://uva-cs.github.io/pdr/slides/02-lists.html#/queues">Queues</a></h1>
-
+<h1 id="queueshttpsuva-csgithubiopdrslides02-listshtmlqueues"><a href="https://uva-cs.github.io/pdr/slides/02-lists.html#/queues">Queues</a></h1>
 <p>Also can be implemented as <code>LinkedList</code>, arrays, or <code>vector</code>, also which are <strong>constant time</strong> with a slight exception for <code>vector</code>.</p>
-<h2 class="mume-header" id="arrays">Arrays</h2>
-
+<h2 id="arrays">Arrays</h2>
 <p>Again issues with the array being full.</p>
-<h2 class="mume-header" id="enqueue">Enqueue</h2>
-
+<h2 id="enqueue">Enqueue</h2>
 <ul>
-<li>increment size</li>
-<li>increment back</li>
+<li>Increment size</li>
+<li>Increment back</li>
 <li>set <code>theArray[back] = element</code></li>
 </ul>
-<h2 class="mume-header" id="dequeue">Dequeue</h2>
-
+<h2 id="dequeue">Dequeue</h2>
 <ul>
 <li>set return value to <code>theArray[front]</code></li>
 <li>decrement current size</li>
 <li>increment front</li>
 </ul>
-<h2 class="mume-header" id="linked-list-1">Linked List</h2>
-
-<p><img src="https://uva-cs.github.io/pdr/slides/images/02-lists/queue-diagram.svg" alt="  Linked List Queue Implementation"></p>
-<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;QueueNode.h&quot;</span></span>
+<h2 id="linked-list">Linked List</h2>
+<p><img src="https://uva-cs.github.io/pdr/slides/images/02-lists/queue-diagram.svg"></p>
+<pre class="text language-text language-cpp" data-role="codeBlock" data-info="cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;QueueNode.h&quot;</span></span>
 
 <span class="token comment">// assumes a queue of ints stored in QueueNodes</span>
 <span class="token keyword">class</span> <span class="token class-name">Queue</span><span class="token punctuation">{</span>
@@ -566,24 +518,22 @@ Consists of</p>
     <span class="token keyword">void</span> <span class="token function">enqueue</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token comment">// remove item from front of list</span>
-    <span class="token keyword">int</span> <span class="token function">dequeue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
-</pre><h1 class="mume-header" id="adtshttpsuva-csgithubiopdrslides02-listshtmladts"><a href="https://uva-cs.github.io/pdr/slides/02-lists.html#/adts">ADTs</a></h1>
-
+    <span class="token keyword">int</span> <span class="token function">dequeue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre>
+<h1 id="adtshttpsuva-csgithubiopdrslides02-listshtmladts"><a href="https://uva-cs.github.io/pdr/slides/02-lists.html#/adts">ADTs</a></h1>
 <p>Things with sets of operations - <strong>definition of a type</strong> - generally classes.</p>
-<h2 class="mume-header" id="lists">Lists</h2>
-
+<h2 id="lists">Lists</h2>
 <ul>
-<li>Size <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></li>
-<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">A_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is first element, then <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>A</mi><mn>2</mn></msub><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_1, A_2 . . . A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> is the position</li>
+<li>Size <span class="math inline">\(N\)</span></li>
+<li><span class="math inline">\(A_0\)</span> is first element, then <span class="math inline">\(A_1, A_2 . . . A_i\)</span> where <span class="math inline">\(i\)</span> is the position</li>
 </ul>
-<h3 class="mume-header" id="arrays-1">Arrays</h3>
-
+<h3 id="arrays-1">Arrays</h3>
 <ul>
 <li>Fixed capacity, operations constant or linear</li>
 </ul>
-<h3 class="mume-header" id="linked-list-2">Linked List</h3>
-
-<p>Opertaions constant or linear</p>
+<h3 id="linked-list-1">Linked List</h3>
+<p>Operations constant or linear</p>
+<h1 id="pointer-reroutes">Pointer Reroutes</h1>
+<p><a href="https://www.softwaretestinghelp.com/doubly-linked-list-2/#Insertion">Awesome pointer illustrations</a></p>
 
 
 
